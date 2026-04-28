@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visit Mesa Board Report — February 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --teal: #007B8A;
+    --teal-light: #009CAD;
+    --teal-dark: #005f6b;
+    --yellow: #F5C518;
+    --yellow-light: #FFF3C4;
+    --black: #1A1A1A;
+    --gray: #F2F2F2;
+    --gray-mid: #D0D0D0;
+    --gray-text: #555555;
+    --white: #FFFFFF;
+    --blue-nav: #1e3a5f;
+    --positive: #2e7d52;
+    --negative: #b85c00;
+    --watch: #c97a00;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f8f9fa;
+    color: var(--black);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    width: 820px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+  }
+
+  /* ── COVER ── */
+  .cover {
+    height: 500px;
+    background: linear-gradient(160deg, #1e3a5f 0%, #007B8A 60%, #00b4cc 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+  }
+  .cover-logo {
+    margin-bottom: 12px;
+  }
+  .cover-subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  .cover h1 {
+    font-size: 42px;
+    font-weight: 800;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .cover-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .cover-divider-line {
+    width: 60px;
+    height: 2px;
+    background: var(--yellow);
+  }
+  .cover-divider-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--yellow);
+    border-radius: 50%;
+  }
+  .cover-date {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 1px;
+  }
+
+  /* ── HEADER BAR (inner pages) ── */
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 36px;
+    border-bottom: 2px solid var(--teal);
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .page-header-logo {
+    display: flex;
+    align-items: center;
+  }
+  .page-header-title {
+    font-size: 12px;
+    color: var(--gray-text);
+    font-weight: 500;
+  }
+
+  /* ── CONTENT ── */
+  .content {
+    padding: 44px 52px;
+  }
+
+  /* ── SECTION BREAKS ── */
+  .section {
+    margin-bottom: 52px;
+  }
+  .section + .section {
+    border-top: 1px solid var(--gray-mid);
+    padding-top: 44px;
+  }
+
+  /* ── HEADINGS ── */
+  .report-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--black);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .report-month {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--teal);
+    margin-bottom: 20px;
+  }
+  hr.rule {
+    border: none;
+    border-top: 1px solid var(--gray-mid);
+    margin: 20px 0;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .section-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--teal);
+    margin-bottom: 18px;
+  }
+  .subsection-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal);
+    margin: 20px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── KPI CARDS ── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .kpi-grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .kpi-card {
+    border: 1px solid var(--gray-mid);
+    border-radius: 8px;
+    padding: 18px 20px;
+    background: white;
+  }
+  .kpi-card.teal-bg {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+  .kpi-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-text);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .teal-bg .kpi-label { color: rgba(255,255,255,0.75); }
+  .kpi-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--black);
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .teal-bg .kpi-value { color: white; }
+  .kpi-sub {
+    font-size: 11px;
+    color: var(--gray-text);
+  }
+  .teal-bg .kpi-sub { color: rgba(255,255,255,0.7); }
+  .up { color: var(--positive); font-weight: 600; }
+  .down { color: var(--negative); font-weight: 600; }
+  .watch { color: var(--watch); font-weight: 600; }
+
+  /* ── TABLES ── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 13px;
+  }
+  .data-table th {
+    background: var(--teal);
+    color: white;
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .data-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--gray);
+    color: var(--black);
+  }
+  .data-table tr:nth-child(even) td { background: var(--gray); }
+  .data-table tr:hover td { background: #e8f5f7; }
+  .data-table td.bold { font-weight: 700; }
+  .data-table td.highlight { color: var(--teal); font-weight: 700; }
+
+  /* ── INSIGHT CALLOUT ── */
+  .insight-box {
+    background: #e6f4f6;
+    border-left: 4px solid var(--teal);
+    padding: 14px 18px;
+    border-radius: 0 6px 6px 0;
+    margin: 20px 0;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .insight-box.yellow {
+    background: var(--yellow-light);
+    border-left-color: var(--yellow);
+  }
+  .insight-box .label {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--teal);
+    margin-bottom: 4px;
+  }
+  .insight-box.yellow .label { color: #8a6a00; }
+
+  /* ── WINS / WATCH TABLES ── */
+  .wins-table, .watch-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+  .wins-table th, .watch-table th {
+    background: var(--teal);
+    color: white;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .wins-table td, .watch-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--gray);
+    vertical-align: top;
+  }
+  .wins-table td:first-child { font-weight: 600; }
+  .watch-table td:first-child { font-weight: 600; color: var(--watch); }
+
+  /* ── CHARTS ── */
+  .chart-wrap {
+    margin: 20px 0;
+  }
+  .chart-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── TRANSITION LINE ── */
+  .transition-line {
+    font-style: italic;
+    color: var(--gray-text);
+    font-size: 13px;
+    text-align: center;
+    margin: 28px 0 0;
+    padding-top: 20px;
+    border-top: 1px dashed var(--gray-mid);
+  }
+
+  /* ── PROSE ── */
+  p { margin-bottom: 12px; font-size: 13px; line-height: 1.7; }
+  p strong { font-weight: 700; color: var(--black); }
+  ul.highlight-list { margin: 10px 0 16px 20px; }
+  ul.highlight-list li { margin-bottom: 6px; font-size: 13px; }
+
+  /* ── SOURCE TAG ── */
+  .source-tag {
+    font-size: 10px;
+    color: var(--gray-text);
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+
+  /* ── EVENTS TABLE ── */
+  .events-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 12px 0;
+  }
+
+  /* ── FOOTER ── */
+  .report-footer {
+    background: var(--teal-dark);
+    color: rgba(255,255,255,0.7);
+    padding: 24px 52px;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .report-footer strong { color: white; }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; }
+    .page-header { position: static; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══════════════════════════════════════════ COVER ═══════════════════════════════════════════ -->
+  <div class="cover">
+    <div class="cover-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 307.4 95.6" width="200" style="display:block;">
+        <defs><style>.wl1{fill:#f36e21}.wl2{fill:#038a96}.wl3{fill:#fff}.wl4{fill:#ffc709}.wl5{fill:#336195}</style></defs>
+        <g>
+          <polygon class="wl1" points="137.4 21.9 136.8 21.9 146.3 49.8 146.8 49.9 146.6 33.5 137.4 21.9"/>
+          <polygon class="wl5" points="148.3 36.4 156.7 24.9 157.5 24.9 149.1 52.3 148.5 52.8 148.3 36.4"/>
+          <polygon class="wl4" points="141.5 41 129.8 50.7 128.9 50.7 135.5 24.7 136.2 24.6 141.5 41"/>
+          <polygon class="wl2" points="155.1 38.1 170.8 52.5 171.6 52.6 160.2 23.6 159.5 23.6 155.1 38.1"/>
+        </g>
+        <g>
+          <g>
+            <path class="wl3" d="M29.7,47.3l-9.4-18.9c-.1-.3-.2-.5-.2-.7,0-.7.4-1.2,1.3-1.2h2.2c.8,0,1.3.3,1.6.9l7.4,15.6,7.4-15.6c.3-.6.8-.9,1.6-.9h2.2c.8,0,1.3.6,1.3,1.2,0,.2,0,.5-.2.7l-9.4,18.9c-.3.6-.8.9-1.6.9h-2.6c-.8,0-1.3-.3-1.6-.9"/>
+            <path class="wl3" d="M49.6,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"/>
+            <path class="wl3" d="M71.3,44.2c3,0,5.8-.8,5.8-2.7,0-1.6-1.9-2-6.1-2.4-6.7-.5-10.5-2-10.5-6s4-7,10.3-7c4.7,0,8,1.6,9.2,2.6.6.4.9.9.9,1.6,0,.5-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5-.3,0-.7-.1-1-.4-2.2-1.4-4.4-2.1-6.9-2.1-2.7,0-5.5.9-5.5,2.4,0,1.4,2.5,1.8,5.7,2,6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4c-4.4,0-8.2-1.3-10.6-3.2-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7.1,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"/>
+            <path class="wl3" d="M87.4,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"/>
+            <path class="wl3" d="M110.9,46.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-15.9h-8.3c-.9,0-1.4-.5-1.4-1.4v-1.5c0-.8.5-1.4,1.4-1.4h21.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-8.3s0,15.9,0,15.9z"/>
+            <path class="wl3" d="M190.7,43.7l-6.7-8.7v11.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-18.9c0-.8.6-1.4,1.4-1.4h1.6c.9,0,1.3.3,1.9,1l8.1,10.5,8.2-10.5c.6-.7,1-1,1.9-1h1.6c.8,0,1.4.6,1.4,1.4v18.8c0,.9-.6,1.4-1.4,1.4h-2c-.9,0-1.4-.5-1.4-1.4v-11.7l-6.7,8.7c-.4.5-.8.8-1.6.8-.6.1-1-.3-1.5-.8"/>
+            <path class="wl3" d="M212.5,46.8v-18.9c0-.8.6-1.4,1.4-1.4h18.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-15v4.2h10.7c.9,0,1.4.6,1.4,1.4v1.6c0,.9-.5,1.4-1.4,1.4h-10.7v4.4h15c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-18.4c-.8.1-1.4-.4-1.4-1.3"/>
+            <path class="wl3" d="M248.8,44.2c3,0,5.8-.8,5.8-2.7,0-1.6-1.9-2-6.1-2.4-6.7-.5-10.5-2-10.5-6s4-7,10.3-7c4.7,0,8,1.6,9.2,2.6.6.4.9.9.9,1.6,0,.5-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5-.3,0-.7-.1-1-.4-2.2-1.4-4.4-2.1-6.9-2.1-2.7,0-5.5.9-5.5,2.4,0,1.4,2.5,1.8,5.7,2,6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4c-4.4,0-8.2-1.3-10.6-3.2-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7.1,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"/>
+            <path class="wl3" d="M278.6,39.6l-3.7-7.9-3.8,7.9h7.5zM277.7,27.4l9.4,18.9c.1.3.2.5.2.8,0,.7-.5,1.2-1.3,1.2h-2.2c-.8,0-1.3-.3-1.6-.9l-1.6-3.4h-11.6l-1.6,3.4c-.3.6-.8.9-1.6.9h-2.2c-.8,0-1.3-.5-1.3-1.2,0-.3.1-.5.2-.8l9.4-18.9c.3-.6.8-.9,1.6-.9h2.6c.8,0,1.3.3,1.6.9"/>
+            <path class="wl3" d="M92.2,63.8l-.7,1.8c-.8-.4-1.6-.6-2.5-.6s-1.8.3-2.5.9-1,1.4-1,2.5c0,.7.2,1.4.5,1.9.7,1,1.8,1.4,3,1.4.9,0,1.7-.2,2.4-.6l.8,1.8c-1.1.5-2.2.8-3.3.8-3,0-5.6-1.8-5.6-5.2,0-1.6.5-2.9,1.6-3.9,1-1,2.4-1.5,3.9-1.5,1.2-.1,2.3.2,3.4.7"/>
+          </g>
+          <rect class="wl3" x="96.2" y="63.2" width="2.1" height="10.2"/>
+          <polygon class="wl3" points="101.4 63.2 101.4 65.2 104.7 65.2 104.7 73.4 106.9 73.4 106.9 65.2 110.2 65.2 110.2 63.2 101.4 63.2"/>
+          <polygon class="wl3" points="120.6 63.2 117.8 67.4 115.1 63.2 112.5 63.2 116.6 69.4 116.6 73.4 119 73.4 119 69.5 123.2 63.2 120.6 63.2"/>
+          <polygon class="wl3" points="133 63.2 133 73.4 140.2 73.4 140.2 71.5 135.2 71.5 135.2 63.2 133 63.2"/>
+          <rect class="wl3" x="143.3" y="63.2" width="2.1" height="10.2"/>
+          <polygon class="wl3" points="159.7 63.2 155.7 68.5 151.8 63.2 149.7 63.2 149.7 73.4 151.9 73.4 151.9 66.8 155.7 71.9 159.5 66.8 159.5 73.4 161.7 73.4 161.7 63.2 159.7 63.2"/>
+          <rect class="wl3" x="166" y="63.2" width="2.1" height="10.2"/>
+          <polygon class="wl3" points="171.2 63.2 171.2 65.2 174.5 65.2 174.5 73.4 176.7 73.4 176.7 65.2 180 65.2 180 63.2 171.2 63.2"/>
+          <polygon class="wl3" points="183.1 63.2 183.1 73.4 190.3 73.4 190.3 71.5 185.3 71.5 185.3 63.2 183.1 63.2"/>
+          <polygon class="wl3" points="193.4 63.2 193.4 73.4 201.1 73.4 201.1 71.5 195.6 71.5 195.6 69.2 199.5 69.2 199.5 67.4 195.6 67.4 195.6 65.2 200.8 65.2 200.8 63.2 193.4 63.2"/>
+          <g>
+            <path class="wl3" d="M211.9,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7-1.1,0-1.8.4-1.8,1,0,.3.2.5.6.7.2.1.6.2.9.3.3.1.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9,0,1.1-.4,1.9-1.2,2.4-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9,1.3,0,2-.5,2.1-1.2,0-.4-.2-.6-.6-.8-.2-.1-.4-.2-.6-.2-.2-.1-.4-.1-.8-.2-.3-.1-.6-.1-.8-.2-1.9-.5-3-1.3-3-2.9,0-.7.2-1.3.6-1.8.8-1,2-1.3,3.5-1.3,1.1.1,2.1.3,3.2.8"/>
+            <path class="wl3" d="M223.2,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7-1.1,0-1.8.4-1.8,1,0,.3.2.5.6.7.2.1.6.2.9.3.3.1.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9,0,1.1-.4,1.9-1.2,2.4-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9,1.3,0,2-.5,2.1-1.2,0-.4-.2-.6-.6-.8-.2-.1-.4-.2-.6-.2-.2-.1-.4-.1-.8-.2-.3-.1-.6-.1-.8-.2-1.9-.5-3-1.3-3-2.9,0-.7.2-1.3.6-1.8.8-1,2-1.3,3.5-1.3,1,.1,2.1.3,3.2.8"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="cover-subtitle">Destination Sales &amp; Marketing</div>
+    <h1>Visit Mesa Monthly<br>Performance Report</h1>
+    <div class="cover-divider">
+      <div class="cover-divider-line"></div>
+      <div class="cover-divider-dot"></div>
+      <div class="cover-divider-line"></div>
+    </div>
+    <div class="cover-date">February 2026</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ PAGE HEADER ═══════════════════════════════════════════ -->
+  <div class="page-header">
+    <div class="page-header-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 307.4 95.6" width="130" style="display:block;">
+        <defs><style>.cl1{fill:#f36e21}.cl2{fill:#038a96}.cl3{fill:#ffc709}.cl4{fill:#336195}</style></defs>
+        <g>
+          <polygon class="cl1" points="137.4 21.9 136.8 21.9 146.3 49.8 146.8 49.9 146.6 33.5 137.4 21.9"/>
+          <polygon class="cl4" points="148.3 36.4 156.7 24.9 157.5 24.9 149.1 52.3 148.5 52.8 148.3 36.4"/>
+          <polygon class="cl3" points="141.5 41 129.8 50.7 128.9 50.7 135.5 24.7 136.2 24.6 141.5 41"/>
+          <polygon class="cl2" points="155.1 38.1 170.8 52.5 171.6 52.6 160.2 23.6 159.5 23.6 155.1 38.1"/>
+        </g>
+        <g>
+          <g>
+            <path class="cl4" d="M29.7,47.3l-9.4-18.9c-.1-.3-.2-.5-.2-.7,0-.7.4-1.2,1.3-1.2h2.2c.8,0,1.3.3,1.6.9l7.4,15.6,7.4-15.6c.3-.6.8-.9,1.6-.9h2.2c.8,0,1.3.6,1.3,1.2,0,.2,0,.5-.2.7l-9.4,18.9c-.3.6-.8.9-1.6.9h-2.6c-.8,0-1.3-.3-1.6-.9"/>
+            <path class="cl4" d="M49.6,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"/>
+            <path class="cl4" d="M71.3,44.2c3,0,5.8-.8,5.8-2.7,0-1.6-1.9-2-6.1-2.4-6.7-.5-10.5-2-10.5-6s4-7,10.3-7c4.7,0,8,1.6,9.2,2.6.6.4.9.9.9,1.6,0,.5-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5-.3,0-.7-.1-1-.4-2.2-1.4-4.4-2.1-6.9-2.1-2.7,0-5.5.9-5.5,2.4,0,1.4,2.5,1.8,5.7,2,6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4c-4.4,0-8.2-1.3-10.6-3.2-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7.1,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"/>
+            <path class="cl4" d="M87.4,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"/>
+            <path class="cl4" d="M110.9,46.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-15.9h-8.3c-.9,0-1.4-.5-1.4-1.4v-1.5c0-.8.5-1.4,1.4-1.4h21.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-8.3s0,15.9,0,15.9z"/>
+            <path class="cl4" d="M190.7,43.7l-6.7-8.7v11.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-18.9c0-.8.6-1.4,1.4-1.4h1.6c.9,0,1.3.3,1.9,1l8.1,10.5,8.2-10.5c.6-.7,1-1,1.9-1h1.6c.8,0,1.4.6,1.4,1.4v18.8c0,.9-.6,1.4-1.4,1.4h-2c-.9,0-1.4-.5-1.4-1.4v-11.7l-6.7,8.7c-.4.5-.8.8-1.6.8-.6.1-1-.3-1.5-.8"/>
+            <path class="cl4" d="M212.5,46.8v-18.9c0-.8.6-1.4,1.4-1.4h18.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-15v4.2h10.7c.9,0,1.4.6,1.4,1.4v1.6c0,.9-.5,1.4-1.4,1.4h-10.7v4.4h15c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-18.4c-.8.1-1.4-.4-1.4-1.3"/>
+            <path class="cl4" d="M248.8,44.2c3,0,5.8-.8,5.8-2.7,0-1.6-1.9-2-6.1-2.4-6.7-.5-10.5-2-10.5-6s4-7,10.3-7c4.7,0,8,1.6,9.2,2.6.6.4.9.9.9,1.6,0,.5-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5-.3,0-.7-.1-1-.4-2.2-1.4-4.4-2.1-6.9-2.1-2.7,0-5.5.9-5.5,2.4,0,1.4,2.5,1.8,5.7,2,6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4c-4.4,0-8.2-1.3-10.6-3.2-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7.1,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"/>
+            <path class="cl4" d="M278.6,39.6l-3.7-7.9-3.8,7.9h7.5zM277.7,27.4l9.4,18.9c.1.3.2.5.2.8,0,.7-.5,1.2-1.3,1.2h-2.2c-.8,0-1.3-.3-1.6-.9l-1.6-3.4h-11.6l-1.6,3.4c-.3.6-.8.9-1.6.9h-2.2c-.8,0-1.3-.5-1.3-1.2,0-.3.1-.5.2-.8l9.4-18.9c.3-.6.8-.9,1.6-.9h2.6c.8,0,1.3.3,1.6.9"/>
+            <path class="cl4" d="M92.2,63.8l-.7,1.8c-.8-.4-1.6-.6-2.5-.6s-1.8.3-2.5.9-1,1.4-1,2.5c0,.7.2,1.4.5,1.9.7,1,1.8,1.4,3,1.4.9,0,1.7-.2,2.4-.6l.8,1.8c-1.1.5-2.2.8-3.3.8-3,0-5.6-1.8-5.6-5.2,0-1.6.5-2.9,1.6-3.9,1-1,2.4-1.5,3.9-1.5,1.2-.1,2.3.2,3.4.7"/>
+          </g>
+          <rect class="cl4" x="96.2" y="63.2" width="2.1" height="10.2"/>
+          <polygon class="cl4" points="101.4 63.2 101.4 65.2 104.7 65.2 104.7 73.4 106.9 73.4 106.9 65.2 110.2 65.2 110.2 63.2 101.4 63.2"/>
+          <polygon class="cl4" points="120.6 63.2 117.8 67.4 115.1 63.2 112.5 63.2 116.6 69.4 116.6 73.4 119 73.4 119 69.5 123.2 63.2 120.6 63.2"/>
+          <polygon class="cl4" points="133 63.2 133 73.4 140.2 73.4 140.2 71.5 135.2 71.5 135.2 63.2 133 63.2"/>
+          <rect class="cl4" x="143.3" y="63.2" width="2.1" height="10.2"/>
+          <polygon class="cl4" points="159.7 63.2 155.7 68.5 151.8 63.2 149.7 63.2 149.7 73.4 151.9 73.4 151.9 66.8 155.7 71.9 159.5 66.8 159.5 73.4 161.7 73.4 161.7 63.2 159.7 63.2"/>
+          <rect class="cl4" x="166" y="63.2" width="2.1" height="10.2"/>
+          <polygon class="cl4" points="171.2 63.2 171.2 65.2 174.5 65.2 174.5 73.4 176.7 73.4 176.7 65.2 180 65.2 180 63.2 171.2 63.2"/>
+          <polygon class="cl4" points="183.1 63.2 183.1 73.4 190.3 73.4 190.3 71.5 185.3 71.5 185.3 63.2 183.1 63.2"/>
+          <polygon class="cl4" points="193.4 63.2 193.4 73.4 201.1 73.4 201.1 71.5 195.6 71.5 195.6 69.2 199.5 69.2 199.5 67.4 195.6 67.4 195.6 65.2 200.8 65.2 200.8 63.2 193.4 63.2"/>
+          <g>
+            <path class="cl4" d="M211.9,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7-1.1,0-1.8.4-1.8,1,0,.3.2.5.6.7.2.1.6.2.9.3.3.1.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9,0,1.1-.4,1.9-1.2,2.4-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9,1.3,0,2-.5,2.1-1.2,0-.4-.2-.6-.6-.8-.2-.1-.4-.2-.6-.2-.2-.1-.4-.1-.8-.2-.3-.1-.6-.1-.8-.2-1.9-.5-3-1.3-3-2.9,0-.7.2-1.3.6-1.8.8-1,2-1.3,3.5-1.3,1.1.1,2.1.3,3.2.8"/>
+            <path class="cl4" d="M223.2,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7-1.1,0-1.8.4-1.8,1,0,.3.2.5.6.7.2.1.6.2.9.3.3.1.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9,0,1.1-.4,1.9-1.2,2.4-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9,1.3,0,2-.5,2.1-1.2,0-.4-.2-.6-.6-.8-.2-.1-.4-.2-.6-.2-.2-.1-.4-.1-.8-.2-.3-.1-.6-.1-.8-.2-1.9-.5-3-1.3-3-2.9,0-.7.2-1.3.6-1.8.8-1,2-1.3,3.5-1.3,1,.1,2.1.3,3.2.8"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="page-header-title">Visit Mesa Monthly Performance Report</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ CONTENT ═══════════════════════════════════════════ -->
+  <div class="content">
+
+    <!-- ────────────────── EXECUTIVE SUMMARY ────────────────── -->
+    <div class="section">
+      <div class="report-title">Visit Mesa Monthly Performance Report</div>
+      <div class="report-month">February 2026</div>
+      <hr class="rule">
+
+      <div class="section-subtitle">Executive Summary</div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Hotel Demand</div>
+          <div class="kpi-value">120.8K</div>
+          <div class="kpi-sub"><span class="up">+8.8% YOY</span> — absorbing 4.4% supply growth</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Aggregate RevPAR</div>
+          <div class="kpi-value">$153.53</div>
+          <div class="kpi-sub"><span class="up">+8.7% YOY</span> — STVR strength driving gains</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Total Trips</div>
+          <div class="kpi-value">257.4K</div>
+          <div class="kpi-sub"><span class="up">+7.6% YOY</span> — 60% overnight share</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Web Sessions</div>
+          <div class="kpi-value">136.6K</div>
+          <div class="kpi-sub"><span class="up">+52% YOY</span> — spring training demand surge</div>
+        </div>
+      </div>
+
+      <div class="subsection-title">The Headline</div>
+      <p><strong>Mesa's spring training flywheel is working.</strong> February delivered demand growth across every channel — hotel occupancy hit 81.9% despite 4.4% supply expansion, STVR RevPAR surged 28.3%, and digital engagement more than doubled. The destination is successfully converting seasonal interest into bookings.</p>
+
+      <div class="subsection-title">February Wins</div>
+      <table class="wins-table">
+        <thead>
+          <tr><th>Win</th><th>Impact</th><th>Strategic Significance</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hotel demand up 8.8% YOY</td>
+            <td>120.8K room nights sold, $20.5M revenue</td>
+            <td>Absorbing new supply without diluting occupancy — genuine demand growth</td>
+          </tr>
+          <tr>
+            <td>STVR RevPAR +28.3%</td>
+            <td>$187.05 RevPAR on 52.7% occupancy</td>
+            <td>Spring training drives premium vacation rental rates; validates event strategy</td>
+          </tr>
+          <tr>
+            <td>Expedia ROAS peaked at 62.6x</td>
+            <td>$423.7K revenue on $6.8K spend</td>
+            <td>OTA co-op proving highly efficient; supports case for continued investment</td>
+          </tr>
+          <tr>
+            <td>Sales bookings +20.9% FYTD</td>
+            <td>59,195 rooms booked; Capelli Sports Cup secured ($1.4M impact)</td>
+            <td>Sports pipeline remains robust despite actualization timing variance</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+
+    <!-- ────────────────── TEAM & COMMUNITY ────────────────── -->
+    <div class="section">
+      <div class="section-title">Team &amp; Community Highlights</div>
+
+      <div class="subsection-title">Spring Training Guide Launch &amp; Media Coverage</div>
+      <p>Visit Mesa appeared on <strong>KPNX-TV 12News Midday</strong> to spotlight the 2026 Visit Mesa Spring Training Guide, highlighting Mesa's season offerings including food, outdoor adventures, and downtown experiences. This earned placement drove significant awareness heading into peak season.</p>
+
+      <div class="subsection-title">Mesa Marathon Nominated for USA TODAY 10Best</div>
+      <p>The Mesa Marathon earned national recognition with nominations in both <strong>Best Marathon</strong> and <strong>Best Half Marathon</strong> categories in the USA TODAY 10Best Readers' Choice Awards. As a Visit Mesa sponsor, this positions the destination alongside premier race markets nationally.</p>
+
+      <div class="subsection-title">City Limitless Podcast Season 4 Premiere</div>
+      <p>Season 4 launched with an arts and culture-focused opener recorded inside the <strong>Ikeda Theater at Mesa Arts Center</strong>. Host Ashley Stwertnik was joined by Executive Director Mandy Tripoli to discuss the impact of the arts — aligning with the upcoming Mesa Arts &amp; Culture Week programming.</p>
+
+      <div class="subsection-title">Practical AI Webinar Series for Business Partners</div>
+      <p>Visit Mesa launched a three-part <strong>Practical AI Webinar Series</strong> for local business partners in February, hosted by Greg Oates, Founder of 2050 City and advisor to 100+ tourism organizations worldwide. Sessions covered AI for customer service and brand communications (Feb. 10), keeping human connection at the center of AI-assisted workflows (Feb. 10), and how AI is reshaping search and online discovery (Feb. 19) — the latter presented by Dylan Scacchetti, MarTech Director at Madden Media. The watch-and-learn format required no technical background and was open to all Mesa business partners. Promotional posts drove strong engagement and were reshared widely across the Visit Mesa network.</p>
+
+      <div class="subsection-title">Spring Training Blog Content Driving Organic Traffic</div>
+      <p>The Visit Mesa content team's Spring Training itinerary blog became a <strong>top-performing organic page</strong> in February, with blog clicks up 25% MoM. This performance is a direct result of the broader Spring Training Guide campaign — the guide launch, media coverage, and coordinated content push all drove sustained search interest and site engagement throughout the month.</p>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">TV Coverage</div>
+          <div class="kpi-value" style="font-size:20px;">12News Midday</div>
+          <div class="kpi-sub">Spring Training Guide feature — prime regional reach</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">National Recognition</div>
+          <div class="kpi-value" style="font-size:20px;">USA TODAY 10Best</div>
+          <div class="kpi-sub">Mesa Marathon nominated in 2 categories</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Content Performance</div>
+          <div class="kpi-value">+25% MoM</div>
+          <div class="kpi-sub">Blog clicks driven by spring training content</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ────────────────── VISITATION & TRAVEL TRENDS ────────────────── -->
+    <div class="section">
+      <div class="section-title">Visitation &amp; Travel Trends</div>
+      <div class="section-subtitle">Overnight &amp; Duration Trends — February 2026</div>
+      <div class="source-tag">Source: Placer.ai</div>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Overnight Duration Breakdown — February</div>
+        <canvas id="stayChart" height="180"></canvas>
+      </div>
+
+      <div class="subsection-title">Overnight Leakage</div>
+      <p><strong>112.9K nights lost (+17.5% YOY)</strong> to neighboring markets. While the leakage <em>rate</em> improved (−4.8pp YOY to 19.6%), the absolute number of nights lost is growing because overall demand is growing.</p>
+
+      <table class="data-table">
+        <thead><tr><th>Leakage Destination</th><th>Nights Lost</th><th>YOY</th></tr></thead>
+        <tbody>
+          <tr><td>Phoenix</td><td>184.7K</td><td class="up">+8.1%</td></tr>
+          <tr><td>Gilbert</td><td>182.4K</td><td class="up">+11.0%</td></tr>
+          <tr><td>Tempe</td><td>117.0K</td><td class="up">+7.7%</td></tr>
+          <tr><td>Chandler</td><td>110.9K</td><td class="up">+17.1%</td></tr>
+          <tr><td>Scottsdale</td><td>88.5K</td><td class="up">+22.3%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="section-subtitle">Category Spending Analysis — Last 12 Months (Mar 2025–Feb 2026)</div>
+      <div class="source-tag">Source: Azira · Trip-type: All · Visitors 50+ Miles</div>
+      <table class="data-table">
+        <thead><tr><th>Category</th><th>Trips</th><th>Share</th><th>YOY</th></tr></thead>
+        <tbody>
+          <tr><td>Retail</td><td>1,112,145</td><td>25.7%</td><td class="up">+1.0%</td></tr>
+          <tr><td>Restaurants</td><td>1,024,720</td><td>23.7%</td><td class="down">−0.2%</td></tr>
+          <tr><td>Hotels</td><td>605,092</td><td>14.0%</td><td>+0.0%</td></tr>
+          <tr><td>Groceries &amp; Food Stores</td><td>580,234</td><td>13.4%</td><td class="down">−2.8%</td></tr>
+          <tr><td>Recreation &amp; Entertainment</td><td>320,086</td><td>7.4%</td><td class="down">−9.2%</td></tr>
+          <tr><td>Health, Beauty &amp; Wellness</td><td>312,926</td><td>7.2%</td><td class="up">+7.4%</td></tr>
+          <tr><td>Automotive Sales, Rentals &amp; Services</td><td>243,769</td><td>5.6%</td><td class="down">−3.9%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="section-subtitle">National Travel Context</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">2026 Domestic Leisure</div>
+          <div class="kpi-value">$912B</div>
+          <div class="kpi-sub">Index 105 vs. 2019 — fully recovered</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">2026 Domestic Business</div>
+          <div class="kpi-value">$288B</div>
+          <div class="kpi-sub">Index 89 vs. 2019 — still lagging</div>
+        </div>
+      </div>
+      <p>US travel spending stands <strong>+14.0% vs. 2019</strong>. Business travel continues to lag pre-pandemic levels while leisure remains robust across all income segments. Leisure travel intent ranges from 55% (&lt;$50K HHI) to 93% ($150–249K HHI), indicating broad-based demand.</p>
+    </div>
+
+    <!-- ────────────────── VISITOR PROFILE ────────────────── -->
+    <div class="section">
+      <div class="section-title">Visitor Profile</div>
+      <div class="section-subtitle">Visitor Profile — February 2026</div>
+      <div class="source-tag">Source: Placer.ai · Visitors 50+ Miles</div>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Top Origin DMAs — February 2026 Trips</div>
+        <canvas id="originChart" height="220"></canvas>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Overnight Share</div>
+          <div class="kpi-value">60%</div>
+          <div class="kpi-sub">Overnight trip share Feb 2026 (50+ miles); spring training driving extended stays</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Avg Length of Stay</div>
+          <div class="kpi-value">6.1 days</div>
+          <div class="kpi-sub">Feb 2026 domestic visits — spring training driving extended stays</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Repeat Visitors</div>
+          <div class="kpi-value">33%</div>
+          <div class="kpi-sub">One-third are return visitors</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Median HHI</div>
+          <div class="kpi-value">$75K</div>
+          <div class="kpi-sub">Mid-market visitor income profile</div>
+        </div>
+      </div>
+
+      <div class="subsection-title">February Visitation Metrics</div>
+      <div class="source-tag">Source: Placer.ai · Visitors 50+ Miles</div>
+      <table class="data-table">
+        <thead>
+          <tr><th>Metric</th><th>Feb 2026</th><th>vs Feb 2025 (YOY)</th><th>vs Jan 2026 (MOM)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Total Trips</td><td>348.9K</td><td class="up">+7.6% (vs 324.2K)</td><td class="up">+2.4% (vs 340.7K)</td></tr>
+          <tr><td>Avg Monthly Visitors</td><td>258.2K</td><td class="down">−3.4% (vs 267.2K)</td><td class="up">+3.0% (vs 250.8K)</td></tr>
+          <tr><td>Visit Nights</td><td>542.1K</td><td class="down">−5.5% (vs 573.8K)</td><td class="up">+0.4% (vs 539.7K)</td></tr>
+          <tr><td>Day Trips</td><td>139.8K (40%)</td><td class="up">+15.2% (vs 121.3K, 37%)</td><td class="up">+7.3% (vs 130.3K, 38%)</td></tr>
+          <tr><td>Overnight Trips</td><td>209.1K (60%)</td><td class="up">+3.1% (vs 202.9K, 63%)</td><td class="down">−0.6% (vs 210.4K, 62%)</td></tr>
+          <tr><td>Overnight Trip Share</td><td>60%</td><td>−3pp (vs 63%)</td><td>−2pp (vs 62%)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="subsection-title">Hotel Pipeline &amp; Forecast</div>
+      <p>Mesa's hotel pipeline includes <strong>8 properties with 813 rooms</strong> under construction, representing 14.7% of existing inventory. CoStar forecasts average submarket occupancy of 60.9% (−1.4pp), ADR of $124 (+1.9%), and RevPAR of $75 (+0.5%) for the year.</p>
+      <table class="data-table">
+        <thead><tr><th>Property Type</th><th>Rooms</th><th>Share of Pipeline</th></tr></thead>
+        <tbody>
+          <tr><td>Upscale</td><td>406</td><td>50%</td></tr>
+          <tr><td>Economy</td><td>130</td><td>16%</td></tr>
+          <tr><td>Midscale</td><td>122</td><td>15%</td></tr>
+          <tr><td>Upper Midscale</td><td>81</td><td>10%</td></tr>
+          <tr><td>Upper Upscale</td><td>74</td><td>9%</td></tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <!-- ────────────────── MARKET RECAP ────────────────── -->
+    <div class="section">
+      <div class="section-title">Market Recap</div>
+      <div class="section-subtitle">Competitive Position — February 2026</div>
+      <div class="source-tag">Source: CoStar / STR</div>
+      <p>Mesa's occupancy gain of +2.2pp placed it mid-pack among Phoenix submarkets, though ADR pressure (−0.9%) limited RevPAR growth to +1.3%. Gilbert and Tempe outperformed on RevPAR growth, driven by stronger rate performance.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-title">February Occupancy by Submarket</div>
+        <canvas id="occChart" height="200"></canvas>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Market</th><th>OCC</th><th>OCC YOY</th><th>ADR</th><th>ADR YOY</th><th>RevPAR</th><th>RevPAR YOY</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="bold">Mesa</td><td>81.1%</td><td class="up">+2.2%</td><td>$164</td><td class="down">−0.9%</td><td>$133</td><td class="up">+1.3%</td></tr>
+          <tr><td>Gilbert</td><td>90.5%</td><td class="up">+7.1%</td><td>$191</td><td class="down">−0.9%</td><td>$172</td><td class="up">+6.1%</td></tr>
+          <tr><td>Tempe</td><td>85.4%</td><td class="up">+3.7%</td><td>$222</td><td class="up">+4.7%</td><td>$189</td><td class="up">+8.6%</td></tr>
+          <tr><td>Phoenix</td><td>82.5%</td><td class="up">+2.9%</td><td>$246</td><td class="up">+3.4%</td><td>$203</td><td class="up">+6.4%</td></tr>
+          <tr><td>Scottsdale</td><td>79.9%</td><td class="up">+3.5%</td><td>$255</td><td class="down">−3.1%</td><td>$204</td><td class="up">+0.3%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="insight-box yellow">
+        <div class="label">⚠ Strategic Implication</div>
+        Mesa ranks 9th in FYTD RevPAR ($73) among Phoenix submarkets. The 813 rooms under construction (14.7% of inventory) will further pressure ADR unless demand growth continues. Focus on high-yield events and extended-stay visitors to protect rate integrity.
+      </div>
+    </div>
+
+    <!-- ────────────────── LODGING PERFORMANCE ────────────────── -->
+    <div class="section">
+      <div class="section-title">Lodging Performance</div>
+
+      <div class="section-subtitle">Hotel Performance — February 2026</div>
+      <div class="source-tag">Source: STR / CoStar, KeyData</div>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Hotel Demand &amp; ADR Trend (Jul–Feb)</div>
+        <canvas id="demandAdrChart" height="200"></canvas>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Metric</th><th>February</th><th>YOY</th><th>FYTD</th><th>FYTD YOY</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Occupancy</td><td>81.9%</td><td class="up">+1.1pp</td><td>64.6%</td><td class="down">−1.0pp</td></tr>
+          <tr><td>ADR</td><td>$163.55</td><td class="down">−0.9%</td><td>$117.27</td><td class="down">−1.2%</td></tr>
+          <tr><td>RevPAR</td><td>$139.10</td><td class="up">+0.4%</td><td>$75.71</td><td class="down">−2.2%</td></tr>
+          <tr><td>Supply</td><td>147.5K</td><td class="up">+4.4%</td><td>1.2M</td><td class="up">+4.4%</td></tr>
+          <tr><td>Demand</td><td>120.8K</td><td class="up">+8.8%</td><td>802.0K</td><td class="up">+3.4%</td></tr>
+          <tr><td>Revenue</td><td>$20.5M</td><td class="up">+5.0%</td><td>$91.0M</td><td class="up">+2.2%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="section-subtitle">Short-Term Vacation Rentals (KeyData)</div>
+      <table class="data-table">
+        <thead>
+          <tr><th>Metric</th><th>February</th><th>YOY</th><th>FYTD</th><th>FYTD YOY</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Occupancy</td><td>52.7%</td><td class="up">+19.0pp</td><td>38.3%</td><td class="up">+9.0pp</td></tr>
+          <tr><td>ADR</td><td>$354.84</td><td class="up">+7.8%</td><td>$270.32</td><td class="up">+4.5%</td></tr>
+          <tr><td>RevPAR</td><td>$187.05</td><td class="up">+28.3%</td><td>$103.54</td><td class="up">+13.9%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Aggregate RevPAR</div>
+          <div class="kpi-value">$153.53</div>
+          <div class="kpi-sub"><span class="up">+8.7% YOY</span> — STVR contribution growing</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">STVR Premium</div>
+          <div class="kpi-value">2.2x</div>
+          <div class="kpi-sub">STVR ADR ($355) is 2.2x hotel ADR ($164)</div>
+        </div>
+      </div>
+
+      <div class="insight-box">
+        <div class="label">💡 Key Insight</div>
+        February's hotel market delivered steady gains with occupancy at 81.9% (+1.1pp YOY) despite 4.4% supply growth — demonstrating genuine demand strength. The STVR segment outperformed significantly with RevPAR up 28.3% to $187.05. Spring training remains the key catalyst for vacation rental performance, and the premium rates ($354.84 ADR vs. $163.55 hotel) reflect the event-driven demand for larger group accommodations. <strong>The concern:</strong> ADR slipped slightly (−0.9% per STR), keeping RevPAR growth modest at +0.4%. With 813 additional rooms entering the market over the next 18 months, rate protection during peak periods becomes critical.
+      </div>
+
+    </div>
+
+    <!-- ────────────────── SALES PERFORMANCE ────────────────── -->
+    <div class="section">
+      <div class="section-title">Sales Performance</div>
+      <div class="section-subtitle">FYTD Performance Summary</div>
+      <div class="source-tag">Source: Visit Mesa CRM (Tempest)</div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Rooms Booked FYTD</div>
+          <div class="kpi-value">59,195</div>
+          <div class="kpi-sub"><span class="up">+20.9% YOY</span> — pipeline strong</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Rooms Actualized FYTD</div>
+          <div class="kpi-value">19,806</div>
+          <div class="kpi-sub"><span class="watch">−23.3% YOY</span> — timing variance</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Feb Economic Impact</div>
+          <div class="kpi-value">$8.74M</div>
+          <div class="kpi-sub">Mesa Marathon top contributor at $3.3M</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Leads Created FYTD</div>
+          <div class="kpi-value">201</div>
+          <div class="kpi-sub"><span class="up">+18.2% YOY</span> — sales activity up</div>
+        </div>
+      </div>
+
+      <div class="subsection-title">Addressing the Actualization Gap</div>
+      <p><strong>Why rooms actualized is down 23.3% FYTD:</strong> This variance is primarily driven by <strong>event calendar timing shifts</strong>, not lost business. Several large returning tournaments that actualized in Q1 FY25 are scheduled for Q3 FY26. Key data points:</p>
+      <ul class="highlight-list">
+        <li>Rooms <em>booked</em> FYTD is up 20.9% — the pipeline is healthy</li>
+        <li>Leads created is up 18.2% — sales activity is strong</li>
+        <li>February pickup delivered 1,654 actual room nights from 11 events</li>
+      </ul>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Rooms Booked by Month (FYTD) — National vs. Sports</div>
+        <canvas id="salesChart" height="220"></canvas>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Metric</th><th>FYTD Total</th><th>YOY</th><th>National</th><th>Sports</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Rooms Booked</td><td>59,195</td><td class="up">+20.9%</td><td>9,759</td><td>49,436</td></tr>
+          <tr><td>Rooms Actualized</td><td>19,806</td><td class="watch">−23.3%</td><td>8,842</td><td>10,964</td></tr>
+          <tr><td>Attendance Booked</td><td>97,037</td><td class="up">+31.8%</td><td>12,317</td><td>84,720</td></tr>
+          <tr><td>Attendance Actualized</td><td>71,090</td><td class="up">+1.1%</td><td>10,730</td><td>60,360</td></tr>
+        </tbody>
+      </table>
+
+      <div class="subsection-title">February Event Highlights</div>
+      <p><strong>Sports Sales:</strong> 924 actualized room nights (1,654 pickup) anchored by Mesa Marathon, SC Del Sol tournaments, Oakland A's, and Cubs Spring Training. Secured <strong>Capelli Sports Cup 2026</strong> — 2,320 future room nights with $1.44M estimated economic impact.</p>
+      <p><strong>National Sales:</strong> 126 actualized room nights from AAGT 2026 Conference and Kent Consumer Brands meeting. Secured <strong>USA Today First Pitch Arizona Forum</strong> (returning, 410 rooms, $162.7K impact) and <strong>2026 WRITA Spring Conference</strong> (new non-profit meeting, 200 rooms, $104.2K impact).</p>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Top February Events (Pickup History)</th><th>Est. Economic Impact</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mesa Marathon 2026</td><td>$3,330,326</td></tr>
+          <tr><td>SC Del Sol Presidents Day Tournament</td><td>$2,423,499</td></tr>
+          <tr><td>SC Del Sol Desert Classic</td><td>$1,063,885</td></tr>
+          <tr><td>US Soccer Federation National Match Camp</td><td>$378,764</td></tr>
+          <tr><td>Cubs Spring Training Session</td><td>$598,379</td></tr>
+          <tr><td>Oakland A's 2026 February</td><td>$279,325</td></tr>
+          <tr><td>WCP Presidents Day Classic</td><td>$479,203</td></tr>
+          <tr><td>AAGT 2026 Conference</td><td>$136,115</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;">Total Feb Economic Impact Est: <strong>$8,739,963</strong> across 11 events · 4,782 contracted rooms · 1,654 actual pickup</p>
+
+    </div>
+
+    <!-- ────────────────── DIGITAL MARKETING – PAID MEDIA ────────────────── -->
+    <div class="section">
+      <div class="section-title">Digital Marketing — Paid Media</div>
+      <div class="section-subtitle">Paid Media Performance — February 2026</div>
+      <div class="source-tag">Source: DV360, Meta Ads, Spotify</div>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Channel</th><th>Impressions</th><th>Clicks</th><th>CTR</th><th>Spend</th><th>CPM / CPC</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Programmatic (DV360)</td><td>4,418,665</td><td>68,671</td><td>1.55%</td><td>$6,001</td><td>$1.36 CPM / $0.09 CPC</td></tr>
+          <tr><td>Facebook Paid (Meta)</td><td>129,139</td><td>1,543</td><td>1.19%</td><td>$558</td><td>$0.36 CPC</td></tr>
+          <tr><td>Spotify (Audio/Video)</td><td>158,804</td><td>47</td><td>0.03%</td><td>$885</td><td>$5.57 CPM</td></tr>
+        </tbody>
+      </table>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Monthly Spend &amp; Impressions (FYTD)</div>
+        <canvas id="spendChart" height="200"></canvas>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Feb Impressions (Confirmed)</div>
+          <div class="kpi-value">4.71M</div>
+          <div class="kpi-sub">DV360 + Facebook + Spotify</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Feb Clicks (Confirmed)</div>
+          <div class="kpi-value">70.3K</div>
+          <div class="kpi-sub">Primarily DV360 (68.7K)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Feb GA4 Engaged Sessions</div>
+          <div class="kpi-value">5,797</div>
+          <div class="kpi-sub">30.57% engagement rate (paid traffic)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Feb Total Paid Spend</div>
+          <div class="kpi-value">$7,444</div>
+          <div class="kpi-sub">DV360 $6,001 · FB $558 · Spotify $885</div>
+        </div>
+      </div>
+
+      <div class="subsection-title">February Paid Media Notes</div>
+      <ul class="highlight-list">
+        <li><strong>Programmatic (DV360):</strong> 4.42M impressions at 1.55% CTR — efficient awareness at $1.36 CPM; top performers were Family/Adventure/Foodie native ads</li>
+        <li><strong>Facebook Paid:</strong> 129K impressions, $558 spend — Meta budget was lighter this month with DV360 taking primacy for reach</li>
+        <li><strong>Spotify:</strong> 158,804 impressions at $885 spend ($5.57 CPM); audio/video format running through the spring travel period</li>
+        <li><strong>Spring Training budget auto-scaled:</strong> Seasonality rules increased Spring Training ad group budget in February</li>
+        <li><strong>Device mix:</strong> 95%+ mobile impressions (320x50 and 300x250 top formats)</li>
+        <li><strong>Top search terms:</strong> "things to do in Mesa AZ," "spring training 2026," "Mesa Arizona"</li>
+        <li><strong>Trending into March:</strong> Cactus League schedule, spring training Arizona, Hohokam Stadium</li>
+      </ul>
+    </div>
+
+    <!-- ────────────────── DIGITAL MARKETING – SOCIAL, SEO & EARNED ────────────────── -->
+    <div class="section">
+      <div class="section-title">Digital Marketing — Social, SEO &amp; Earned Media</div>
+
+      <div class="section-subtitle">Social Media Performance — February 2026</div>
+      <div class="source-tag">Source: Sprout Social</div>
+      <p>Total Audience: <strong>86.7K (+39.1% YOY)</strong></p>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Social Platform Performance — February 2026 (Audience K vs. Impressions M)</div>
+        <canvas id="socialChart" height="200"></canvas>
+      </div>
+
+      <p style="font-size:12px;"><strong>FYTD Social:</strong> Impressions 10.3M (+82.9% YOY), Engagements 201.3K (−26.2% YOY). February monthly: Impressions +219.4% YOY, Engagements +52.1%.</p>
+
+      <div class="section-subtitle">Website Performance (GA4) — February 2026</div>
+      <div class="source-tag">Source: Google Analytics 4</div>
+      <table class="data-table">
+        <thead>
+          <tr><th>Metric</th><th>February 2026</th><th>YOY Change</th><th>Analysis</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Users</td><td>112.9K</td><td class="up">+52.7%</td><td>Strong volume growth</td></tr>
+          <tr><td>Sessions</td><td>136.6K</td><td class="up">+52.0%</td><td>Aligns with user growth</td></tr>
+          <tr><td>Engaged Sessions</td><td>57.2K</td><td class="up">+10.5%</td><td>Engaged sessions still up, but...</td></tr>
+          <tr><td class="bold">Engagement Rate</td><td class="bold">41.9%</td><td class="down bold">−15.75pp</td><td>...engagement rate diluted by volume</td></tr>
+          <tr><td>Bounce Rate</td><td>58.1%</td><td class="down">+15.75pp</td><td>Mirror of engagement rate decline</td></tr>
+          <tr><td>Page Views</td><td>217.4K</td><td class="up">+36.8%</td><td>Pages/session down slightly</td></tr>
+          <tr><td>Avg Session Duration</td><td>2:08</td><td class="down">−22 sec YOY</td><td>Shorter sessions from awareness-stage paid traffic</td></tr>
+          <tr><td>Pages Per Session</td><td>1.59</td><td class="down">−0.18 YOY</td><td>Consistent with broader awareness traffic mix</td></tr>
+        </tbody>
+      </table>
+      <p><strong>What's happening:</strong> The engagement rate drop is a <strong>traffic quality issue</strong>, not a content problem. Engaged sessions are actually up 10.5% — but total sessions grew 52%, diluting the ratio. This is common when paid campaigns scale quickly. Top traffic sources: Google 34.2%, Direct 18.9%, Android weather app 6.9%, Instagram 3.7%, DV360 2.8%, Facebook 2.3%, Bing 1.5%. The Visit Mesa_FY26 campaign accounted for 30.7% of sessions, confirming paid activity is the primary volume driver.</p>
+      <div class="section-subtitle">Earned Media (Critical Mention)</div>
+      <table class="data-table">
+        <thead>
+          <tr><th>Metric</th><th>February</th><th>CYTD</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mentions</td><td>3</td><td>13</td></tr>
+          <tr><td>Audience Reach</td><td>552,204</td><td>809,253</td></tr>
+          <tr><td>Publicity Value</td><td>$25,701</td><td>$79,184</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;"><strong>Key February Placements:</strong> San Diego Magazine ("Do You Want to Surf in Arizona?" — Online, Feb 5), AZ Big Media (Cactus League/Play Ball 2026 — Digital, Feb 12), Yankees Magazine (Print, Feb 22)</p>
+
+      <div class="section-subtitle">SEO Highlights</div>
+      <ul class="highlight-list">
+        <li><strong>Superstition Mountains content cluster:</strong> 6 pieces, 4 live</li>
+        <li><strong>AI overview monitoring launched</strong> — began tracking Visit Mesa's presence in AI-generated search results using Scrunch</li>
+        <li><strong>Blog clicks +25% MoM,</strong> impressions +56% MoM</li>
+        <li><strong>Accessibility content growing</strong> — autism, hidden disabilities content gaining traction</li>
+        <li><strong>FIFA World Cup opportunity identified</strong> — training city content opportunity for 2026</li>
+      </ul>
+    </div>
+
+    <!-- ────────────────── WEBSITE ATTRIBUTION & OTAs ────────────────── -->
+    <div class="section">
+      <div class="section-title">Website Attribution &amp; OTAs</div>
+      <p>February Total Attributed Room Nights: <strong>4,665</strong></p>
+
+      <div class="kpi-grid">
+        <div class="kpi-card teal-bg">
+          <div class="kpi-label">ADARA Attributed</div>
+          <div class="kpi-value">2,553 nights</div>
+          <div class="kpi-sub">445 bookings, 5.7-night avg stay</div>
+        </div>
+        <div class="kpi-card teal-bg">
+          <div class="kpi-label">Expedia Attributed</div>
+          <div class="kpi-value">2,112 nights</div>
+          <div class="kpi-sub">1,847 room + 265 VR nights</div>
+        </div>
+      </div>
+
+      <div class="section-subtitle">ADARA Attribution — February 2026</div>
+      <table class="data-table">
+        <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Site Visits</td><td>43,211</td></tr>
+          <tr><td>Site Visitors</td><td>37,824</td></tr>
+          <tr><td>Page Views</td><td>65,692</td></tr>
+          <tr><td>Hotel Searches</td><td>9,451</td></tr>
+          <tr><td>Hotel Bookings</td><td>445</td></tr>
+          <tr><td class="bold">Search-to-Booking Rate</td><td class="highlight">4.7%</td></tr>
+          <tr><td>Total Travelers</td><td>831</td></tr>
+          <tr><td>Total Nights</td><td>2,553</td></tr>
+          <tr><td>Avg Length of Stay</td><td>5.7 nights</td></tr>
+          <tr><td>Avg Advance Purchase</td><td>12.6 days</td></tr>
+        </tbody>
+      </table>
+      <p>The 4.7% search-to-booking conversion rate and 12.6-day advance purchase window suggest a mix of spontaneous and planned travel. Average travel party size of 1.9 reflects Mesa's appeal to couples and small groups.</p>
+
+      <div class="section-subtitle">Expedia CPR — FY26 Campaign (Dec 2025–Feb 2026)</div>
+      <div class="chart-wrap">
+        <div class="chart-title">Revenue by OTA Platform — February 2026</div>
+        <canvas id="otaChart" height="160"></canvas>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Metric</th><th>Dec 2025</th><th>Jan 2026</th><th>Feb 2026</th><th>3-Month Total</th></tr></thead>
+        <tbody>
+          <tr><td>Ad Spend</td><td>$13,296</td><td>$14,817</td><td>$6,773</td><td>$34,886</td></tr>
+          <tr><td>Impressions</td><td>628.1K</td><td>698.6K</td><td>317.1K</td><td>1.6M</td></tr>
+          <tr><td>Room Nights</td><td>2,541</td><td>2,917</td><td>1,847</td><td>7,305</td></tr>
+          <tr><td>VR Nights</td><td>323</td><td>293</td><td>265</td><td>881</td></tr>
+          <tr><td>Travelers</td><td>2,435</td><td>2,328</td><td>1,556</td><td>6,319</td></tr>
+          <tr><td>Revenue</td><td>$472.2K</td><td>$602.5K</td><td>$423.7K</td><td>$1.5M</td></tr>
+          <tr><td class="bold">ROAS</td><td>35.5x</td><td>40.7x</td><td class="highlight bold">62.6x</td><td class="highlight bold">43.0x avg</td></tr>
+        </tbody>
+      </table>
+
+      <div class="insight-box">
+        <div class="label">💡 ROAS Trend</div>
+        Expedia ROAS accelerated to 62.6x in February — nearly double the December figure of 35.5x — as spring training demand drove exceptional OTA conversion. The 3-month campaign generated $1.5M in total attributed revenue on $34,886 in spend, with 7,305 hotel room nights and 881 VR nights booked across ExpediaPlus, Hotels.com, and Vrbo.
+      </div>
+
+      <div class="subsection-title">February Platform Breakdown</div>
+      <table class="data-table">
+        <thead><tr><th>Platform</th><th>Impressions</th><th>Clicks</th><th>Ad Spend</th><th>Revenue</th><th>ROAS</th></tr></thead>
+        <tbody>
+          <tr><td>ExpediaPlus US</td><td>123,417</td><td>66</td><td>$2,722</td><td>$165,454</td><td>60.8x</td></tr>
+          <tr><td>Hotels.com US</td><td>52,603</td><td>21</td><td>$1,342</td><td>$171,116</td><td>127.5x</td></tr>
+          <tr><td>Vrbo US</td><td>141,129</td><td>83</td><td>$2,709</td><td>$87,115</td><td>32.2x</td></tr>
+          <tr class="bold"><td>Total</td><td>317,149</td><td>170</td><td>$6,773</td><td>$423,685</td><td class="highlight">62.6x</td></tr>
+        </tbody>
+      </table>
+
+      <div class="section-subtitle">Booking Insights</div>
+      <table class="data-table">
+        <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Travel Window (0–6 days)</td><td>50.8% — strong last-minute demand</td></tr>
+          <tr><td>Traveler Mix</td><td>57.7% multi-adult, 30.6% family, 11.8% single</td></tr>
+          <tr><td>Property Type</td><td>85.6% hotel, 11.6% condo, 2.2% motel</td></tr>
+          <tr><td>Lodging ADR</td><td>$187</td></tr>
+          <tr><td>VR ADR</td><td>$227</td></tr>
+          <tr><td>LOS (Lodging)</td><td>2.4 days</td></tr>
+          <tr><td>LOS (VR)</td><td>12.9 days</td></tr>
+        </tbody>
+      </table>
+
+      <div class="section-subtitle">Website Attribution — Jul 2025–Feb 2026</div>
+      <div class="source-tag">Source: Azira Attribution Feed (via Symphony) · Tracks real-world destination visits driven by VisitMesa.com exposure</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Measurable Impressions</div>
+          <div class="kpi-value">307,470</div>
+          <div class="kpi-sub">FYTD tracked exposures</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Observed Visits</div>
+          <div class="kpi-value">12,581</div>
+          <div class="kpi-sub">4.09% visit rate per impression</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Visits per 1,000 Impressions</div>
+          <div class="kpi-value">40.9</div>
+          <div class="kpi-sub">Avg exposure-to-visit lag: 34.1 days</div>
+        </div>
+      </div>
+      <p style="font-size:12px;">Top attributed pages: /things-to-do/ (95.5 visits/1K impr), /blog/wild-about-horses/ (73.5), homepage (11.0). Top DMA by visit rate: Albuquerque-Santa Fe (203.9 visits/1K), El Paso (191.0), Tucson (117.6).</p>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- ═══════════════════════════════════════════ GLOSSARY ═══════════════════════════════════════════ -->
+  <div class="section" style="margin-top:40px;">
+    <div class="section-title">Glossary — Key Metrics &amp; Data Sources</div>
+    <p style="font-size:12px; color:var(--gray-text); margin-bottom:16px;">This report draws from multiple independent data platforms. Below is a plain-language explanation of each source and the key terms used throughout.</p>
+
+    <div class="subsection-title">Data Sources</div>
+    <table class="data-table">
+      <thead><tr><th>Source</th><th>What It Is</th><th>Used For</th></tr></thead>
+      <tbody>
+        <tr><td><strong>STR / CoStar</strong></td><td>Hotel industry benchmarking platform. Collects occupancy, ADR, and RevPAR data from participating hotels and aggregates by market/submarket.</td><td>Lodging performance, market comparisons</td></tr>
+        <tr><td><strong>KeyData</strong></td><td>Short-term vacation rental (STVR) analytics platform. Tracks Airbnb, Vrbo, and other rental platforms for occupancy and revenue data.</td><td>STVR/vacation rental performance</td></tr>
+        <tr><td><strong>Placer.ai</strong></td><td>Mobile device location data platform. Anonymized GPS signals from opted-in smartphone users are used to estimate visit counts, trip types, and visitor origins. Filters applied: visitors from 50+ miles away.</td><td>Visitation trends, visitor profile, origin markets</td></tr>
+        <tr><td><strong>ADARA</strong></td><td>Travel intent and booking data network. Aggregates data from airline, hotel, and OTA booking platforms to measure how VisitMesa.com traffic converts to actual travel bookings.</td><td>Website-to-booking attribution</td></tr>
+        <tr><td><strong>Azira / Symphony (Website Attribution)</strong></td><td>Connects VisitMesa.com website exposure to real-world visitation using mobile device location data. When someone visits the site, their anonymized device ID is matched against GPS signals to determine whether they actually showed up in Mesa — and where they went.</td><td>Website-to-destination attribution, in-market behavior</td></tr>
+        <tr><td><strong>Expedia CPR</strong></td><td>Co-op Performance Report from Expedia Group Advertising. Measures the return on ad spend (ROAS) from Visit Mesa's paid display campaign running across Expedia, Hotels.com, and Vrbo.</td><td>OTA campaign performance, ROAS</td></tr>
+        <tr><td><strong>Google Analytics 4 (GA4)</strong></td><td>Visit Mesa's website analytics platform. Tracks sessions, users, engagement, and traffic sources for VisitMesa.com.</td><td>Website performance</td></tr>
+        <tr><td><strong>DV360</strong></td><td>Google's Display &amp; Video 360 programmatic ad platform. Used to run display advertising campaigns across the web.</td><td>Paid digital impressions and spend</td></tr>
+        <tr><td><strong>Meta Ads</strong></td><td>Facebook and Instagram paid advertising platform.</td><td>Paid social impressions and spend</td></tr>
+        <tr><td><strong>Spotify Ads</strong></td><td>Audio and podcast advertising platform.</td><td>Paid audio impressions and spend</td></tr>
+        <tr><td><strong>Sprout Social</strong></td><td>Social media management and analytics platform. Aggregates data from Facebook, Instagram, TikTok, LinkedIn, and YouTube.</td><td>Social media audience and engagement metrics</td></tr>
+        <tr><td><strong>Critical Mention</strong></td><td>Media monitoring platform. Tracks TV, radio, print, and online news mentions of Visit Mesa and calculates estimated publicity value.</td><td>Earned media / PR coverage</td></tr>
+        <tr><td><strong>Tempest CRM</strong></td><td>Visit Mesa's sales CRM platform. Tracks group sales leads, bookings, and room night actualization for conventions, sports, and national accounts.</td><td>Sales performance, group room nights</td></tr>
+        <tr><td><strong>Symphony</strong></td><td>Visit Mesa's integrated reporting dashboard, which consolidates data from multiple platforms including STR, KeyData, GA4, and Azira into one view.</td><td>Consolidated reporting reference</td></tr>
+        <tr><td><strong>Scrunch</strong></td><td>AI visibility monitoring platform. Tracks how and where Visit Mesa content appears in AI-generated search results (e.g., Google AI Overviews).</td><td>AI search presence monitoring</td></tr>
+      </tbody>
+    </table>
+
+    <div class="subsection-title" style="margin-top:24px;">Key Metric Definitions</div>
+    <table class="data-table">
+      <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td><strong>ADR (Average Daily Rate)</strong></td><td>Average revenue earned per occupied hotel room per night.</td></tr>
+        <tr><td><strong>RevPAR (Revenue Per Available Room)</strong></td><td>Total room revenue divided by total available rooms. Combines both occupancy and rate into one efficiency metric.</td></tr>
+        <tr><td><strong>Occupancy Rate</strong></td><td>Percentage of available hotel rooms that were sold on a given night or period.</td></tr>
+        <tr><td><strong>ROAS (Return on Ad Spend)</strong></td><td>Revenue generated for every $1 spent on advertising. A ROAS of 40x means $40 in bookings for every $1 in ad spend.</td></tr>
+        <tr><td><strong>Room Nights</strong></td><td>The total number of hotel rooms occupied multiplied by the number of nights. One guest staying 3 nights = 3 room nights.</td></tr>
+        <tr><td><strong>Overnight Trip Share</strong></td><td>The percentage of total visitor trips that included at least one overnight stay (vs. day trips that return home same day). Measured among visitors from 50+ miles.</td></tr>
+
+        <tr><td><strong>Day Trip</strong></td><td>A visit where the traveler spends at least 5 hours in the market but returns home the same day without an overnight stay. Measured among visitors from 50+ miles away.</td></tr>
+        <tr><td><strong>Overnight Leakage</strong></td><td>Identified when a day trip to Mesa is preceded or followed by an overnight stay in a different market — one that is neither Mesa nor the visitor's home location. Those overnight stays are counted as <em>Nights Lost</em>: visitors who were in market but chose (or defaulted) to sleep elsewhere. This represents demand Mesa attracts but does not capture in its own lodging inventory.</td></tr>
+        <tr><td><strong>Search-to-Booking Rate</strong></td><td>Measured via ADARA. The percentage of VisitMesa.com visitors who go on to complete a travel booking (hotel, flight, or package). Indicates how effectively the website converts research intent into confirmed trips.</td></tr>
+        <tr><td><strong>CTR (Click-Through Rate)</strong></td><td>Percentage of ad impressions that resulted in a click.</td></tr>
+        <tr><td><strong>Engagement Rate (Social)</strong></td><td>Interactions (likes, comments, shares, saves) as a percentage of total audience or impressions, depending on platform.</td></tr>
+        <tr><td><strong>Engagement Rate (Website)</strong></td><td>In GA4, the percentage of sessions that lasted longer than 10 seconds, had a conversion event, or had 2+ page views. The inverse of bounce rate.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ FOOTER ═══════════════════════════════════════════ -->
+  <div class="report-footer">
+    <strong>Report prepared by Visit Mesa | Destination Sales &amp; Marketing | Confidential</strong><br>
+    Sources: STR, KeyData, CoStar, Placer.ai, GA4, Google Search Console, ADARA, Expedia CPR, Critical Mention, Tourism Economics, US Travel Association, Tempest, DV360, Meta, Sprout Social<br><br>
+    <span style="font-size:11px; color:#fff;">This report was generated with the assistance of AI. All context provided by Visit Mesa, with human review.</span>
+  </div>
+
+</div><!-- /page -->
+
+<!-- ═══════════════════════════════════════════ CHARTS ═══════════════════════════════════════════ -->
+<script>
+const TEAL = '#007B8A';
+const TEAL_LIGHT = '#5BB8C4';
+const YELLOW = '#F5C518';
+const GRAY = '#D0D0D0';
+const BLUE_DARK = '#1e3a5f';
+
+Chart.defaults.font.family = 'Inter, sans-serif';
+Chart.defaults.font.size = 11;
+Chart.defaults.color = '#555';
+
+// ── Occupancy by Submarket ──
+new Chart(document.getElementById('occChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Mesa', 'Gilbert', 'Tempe', 'Phoenix', 'Scottsdale', 'Phx Airport', 'Phx Central'],
+    datasets: [{
+      label: 'Occupancy %',
+      data: [81.1, 90.5, 85.4, 82.5, 79.9, 81.0, 80.5],
+      backgroundColor: [TEAL, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY],
+      borderRadius: 3,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { min: 60, max: 100, grid: { color: '#f0f0f0' }, ticks: { callback: v => v + '%' } },
+      y: { grid: { display: false } }
+    }
+  }
+});
+
+// ── Origin DMAs — Feb 2026 top feeder markets by trips (50+ miles, Source: Azira)
+// Rank: #1 Phoenix AZ 68.2K, #2 Tucson 31.0K, #3 LA 77.5K, #4 Seattle 14.5K, #5 Minneapolis 13.2K
+new Chart(document.getElementById('originChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Los Angeles', 'Phoenix Metro', 'Tucson', 'Seattle-Tacoma', 'Minneapolis'],
+    datasets: [{
+      label: 'Trips (K)',
+      data: [77.5, 68.2, 31.0, 14.5, 13.2],
+      backgroundColor: [TEAL, BLUE_DARK, '#E06B2B', TEAL_LIGHT, '#A8D8DE'],
+      borderRadius: 3,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ` ${ctx.raw}K trips` } }
+    },
+    scales: {
+      x: { grid: { color: '#f0f0f0' }, ticks: { callback: v => v + 'K' } },
+      y: { grid: { display: false } }
+    }
+  }
+});
+
+// ── Hotel Demand & ADR Trend ──
+new Chart(document.getElementById('demandAdrChart'), {
+  type: 'line',
+  data: {
+    labels: ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+    datasets: [
+      {
+        label: 'Demand (K)',
+        data: [85, 103, 97, 80, 115, 120.8],
+        borderColor: TEAL,
+        backgroundColor: 'rgba(0,123,138,0.08)',
+        fill: false,
+        tension: 0.4,
+        pointRadius: 5,
+        yAxisID: 'y'
+      },
+      {
+        label: 'ADR ($)',
+        data: [143, 158, 141, 122, 163, 163.55],
+        borderColor: YELLOW,
+        backgroundColor: 'rgba(245,197,24,0.08)',
+        fill: false,
+        tension: 0.4,
+        pointRadius: 5,
+        yAxisID: 'y2'
+      }
+    ]
+  },
+  options: {
+    plugins: { legend: { position: 'bottom' } },
+    scales: {
+      y: { position: 'left', grid: { color: '#f0f0f0' }, title: { display: true, text: 'Demand (K)' } },
+      y2: { position: 'right', grid: { display: false }, title: { display: true, text: 'ADR ($)' } }
+    }
+  }
+});
+
+// ── Sales by Month — Rooms Booked (Source: Tempest CRM, as of 3/18/2026) ──
+new Chart(document.getElementById('salesChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+    datasets: [
+      {
+        label: 'National Booked',
+        data: [883, 658, 1124, 446, 898, 4127, 755, 868],
+        backgroundColor: TEAL_LIGHT,
+        borderRadius: 2,
+        stack: 'rooms'
+      },
+      {
+        label: 'Sports Booked',
+        data: [2425, 6000, 10092, 15595, 8193, 0, 4811, 2320],
+        backgroundColor: TEAL,
+        borderRadius: 2,
+        stack: 'rooms'
+      }
+    ]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: { legend: { position: 'bottom' } },
+    scales: {
+      x: { stacked: true, grid: { color: '#f0f0f0' }, ticks: { callback: v => (v/1000).toFixed(0) + 'K' } },
+      y: { stacked: true, grid: { display: false } }
+    }
+  }
+});
+
+// ── Spend & Impressions FYTD ──
+// Feb verified: DV360 4.42M + FB 0.13M + Spotify 0.16M = 4.71M impressions; spend $7.44K
+new Chart(document.getElementById('spendChart'), {
+  type: 'line',
+  data: {
+    labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+    datasets: [
+      {
+        label: 'Impressions (M)',
+        data: [10.2, 11.1, 12.3, 15.2, 14.0, 10.5, 14.8, 4.71],
+        borderColor: YELLOW,
+        backgroundColor: 'rgba(245,197,24,0.12)',
+        fill: true,
+        tension: 0.4,
+        pointRadius: 4,
+        yAxisID: 'y'
+      },
+      {
+        label: 'Spend ($K)',
+        data: [1.3, 1.8, 2.2, 2.5, 1.9, 1.4, 2.1, 7.44],
+        borderColor: TEAL,
+        fill: false,
+        tension: 0.4,
+        pointRadius: 4,
+        yAxisID: 'y2'
+      }
+    ]
+  },
+  options: {
+    plugins: { legend: { position: 'bottom' } },
+    scales: {
+      y: { position: 'left', grid: { color: '#f0f0f0' }, title: { display: true, text: 'Impressions (M)' } },
+      y2: { position: 'right', grid: { display: false }, title: { display: true, text: 'Spend ($K)' } }
+    }
+  }
+});
+
+// ── Social Platform ──
+new Chart(document.getElementById('socialChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Facebook', 'Instagram', 'TikTok', 'LinkedIn', 'YouTube'],
+    datasets: [
+      {
+        label: 'Audience (K)',
+        data: [42.3, 29.8, 11.3, 2.7, 0.645],
+        backgroundColor: TEAL,
+        borderRadius: 3,
+        yAxisID: 'y'
+      }
+    ]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: true },
+      datalabels: {
+        display: false
+      }
+    },
+    scales: {
+      x: {
+        display: true,
+        grid: { color: '#f0f0f0' },
+        ticks: { callback: v => v + 'K' }
+      },
+      y: { grid: { display: false } }
+    },
+    animation: {
+      onComplete: function() {
+        const chart = this;
+        const ctx = chart.ctx;
+        const yoys = ['+47.2%', '+16.7%', '+117.4%', '+15.4%', '+19.9%'];
+        const audiences = ['42.3K', '29.8K', '11.3K', '2.7K', '0.6K'];
+        chart.data.datasets[0].data.forEach(function(value, index) {
+          const meta = chart.getDatasetMeta(0);
+          const bar = meta.data[index];
+          const x = bar.x + 6;
+          const y = bar.y;
+          ctx.save();
+          ctx.font = 'bold 11px sans-serif';
+          ctx.fillStyle = '#007B8A';
+          ctx.textAlign = 'left';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(audiences[index] + '  ', x, y - 6);
+          ctx.font = '11px sans-serif';
+          ctx.fillStyle = '#2e7d32';
+          ctx.fillText(yoys[index], x, y + 8);
+          ctx.restore();
+        });
+      }
+    }
+  }
+});
+
+// ── OTA Revenue ──
+new Chart(document.getElementById('otaChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Hotels.com', 'ExpediaPlus', 'Vrbo'],
+    datasets: [{
+      label: 'Revenue ($K)',
+      data: [171.1, 165.5, 87.1],
+      backgroundColor: [TEAL, TEAL_LIGHT, BLUE_DARK],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: '#f0f0f0' }, ticks: { callback: v => '$' + v + 'K' } },
+      y: { grid: { display: false } }
+    }
+  }
+});
+
+// ── Overnight Duration ──
+new Chart(document.getElementById('stayChart'), {
+  type: 'bar',
+  data: {
+    labels: ['1 night', '2–3 nights', '4–7 nights', '8–30 nights'],
+    datasets: [{
+      label: 'Trips (K)',
+      data: [68, 62, 28, 10],
+      backgroundColor: [TEAL, TEAL, TEAL_LIGHT, GRAY],
+      borderRadius: 3
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: '#f0f0f0' } },
+      y: { grid: { display: false } }
+    }
+  }
+});
+</script>
+</body>
+</html>
