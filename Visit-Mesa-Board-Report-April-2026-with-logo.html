@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visit Mesa — Board Report — April 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#f4f4f4;color:#1A1A1A;line-height:1.6}
+.page{max-width:820px;margin:0 auto;background:#fff;box-shadow:0 0 30px rgba(0,0,0,.08)}
+
+/* Cover */
+.cover{background:linear-gradient(160deg,#1e3a5f 0%,#007B8A 60%,#00b4cc 100%);color:#fff;padding:100px 52px 80px;text-align:center}
+.cover-logo{margin-bottom:32px}
+
+.cover-logo svg{width:220px;max-width:70%;height:auto;display:block;margin:0 auto 4px}
+.cover-subtitle{font-size:13px;letter-spacing:4px;text-transform:uppercase;opacity:.85;margin-bottom:12px;font-weight:500}
+.cover h1{font-size:36px;font-weight:800;line-height:1.2;margin-bottom:28px}
+.cover-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:28px}
+.cover-divider-line{width:60px;height:1px;background:rgba(255,255,255,.4)}
+.cover-divider-dot{width:8px;height:8px;border-radius:50%;background:#F5C518}
+.cover-date{font-size:20px;font-weight:600;letter-spacing:1px}
+
+/* Sticky header */
+.page-header{position:sticky;top:0;background:#fff;border-bottom:3px solid #007B8A;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;z-index:100}
+.page-header-logo svg{height:32px}
+.page-header-title{font-size:13px;font-weight:600;color:#555;letter-spacing:.5px}
+
+/* Content */
+.content{padding:44px 52px}
+.section{margin-bottom:52px}
+.section-title{font-size:22px;font-weight:800;color:#007B8A;margin-bottom:8px;border-bottom:2px solid #007B8A;padding-bottom:6px}
+.section-subtitle{font-size:16px;font-weight:700;color:#1A1A1A;margin:20px 0 4px}
+.subsection-title{font-size:14px;font-weight:700;color:#333;margin:18px 0 6px}
+.source-tag{font-size:11px;color:#888;margin-bottom:16px;background:#f8f8f8;display:inline-block;padding:2px 10px;border-radius:10px}
+
+/* KPI cards */
+.kpi-grid{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+.kpi-card{flex:1 1 calc(33.33% - 12px);min-width:140px;border:1px solid #e8e8e8;border-radius:8px;padding:16px;text-align:center;background:#fafcfd}
+.kpi-label{font-size:11px;font-weight:600;text-transform:uppercase;color:#666;letter-spacing:.5px;margin-bottom:4px}
+.kpi-value{font-size:26px;font-weight:800;color:#1A1A1A}
+.kpi-sub{font-size:11px;color:#666;margin-top:4px}
+
+/* Tables */
+.data-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.data-table thead{background:#007B8A;color:#fff}
+.data-table th{padding:10px 12px;text-align:left;font-weight:600;font-size:12px}
+.data-table td{padding:8px 12px;border-bottom:1px solid #eee}
+.data-table tbody tr:hover{background:#f8fcfd}
+.wins-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+.wins-table thead{background:#1e3a5f;color:#fff}
+.wins-table th{padding:10px 12px;text-align:left;font-weight:600;font-size:12px}
+.wins-table td{padding:10px 12px;border-bottom:1px solid #eee;vertical-align:top}
+.wins-table tbody tr:nth-child(even){background:#f8f9fa}
+
+/* Indicators */
+.up{color:#2e7d52;font-weight:600}
+.down{color:#b85c00;font-weight:600}
+.watch{color:#c97a00;font-weight:600}
+.bold{font-weight:700}
+.highlight{background:#e8f5f7}
+
+/* Chart */
+.chart-wrap{margin:20px 0;position:relative}
+.chart-title{font-size:13px;font-weight:700;color:#333;margin-bottom:8px}
+.chart-wrap canvas{max-height:300px}
+
+/* Insight box */
+.insight-box{border-left:4px solid #007B8A;background:#f0f8fa;padding:14px 18px;margin:16px 0;border-radius:0 6px 6px 0;font-size:13px}
+.insight-box strong{color:#007B8A}
+
+/* Highlight list */
+.highlight-list{list-style:none;padding:0;margin:12px 0}
+.highlight-list li{padding:6px 0 6px 20px;position:relative;font-size:13px}
+.highlight-list li::before{content:'▸';position:absolute;left:0;color:#007B8A;font-weight:700}
+
+/* Footer */
+.report-footer{background:#1e3a5f;color:#ccc;padding:28px 52px;font-size:12px;line-height:1.7;text-align:center}
+
+/* Prose */
+p{font-size:14px;margin:10px 0;line-height:1.65}
+.exec-summary p{font-size:13.5px}
+
+/* Responsive tweak */
+@media(max-width:860px){.content{padding:28px 20px}.kpi-card{min-width:120px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ==================== COVER ==================== -->
+<div class="cover">
+<div class="cover-logo">
+<svg class="visit-mesa-cover-logo" role="img" aria-label="Visit Mesa logo" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" version="1.1" viewBox="0 0 307.4 95.6">
+  <!-- Generator: Adobe Illustrator 29.0.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 192)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #f36e21;
+      }
+
+      .st1 {
+        fill: #038a96;
+      }
+
+      .st2 {
+        fill: #fff;
+      }
+
+      .st3 {
+        fill: #ffc709;
+      }
+
+      .st4 {
+        fill: #336195;
+      }
+    </style>
+  </defs>
+  <polygon class="st0" points="137.4 21.9 136.8 21.9 146.3 49.8 146.8 49.9 146.6 33.5 137.4 21.9"/>
+  <polygon class="st4" points="148.3 36.4 156.7 24.9 157.5 24.9 149.1 52.3 148.5 52.8 148.3 36.4"/>
+  <polygon class="st3" points="141.5 41 129.8 50.7 128.9 50.7 135.5 24.7 136.2 24.6 141.5 41"/>
+  <polygon class="st1" points="155.1 38.1 170.8 52.5 171.6 52.6 160.2 23.6 159.5 23.6 155.1 38.1"/>
+  <g>
+    <g>
+      <path class="st2" d="M29.7,47.3l-9.4-18.9c-.1-.3-.2-.5-.2-.7,0-.7.4-1.2,1.3-1.2h2.2c.8,0,1.3.3,1.6.9l7.4,15.6,7.4-15.6c.3-.6.8-.9,1.6-.9h2.2c.8,0,1.3.6,1.3,1.2s0,.5-.2.7l-9.4,18.9c-.3.6-.8.9-1.6.9h-2.6c-.8,0-1.3-.3-1.6-.9"/>
+      <path class="st2" d="M49.6,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"/>
+      <path class="st2" d="M71.3,44.2c3,0,5.8-.8,5.8-2.7s-1.9-2-6.1-2.4c-6.7-.5-10.5-2-10.5-6s4-7,10.3-7,8,1.6,9.2,2.6c.6.4.9.9.9,1.6s-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5s-.7,0-1-.4c-2.2-1.4-4.4-2.1-6.9-2.1s-5.5.9-5.5,2.4,2.5,1.8,5.7,2c6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4-8.2-1.3-10.6-3.2c-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7,0,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"/>
+      <path class="st2" d="M87.4,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"/>
+      <path class="st2" d="M110.9,46.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-15.9h-8.3c-.9,0-1.4-.5-1.4-1.4v-1.5c0-.8.5-1.4,1.4-1.4h21.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-8.3s0,15.9,0,15.9Z"/>
+      <path class="st2" d="M190.7,43.7l-6.7-8.7v11.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-18.9c0-.8.6-1.4,1.4-1.4h1.6c.9,0,1.3.3,1.9,1l8.1,10.5,8.2-10.5c.6-.7,1-1,1.9-1h1.6c.8,0,1.4.6,1.4,1.4v18.8c0,.9-.6,1.4-1.4,1.4h-2c-.9,0-1.4-.5-1.4-1.4v-11.7l-6.7,8.7c-.4.5-.8.8-1.6.8-.6,0-1-.3-1.5-.8"/>
+      <path class="st2" d="M212.5,46.8v-18.9c0-.8.6-1.4,1.4-1.4h18.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-15v4.2h10.7c.9,0,1.4.6,1.4,1.4v1.6c0,.9-.5,1.4-1.4,1.4h-10.7v4.4h15c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-18.4c-.8,0-1.4-.4-1.4-1.3"/>
+      <path class="st2" d="M248.8,44.2c3,0,5.8-.8,5.8-2.7s-1.9-2-6.1-2.4c-6.7-.5-10.5-2-10.5-6s4-7,10.3-7,8,1.6,9.2,2.6c.6.4.9.9.9,1.6s-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5s-.7,0-1-.4c-2.2-1.4-4.4-2.1-6.9-2.1s-5.5.9-5.5,2.4,2.5,1.8,5.7,2c6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4-8.2-1.3-10.6-3.2c-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7,0,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"/>
+      <path class="st2" d="M278.6,39.6l-3.7-7.9-3.8,7.9h7.5ZM277.7,27.4l9.4,18.9c.1.3.2.5.2.8,0,.7-.5,1.2-1.3,1.2h-2.2c-.8,0-1.3-.3-1.6-.9l-1.6-3.4h-11.6l-1.6,3.4c-.3.6-.8.9-1.6.9h-2.2c-.8,0-1.3-.5-1.3-1.2s.1-.5.2-.8l9.4-18.9c.3-.6.8-.9,1.6-.9h2.6c.8,0,1.3.3,1.6.9"/>
+      <path class="st2" d="M92.2,63.8l-.7,1.8c-.8-.4-1.6-.6-2.5-.6s-1.8.3-2.5.9-1,1.4-1,2.5.2,1.4.5,1.9c.7,1,1.8,1.4,3,1.4s1.7-.2,2.4-.6l.8,1.8c-1.1.5-2.2.8-3.3.8-3,0-5.6-1.8-5.6-5.2s.5-2.9,1.6-3.9c1-1,2.4-1.5,3.9-1.5,1.2-.1,2.3.2,3.4.7"/>
+    </g>
+    <rect class="st2" x="96.2" y="63.2" width="2.1" height="10.2"/>
+    <polygon class="st2" points="101.4 63.2 101.4 65.2 104.7 65.2 104.7 73.4 106.9 73.4 106.9 65.2 110.2 65.2 110.2 63.2 101.4 63.2"/>
+    <polygon class="st2" points="120.6 63.2 117.8 67.4 115.1 63.2 112.5 63.2 116.6 69.4 116.6 73.4 119 73.4 119 69.5 123.2 63.2 120.6 63.2"/>
+    <polygon class="st2" points="133 63.2 133 73.4 140.2 73.4 140.2 71.5 135.2 71.5 135.2 63.2 133 63.2"/>
+    <rect class="st2" x="143.3" y="63.2" width="2.1" height="10.2"/>
+    <polygon class="st2" points="159.7 63.2 155.7 68.5 151.8 63.2 149.7 63.2 149.7 73.4 151.9 73.4 151.9 66.8 155.7 71.9 159.5 66.8 159.5 73.4 161.7 73.4 161.7 63.2 159.7 63.2"/>
+    <rect class="st2" x="166" y="63.2" width="2.1" height="10.2"/>
+    <polygon class="st2" points="171.2 63.2 171.2 65.2 174.5 65.2 174.5 73.4 176.7 73.4 176.7 65.2 180 65.2 180 63.2 171.2 63.2"/>
+    <polygon class="st2" points="183.1 63.2 183.1 73.4 190.3 73.4 190.3 71.5 185.3 71.5 185.3 63.2 183.1 63.2"/>
+    <polygon class="st2" points="193.4 63.2 193.4 73.4 201.1 73.4 201.1 71.5 195.6 71.5 195.6 69.2 199.5 69.2 199.5 67.4 195.6 67.4 195.6 65.2 200.8 65.2 200.8 63.2 193.4 63.2"/>
+    <g>
+      <path class="st2" d="M211.9,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7s-1.8.4-1.8,1,.2.5.6.7c.2,0,.6.2.9.3.3,0,.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9s-.4,1.9-1.2,2.4c-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9s2-.5,2.1-1.2c0-.4-.2-.6-.6-.8s-.4-.2-.6-.2c-.2,0-.4,0-.8-.2-.3,0-.6,0-.8-.2-1.9-.5-3-1.3-3-2.9s.2-1.3.6-1.8c.8-1,2-1.3,3.5-1.3,1.1,0,2.1.3,3.2.8"/>
+      <path class="st2" d="M223.2,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7s-1.8.4-1.8,1,.2.5.6.7c.2,0,.6.2.9.3.3,0,.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9s-.4,1.9-1.2,2.4c-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9s2-.5,2.1-1.2c0-.4-.2-.6-.6-.8s-.4-.2-.6-.2c-.2,0-.4,0-.8-.2-.3,0-.6,0-.8-.2-1.9-.5-3-1.3-3-2.9s.2-1.3.6-1.8c.8-1,2-1.3,3.5-1.3,1,0,2.1.3,3.2.8"/>
+      <path class="st2" d="M227.2,64.4v.8h.3c.3,0,.5,0,.5-.4s-.2-.4-.5-.4h-.3M228.4,64.8c0,.3-.1.5-.3.6l.3.6h-.4l-.2-.5h-.5v.5h-.4v-1.9h.7c.4,0,.8.2.8.7M226.6,64c-.3.3-.4.6-.4,1s.1.7.4,1c.3.3.6.4,1,.4s.7,0,1-.4.4-.6.4-1-.1-.7-.4-1c-.3-.3-.6-.4-1-.4s-.8.2-1,.4M228.8,63.8c.4.3.5.8.5,1.3s-.2.9-.5,1.3c-.4.4-.8.5-1.3.5s-.9-.2-1.3-.5c-.4-.4-.5-.8-.5-1.3s.2-.9.5-1.3c.4-.4.8-.5,1.3-.5.5,0,1,.1,1.3.5"/>
+    </g>
+  </g>
+  <metadata>
+    <i:aipgfRef id="adobe_illustrator_pgf"/>
+    <i:aipgf id="adobe_illustrator_pgf" i:pgfEncoding="zstd/base64" i:pgfVersion="24">
+<![CDATA[
+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
+Q6fD
+]]>
+    </i:aipgf>
+  </metadata>
+</svg>
+</div>
+<div class="cover-subtitle">MONTHLY BOARD REPORT</div>
+<h1>Destination Marketing<br>Performance Report</h1>
+<div class="cover-divider">
+<div class="cover-divider-line"></div>
+<div class="cover-divider-dot"></div>
+<div class="cover-divider-line"></div>
+</div>
+<div class="cover-date">April 2026</div>
+</div>
+
+<!-- ==================== STICKY HEADER ==================== -->
+<div class="page-header">
+<!-- Logo placeholder — Kate adds logos before sending -->
+<div class="page-header-title">Board Report — April 2026</div>
+</div>
+
+<!-- ==================== CONTENT ==================== -->
+<div class="content">
+
+<!-- ===== EXECUTIVE SUMMARY ===== -->
+<div class="section exec-summary">
+<div class="section-title">Executive Summary</div>
+<p>April's story is one of <strong>aggregate lodging resilience and sales momentum</strong>. Combined hotel-plus-STVR occupancy rose to 59.3% (<span class="up">+5.0% YOY</span>), driven by a surging short-term rental market that posted <span class="up">+10.8% YOY</span> occupancy gains. Sales booked 9,688 rooms for the month (Leisure/OTA: 5,920 · Sports: 3,159 · National: 609), and leisure OTA campaigns contributed 30,470 FYTD contracted rooms, pushing combined FYTD rooms booked to 93,702 — <span class="up">+47.2% ahead of last year</span>. On the content front, a single Salt River tubing reel reached <strong>836K views on Instagram</strong>, one of the best-performing organic posts in Visit Mesa history.</p>
+<p>Headwinds appeared in website traffic (sessions <span class="down">-7.5% YOY</span>) and hotel ADR (<span class="down">-1.4% YOY</span>). The session decline is consistent with an industry-wide shift as AI Overviews and LLM-powered search increasingly answer travel queries directly, reducing click-through to destination websites — a trend reflected in our <span class="down">-16.0% MOM</span> drop in search impressions even as average position improved to 8.4. Page views held flat and pages per session increased, indicating that visitors who do arrive are engaging more deeply. The STVR market offset hotel softness with RevPAR up <span class="up">+13.3% YOY</span>. Inflation climbed to 3.8% — a three-year high — with gasoline up 28.4% and airfares up 20.7%, while consumer sentiment fell to a record low of 47.6.</p>
+
+<div class="section-subtitle">April Wins</div>
+<table class="wins-table">
+<thead><tr><th>Win</th><th>Impact</th><th>Strategic Significance</th></tr></thead>
+<tbody>
+<tr><td><strong>Salt River Tubing Reel Goes Viral</strong></td><td>836K views, 39.6K likes, 37.3K shares on Instagram alone</td><td>One of the best-performing organic posts in Visit Mesa history — positions Mesa as the Salt River gateway destination heading into summer</td></tr>
+<tr><td><strong>FYTD Rooms Booked +47.2% YOY</strong></td><td>93,702 rooms booked through April vs. 63,669 prior year</td><td>Sales pipeline is the strongest in five years, with sports tournaments driving the majority of growth</td></tr>
+<tr><td><strong>STVR RevPAR +13.3% YOY</strong></td><td>$126.21 RevPAR in April; FYTD up +14.9% YOY</td><td>Continued strength in the vacation rental segment diversifies Mesa's lodging revenue base</td></tr>
+<tr><td><strong>Social Audience Reaches 95.3K (+39.6% YOY)</strong></td><td>Facebook +50%, TikTok +54.5%, Instagram +25.3%</td><td>Organic audience growth accelerating across all platforms — no paid follower acquisition</td></tr>
+<tr><td><strong>Aggregate Occupancy 59.3% (+5.0% YOY)</strong></td><td>RevPAR up +2.5% YOY to $96.84</td><td>Combined hotel + STVR performance is the number that matters for total destination revenue</td></tr>
+<tr><td><strong>Capelli Sports Cup — 2,882 Room Nights</strong></td><td>$1.44M estimated economic impact</td><td>Largest single April sports event; drove hotel demand during shoulder period</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===== TEAM & COMMUNITY HIGHLIGHTS ===== -->
+<div class="section">
+<div class="section-title">Team & Community Highlights</div>
+<div class="source-tag">Source: Visit Mesa Communications & Partner Programs</div>
+
+<ul class="highlight-list">
+<li><strong>Autism Acceptance Month Activations</strong> — Visit Mesa partnered with 12 West Brewing, Chupacabra Taproom, and Cider Corps to launch two craft beverages (Spectrum IPA and Spec(trum) Ops non-alcoholic apple soda) benefiting the Mesa For All Foundation. Promoted the Accessibility Travel Guide through social content.</li>
+<li><strong>Coopstock 2026</strong> — Alice Cooper's 28th annual rock & roll fundraiser at Las Sendas Golf Club brought national music acts to Mesa on April 11, benefiting Alice Cooper Solid Rock teen programs. Visit Mesa promoted through giveaways and content.</li>
+<li><strong>Flavors on Main Food Crawl</strong> — The Exceptional Vibe hosted their 3rd Flavors on Main event in Downtown Mesa on April 18, sampling 20 eateries along Main Street with live music. Visit Mesa provided promotion via social channels.</li>
+<li><strong>City Limitless® Podcast</strong> — April episodes featured the PPA Tour / Carvana Mesa Cup (pickleball) and Breakaway Music Festival, reinforcing Mesa's position as a live events destination.</li>
+<li><strong>Salt River Merch Collaboration</strong> — Visit Mesa partnered with Visit Phoenix and Natural Restorations on limited-edition Salt River shirts, with proceeds supporting river cleanup.</li>
+<li><strong>Outdoor Adventure & Water Guide</strong> — Published a free downloadable guide to trails, biking routes, water adventures, and off-roading in Mesa, timed for the start of water recreation season.</li>
+</ul>
+</div>
+
+<!-- ===== VISITATION & TRAVEL TRENDS ===== -->
+<div class="section">
+<div class="section-title">Visitation & Travel Trends</div>
+
+<div class="section-subtitle">Airport & Air Travel</div>
+<div class="source-tag">Source: TSA · Phoenix Sky Harbor International</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">April TSA Volume</div>
+<div class="kpi-value">1.9M</div>
+<div class="kpi-sub"><span class="down">-0.9% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">FYTD TSA Volume</div>
+<div class="kpi-value">17.6M</div>
+<div class="kpi-sub"><span class="down">-0.5% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Overnight Trip Share</div>
+<div class="kpi-value">65%</div>
+<div class="kpi-sub">Placer.ai · April 2026</div>
+</div>
+</div>
+<p>Air travel through Phoenix Sky Harbor remained essentially flat in April, with 1.9M passengers passing through TSA checkpoints (<span class="down">-0.9% YOY</span>). The marginal decline mirrors national travel stabilization after two years of elevated recovery demand. FYTD throughput of 17.6M travelers is just <span class="down">-0.5% YOY</span>, signaling sustained air access to the market.</p>
+
+<div class="subsection-title">Top Air Origin Markets (FYTD)</div>
+<div class="source-tag">Source: OAG · Jul 2025–Mar 2026</div>
+<table class="data-table">
+<thead><tr><th>Origin Market</th><th>Share</th></tr></thead>
+<tbody>
+<tr><td>Chicago, IL</td><td>4.8%</td></tr>
+<tr><td>Denver, CO</td><td>4.5%</td></tr>
+<tr><td>Seattle, WA</td><td>4.1%</td></tr>
+<tr><td>Minneapolis, MN</td><td>3.1%</td></tr>
+<tr><td>Portland, OR</td><td>2.5%</td></tr>
+<tr><td>Los Angeles, CA</td><td>2.5%</td></tr>
+<tr><td>Dallas-Fort Worth, TX</td><td>2.4%</td></tr>
+<tr><td>Salt Lake City, UT</td><td>2.4%</td></tr>
+<tr><td>New York, NY</td><td>2.3%</td></tr>
+<tr><td>San Francisco, CA</td><td>2.2%</td></tr>
+</tbody>
+</table>
+
+<div class="section-subtitle">Visitation</div>
+<div class="source-tag">Source: Placer.ai · 50+ mile visitor filter</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Total Trips</div>
+<div class="kpi-value">301.0K</div>
+<div class="kpi-sub"><span class="up">+3.3% YOY</span> · vs. 291.4K prev. year</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Total Visitors</div>
+<div class="kpi-value">247.2K</div>
+<div class="kpi-sub"><span class="up">+6.5% YOY</span> · vs. 232.1K prev. year</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Visit Nights</div>
+<div class="kpi-value">480.3K</div>
+<div class="kpi-sub"><span class="up">+1.8% YOY</span> · vs. 471.6K prev. year</div>
+</div>
+</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Overnight Trip Share</div>
+<div class="kpi-value">65%</div>
+<div class="kpi-sub">195.3K overnight trips</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Avg Duration</div>
+<div class="kpi-value">3.5 days</div>
+<div class="kpi-sub"><span class="down">-0.3% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Overnight Leakage</div>
+<div class="kpi-value">89.9K</div>
+<div class="kpi-sub">nights lost · 15.8% leakage rate</div>
+</div>
+</div>
+<p>April visitation grew <span class="up">+3.3% YOY</span> to 301K total trips, with unique visitors up <span class="up">+6.5%</span> to 247.2K. Overnight trips accounted for 65% of total volume, with the remaining 35% as day trips. The top origin DMAs were Phoenix (63.4K trips), Tucson (33.4K), and Los Angeles (27.0K). Overnight leakage held steady at 15.8%, representing 89.9K nights where visitors were in-market but stayed elsewhere — reinforcing the case for expanding Mesa's lodging inventory.</p>
+
+<div class="section-subtitle">Market Conditions</div>
+<div class="source-tag">Source: Tourism Economics · U.S. Travel Association</div>
+<p>U.S. hotel performance improved in April as demand growth (+2.0%) outpaced supply growth (+0.4%), driving national occupancy up 1.6% and RevPAR up 4.4% YOY. However, macroeconomic headwinds intensified: inflation hit a three-year high of 3.8%, driven by gasoline prices up 28.4% YOY and airfares up 20.7% YOY. Consumer sentiment dropped to a record low of 47.6, with declines across all demographic groups. Despite these pressures, domestic leisure travel spending remained 12.9% above 2019 levels, and travel intent among higher-income households ($150K+) remained above 90%.</p>
+</div>
+
+<!-- ===== VISITOR PROFILE ===== -->
+<div class="section">
+<div class="section-title">Visitor Profile</div>
+<div class="source-tag">Source: Placer.ai & U.S. Census Bureau</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Overnight Trip Share</div>
+<div class="kpi-value">65%</div>
+<div class="kpi-sub">195.3K overnight · 105.7K day trips</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Avg Length of Stay</div>
+<div class="kpi-value">3.5 days</div>
+<div class="kpi-sub"><span class="down">-0.3% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Repeat Trip Share</div>
+<div class="kpi-value">54%</div>
+<div class="kpi-sub">April 2026</div>
+</div>
+</div>
+
+<div class="subsection-title">Top Origin States</div>
+<table class="data-table">
+<thead><tr><th>State</th><th>Share</th><th>Top MSA</th><th>MSA Share</th></tr></thead>
+<tbody>
+<tr><td>Arizona</td><td>30.1%</td><td>Tucson</td><td>7.4%</td></tr>
+<tr><td>California</td><td>17.7%</td><td>Los Angeles-Long Beach-Anaheim</td><td>6.7%</td></tr>
+<tr><td>Texas</td><td>5.2%</td><td>Phoenix-Mesa-Chandler</td><td>4.8%</td></tr>
+<tr><td>New Mexico</td><td>4.8%</td><td>Prescott Valley-Prescott</td><td>4.3%</td></tr>
+<tr><td>Utah</td><td>3.9%</td><td>Riverside-San Bernardino-Ontario</td><td>3.8%</td></tr>
+</tbody>
+</table>
+
+<div class="subsection-title">Visitor Demographics</div>
+<p>April visitors skewed toward the 35–44 age bracket (18%) with a median household income of $75.9K. The racial mix was 61% White, 12% Asian, 10% Black, 12% Other, and 5% 2+ Races. Gender split was roughly 58% female / 42% male among search and engagement audiences.</p>
+</div>
+
+<!-- ===== LODGING PERFORMANCE ===== -->
+<div class="section">
+<div class="section-title">Lodging Performance</div>
+
+<div class="section-subtitle">Aggregate Lodging (Hotels + STVR)</div>
+<div class="source-tag">Source: STR & KeyData</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Occupancy</div>
+<div class="kpi-value">59.3%</div>
+<div class="kpi-sub"><span class="up">+5.0% YOY</span> · FYTD: 58.0% (<span class="up">+4.7%</span>)</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">ADR</div>
+<div class="kpi-value">$163.35</div>
+<div class="kpi-sub"><span class="down">-2.3% YOY</span> · FYTD: $161.68 (<span class="down">-1.1%</span>)</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">RevPAR</div>
+<div class="kpi-value">$96.84</div>
+<div class="kpi-sub"><span class="up">+2.5% YOY</span> · FYTD: $93.82 (<span class="up">+3.5%</span>)</div>
+</div>
+</div>
+
+<div class="section-subtitle">Hotel Performance (City of Mesa)</div>
+<div class="source-tag">Source: STR</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Hotel Occupancy</div>
+<div class="kpi-value">67.3%</div>
+<div class="kpi-sub"><span class="down">-0.2% YOY</span> · FYTD: 66.6% (<span class="down">-0.7%</span>)</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Hotel ADR</div>
+<div class="kpi-value">$123.56</div>
+<div class="kpi-sub"><span class="down">-1.4% YOY</span> · FYTD: $125.65 (<span class="down">-0.4%</span>)</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Hotel RevPAR</div>
+<div class="kpi-value">$83.12</div>
+<div class="kpi-sub"><span class="down">-1.5% YOY</span> · FYTD: $83.66 (<span class="down">-1.1%</span>)</div>
+</div>
+</div>
+<p>Hotel occupancy was essentially flat in April at 67.3%, with modest ADR softness (<span class="down">-1.4% YOY</span>) contributing to a <span class="down">-1.5% RevPAR</span> decline. This is consistent with the national pattern where supply growth (+4.8% FYTD in Mesa) is absorbing demand gains. FYTD hotel revenue reached $126.1M (<span class="up">+3.7% YOY</span>), confirming that volume growth is compensating for rate pressure.</p>
+
+<div class="section-subtitle">Short-Term Vacation Rental Performance</div>
+<div class="source-tag">Source: KeyData · Note: ADR includes cleaning fees and platform fees as of Q2 2025</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">STVR Occupancy</div>
+<div class="kpi-value">42.2%</div>
+<div class="kpi-sub"><span class="up">+10.8% YOY</span> · FYTD: 39.9% (<span class="up">+9.1%</span>)</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">STVR ADR</div>
+<div class="kpi-value">$299.03</div>
+<div class="kpi-sub"><span class="up">+2.2% YOY</span> · FYTD: $288.85 (<span class="up">+5.3%</span>)</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">STVR RevPAR</div>
+<div class="kpi-value">$126.21</div>
+<div class="kpi-sub"><span class="up">+13.3% YOY</span> · FYTD: $115.32 (<span class="up">+14.9%</span>)</div>
+</div>
+</div>
+<p>Mesa's short-term rental market continued its strong run with STVR RevPAR up <span class="up">+13.3% YOY</span>. The FYTD <span class="up">+14.9%</span> RevPAR gain is the strongest performance across the lodging portfolio, driven by both occupancy gains and modest rate growth.</p>
+
+<div class="section-subtitle">Competitive Market Context (April 2026)</div>
+<div class="source-tag">Source: STR</div>
+<table class="data-table">
+<thead><tr><th>Market</th><th>Occ</th><th>OCC YOY</th><th>ADR</th><th>ADR YOY</th><th>RevPAR</th><th>RevPAR YOY</th></tr></thead>
+<tbody>
+<tr><td>Black Canyon Corridor</td><td>86.6%</td><td><span class="up">+11.9%</span></td><td>$189</td><td><span class="up">+4.5%</span></td><td>$164</td><td><span class="up">+16.9%</span></td></tr>
+<tr><td>Phoenix Southeast/Chandler</td><td>78.2%</td><td><span class="up">+3.8%</span></td><td>$144</td><td><span class="down">-2.8%</span></td><td>$113</td><td><span class="up">+0.9%</span></td></tr>
+<tr><td>Phoenix, AZ</td><td>76.6%</td><td><span class="up">+6.3%</span></td><td>$234</td><td><span class="up">+4.8%</span></td><td>$166</td><td><span class="up">+11.4%</span></td></tr>
+<tr><td>Phoenix Central</td><td>73.4%</td><td><span class="down">-0.6%</span></td><td>$167</td><td><span class="up">+2.7%</span></td><td>$122</td><td><span class="up">+2.1%</span></td></tr>
+<tr><td>Phoenix West</td><td>72.5%</td><td><span class="up">+1.2%</span></td><td>$200</td><td><span class="up">+2.7%</span></td><td>$145</td><td><span class="up">+3.8%</span></td></tr>
+<tr><td>City of Gilbert</td><td>81.5%</td><td><span class="down">-3.1%</span></td><td>$199</td><td><span class="down">-0.6%</span></td><td>$162</td><td><span class="down">-3.6%</span></td></tr>
+<tr class="highlight"><td><strong>City of Mesa</strong></td><td><strong>65.9%</strong></td><td><span class="down">-1.0%</span></td><td><strong>$120</strong></td><td><span class="down">-1.0%</span></td><td><strong>$79</strong></td><td><span class="down">-2.0%</span></td></tr>
+<tr><td>Scottsdale</td><td>71.2%</td><td><span class="up">+0.2%</span></td><td>$143</td><td><span class="up">+2.4%</span></td><td>$102</td><td><span class="up">+2.6%</span></td></tr>
+<tr><td>Tempe</td><td>70.8%</td><td><span class="down">-2.6%</span></td><td>$144</td><td><span class="up">+1.8%</span></td><td>$102</td><td><span class="down">-0.8%</span></td></tr>
+</tbody>
+</table>
+<p>Mesa hotels posted a <span class="down">-2.0% RevPAR</span> decline in April — milder than Gilbert (<span class="down">-3.6%</span>) and slightly steeper than Tempe (<span class="down">-0.8%</span>). The +4.8% FYTD supply growth in Mesa is absorbing demand and putting pressure on occupancy. FYTD hotel revenue of $126.1M (<span class="up">+3.7% YOY</span>) confirms the demand side remains healthy despite the rate compression.</p>
+
+<div class="section-subtitle">Workforce</div>
+<div class="source-tag">Source: Bureau of Labor Statistics</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">L&H Jobs (PHX-Mesa-Scottsdale)</div>
+<div class="kpi-value">271.1K</div>
+<div class="kpi-sub"><span class="down">-1.1% YOY</span> · +14.3% vs. 2019</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">L&H Share of Total Jobs</div>
+<div class="kpi-value">10.9%</div>
+<div class="kpi-sub">April 2026</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">L&H Job Openings</div>
+<div class="kpi-value">12.1K</div>
+<div class="kpi-sub">As of Dec 2025 · 4.6% opening rate</div>
+</div>
+</div>
+</div>
+
+<!-- ===== SALES PERFORMANCE ===== -->
+<div class="section">
+<div class="section-title">Sales Performance</div>
+<div class="source-tag">Source: Visit Mesa CRM (Tempest) · As of 5/15/2026</div>
+
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">FYTD Rooms Booked</div>
+<div class="kpi-value">93,702</div>
+<div class="kpi-sub"><span class="up">+47.2% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">FYTD Rooms Actualized</div>
+<div class="kpi-value">46,760</div>
+<div class="kpi-sub"><span class="up">+38.4% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">FYTD Leads Created</div>
+<div class="kpi-value">270</div>
+<div class="kpi-sub"><span class="up">+15.4% YOY</span></div>
+</div>
+</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">FYTD Attendance Booked</div>
+<div class="kpi-value">118,144</div>
+<div class="kpi-sub"><span class="up">+44.3% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">FYTD Attendance Actualized</div>
+<div class="kpi-value">96,208</div>
+<div class="kpi-sub"><span class="up">+9.2% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">April Rooms Booked</div>
+<div class="kpi-value">9,688</div>
+<div class="kpi-sub">Sports: 3,159 · Leisure/OTA: 5,920 · National: 609</div>
+</div>
+</div>
+
+<div class="chart-wrap">
+<div class="chart-title">Rooms Booked by Month — FY2026 vs. FY2025</div>
+<svg viewBox="0 0 716 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:300px">
+<!-- Y-axis labels -->
+<text x="38" y="38" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="end">25K</text>
+<text x="38" y="88" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="end">20K</text>
+<text x="38" y="138" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="end">15K</text>
+<text x="38" y="188" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="end">10K</text>
+<text x="38" y="238" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="end">5K</text>
+<line x1="44" y1="35" x2="710" y2="35" stroke="#f0f0f0" stroke-width="1"/>
+<line x1="44" y1="85" x2="710" y2="85" stroke="#f0f0f0" stroke-width="1"/>
+<line x1="44" y1="135" x2="710" y2="135" stroke="#f0f0f0" stroke-width="1"/>
+<line x1="44" y1="185" x2="710" y2="185" stroke="#f0f0f0" stroke-width="1"/>
+<line x1="44" y1="235" x2="710" y2="235" stroke="#f0f0f0" stroke-width="1"/>
+<!-- Baseline -->
+<line x1="44" y1="255" x2="710" y2="255" stroke="#ccc" stroke-width="1"/>
+<!-- FY2026 bars (teal) and FY2025 bars (gray) — scale: 25000 = 220px height, baseline at y=255 -->
+<!-- Jul: FY26=3924 FY25=460 -->
+<rect x="52" y="220.6" width="28" height="34.4" rx="2" fill="#007B8A"/><rect x="82" y="251.0" width="28" height="4.0" rx="2" fill="#D0D0D0"/>
+<!-- Aug: FY26=2299 FY25=500 -->
+<rect x="118" y="234.8" width="28" height="20.2" rx="2" fill="#007B8A"/><rect x="148" y="250.6" width="28" height="4.4" rx="2" fill="#D0D0D0"/>
+<!-- Sep: FY26=2262 FY25=3398 -->
+<rect x="184" y="235.1" width="28" height="19.9" rx="2" fill="#007B8A"/><rect x="214" y="225.1" width="28" height="29.9" rx="2" fill="#D0D0D0"/>
+<!-- Oct: FY26=7292 FY25=6458 -->
+<rect x="250" y="190.8" width="28" height="64.2" rx="2" fill="#007B8A"/><rect x="280" y="198.2" width="28" height="56.8" rx="2" fill="#D0D0D0"/>
+<!-- Nov: FY26=4522 FY25=5411 -->
+<rect x="316" y="215.2" width="28" height="39.8" rx="2" fill="#007B8A"/><rect x="346" y="207.4" width="28" height="47.6" rx="2" fill="#D0D0D0"/>
+<!-- Dec: FY26=14266 FY25=11634 -->
+<rect x="382" y="129.5" width="28" height="125.5" rx="2" fill="#007B8A"/><rect x="412" y="152.6" width="28" height="102.4" rx="2" fill="#D0D0D0"/>
+<!-- Jan: FY26=20126 FY25=18537 -->
+<rect x="448" y="77.9" width="28" height="177.1" rx="2" fill="#007B8A"/><rect x="478" y="91.9" width="28" height="163.1" rx="2" fill="#D0D0D0"/>
+<!-- Feb: FY26=9217 FY25=22344 -->
+<rect x="514" y="173.9" width="28" height="81.1" rx="2" fill="#007B8A"/><rect x="544" y="58.6" width="28" height="196.4" rx="2" fill="#D0D0D0"/>
+<!-- Mar: FY26=7326 FY25=11602 -->
+<rect x="580" y="190.5" width="28" height="64.5" rx="2" fill="#007B8A"/><rect x="610" y="152.9" width="28" height="102.1" rx="2" fill="#D0D0D0"/>
+<!-- Apr: FY26=9688 FY25=4434 -->
+<rect x="646" y="169.7" width="28" height="85.3" rx="2" fill="#007B8A"/><rect x="676" y="216.0" width="28" height="39.0" rx="2" fill="#D0D0D0"/>
+<!-- X-axis labels -->
+<text x="80" y="272" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">Jul</text>
+<text x="146" y="272" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">Aug</text>
+<text x="212" y="272" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">Sep</text>
+<text x="278" y="272" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">Oct</text>
+<text x="344" y="272" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">Nov</text>
+<text x="410" y="272" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">Dec</text>
+<text x="476" y="272" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">Jan</text>
+<text x="542" y="272" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">Feb</text>
+<text x="608" y="272" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">Mar</text>
+<text x="674" y="272" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="middle">Apr</text>
+<!-- Legend -->
+<rect x="280" y="8" width="12" height="12" rx="2" fill="#007B8A"/><text x="296" y="18" fill="#555" font-family="Inter,sans-serif" font-size="11">FY2026</text>
+<rect x="360" y="8" width="12" height="12" rx="2" fill="#D0D0D0"/><text x="376" y="18" fill="#555" font-family="Inter,sans-serif" font-size="11">FY2025</text>
+</svg>
+</div>
+
+<div class="section-subtitle">April Actualized Events</div>
+<table class="data-table">
+<thead><tr><th>Event</th><th>Type</th><th>Rooms</th><th>Pickup</th><th>Attendance</th><th>Est. Impact</th></tr></thead>
+<tbody>
+<tr><td>Capelli Sports Cup 2026</td><td>Sports</td><td>2,882</td><td>911</td><td>2,000</td><td>$1,442,889</td></tr>
+<tr><td>AZ Transit Assoc. Spring Conference</td><td>Conference</td><td>374</td><td>342</td><td>350</td><td>$348,167</td></tr>
+<tr><td>NAIA Women's Beach Volleyball</td><td>Sports</td><td>250</td><td>0</td><td>700</td><td>$1,096,303</td></tr>
+<tr><td>WRITA Spring Conference</td><td>Meeting</td><td>200</td><td>139</td><td>200</td><td>$104,164</td></tr>
+<tr><td>Perfect Game Jackie Robinson Classic</td><td>Sports</td><td>27</td><td>27</td><td>250</td><td>$120,597</td></tr>
+<tr><td>AZ Take Steps Walk</td><td>Event</td><td>20</td><td>0</td><td>15</td><td>$13,873</td></tr>
+<tr><td>67th Annual ANAS Meeting</td><td>Meeting</td><td>15</td><td>2</td><td>200</td><td>$22,354</td></tr>
+<tr style="background:#f0f8fa;font-weight:600"><td>April Total</td><td></td><td>3,768</td><td>1,421</td><td>3,715</td><td>$3,148,346</td></tr>
+</tbody>
+</table>
+
+<div class="insight-box"><strong>Pipeline note:</strong> FYTD rooms booked (+47.2%) continues to outpace rooms actualized (+38.4%), confirming a healthy forward pipeline. Sports sales account for the majority of booked growth, with Capelli Sports Cup (2,882 rooms) the largest single April booking.</div>
+</div>
+
+<!-- ===== DIGITAL MARKETING — PAID ===== -->
+<div class="section">
+<div class="section-title">Digital Marketing — Paid</div>
+
+<div class="section-subtitle">DV360 Programmatic (Pre-Roll Video)</div>
+<div class="source-tag">Source: DV360 · April 2026</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Impressions</div>
+<div class="kpi-value">589K</div>
+<div class="kpi-sub">Pre-roll video only</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Clicks</div>
+<div class="kpi-value">6,719</div>
+<div class="kpi-sub">CTR: 1.14%</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Spend</div>
+<div class="kpi-value">$2,495</div>
+<div class="kpi-sub">CPM: $4.23 · CPC: $0.37</div>
+</div>
+</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Video Starts</div>
+<div class="kpi-value">587K</div>
+<div class="kpi-sub">99.6% start rate</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Video Completions</div>
+<div class="kpi-value">265K</div>
+<div class="kpi-sub">VCR: 45.1%</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">FYTD DV360 Spend</div>
+<div class="kpi-value">$31,249</div>
+<div class="kpi-sub">187.9K FYTD clicks</div>
+</div>
+</div>
+<p>April's DV360 campaign ran two 30-second "AI Can't" pre-roll videos targeting out-of-state feeder markets via content targeting. The Family creative outperformed Couples with a 1.37% CTR vs. 0.91%, and a higher video completion rate (46.9% vs. 43.4%). Content targeting — placing ads alongside travel-related articles — continued to deliver strong site quality.</p>
+
+<div class="section-subtitle">Google Search Marketing</div>
+<div class="source-tag">Source: Google Ads · April 2026</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Impressions</div>
+<div class="kpi-value">109K</div>
+<div class="kpi-sub"><span class="down">-10.1% MOM</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Clicks</div>
+<div class="kpi-value">9,790</div>
+<div class="kpi-sub">CTR: 8.98%</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Spend</div>
+<div class="kpi-value">$2,834</div>
+<div class="kpi-sub">Avg CPC: $0.29</div>
+</div>
+</div>
+<p>Google Search ran two campaigns: Out-of-State Feeder Markets (targeting travel-intent searches like "things to do in Mesa AZ") and Valley Locals (driving event awareness locally). The Out-of-State campaign generated 32 tracked clicks to Expedia — double the prior month. The Locals campaign saw highest activity on weekends, with event-related searches performing strongest.</p>
+
+<div class="section-subtitle">Meta Ads (Facebook & Instagram)</div>
+<div class="source-tag">Source: Meta Ads</div>
+<p>No paid Meta campaigns ran in April 2026.</p>
+
+<div class="section-subtitle">FYTD All-Media Summary</div>
+<table class="data-table">
+<thead><tr><th>Channel</th><th>FYTD Impressions</th><th>FYTD Clicks</th><th>FYTD Spend</th><th>CTR</th><th>CPC</th></tr></thead>
+<tbody>
+<tr><td>DV360 (Programmatic)</td><td>11.5M</td><td>187,909</td><td>$286,537</td><td>1.63%</td><td>$1.52</td></tr>
+<tr><td>Google Search</td><td>1.2M</td><td>88,068</td><td>$27,632</td><td>7.08%</td><td>$0.31</td></tr>
+<tr><td>Meta (FB/IG)</td><td>3.1M</td><td>34,158</td><td>$14,987</td><td>1.11%</td><td>$0.44</td></tr>
+<tr style="background:#f0f8fa;font-weight:600"><td>Programmatic Media FYTD</td><td>20.3M</td><td>311,966</td><td>$120,126</td><td>1.54%</td><td>$0.39</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===== SOCIAL / SEO / EARNED MEDIA ===== -->
+<div class="section">
+<div class="section-title">Digital Marketing — Social / SEO / Earned Media</div>
+
+<div class="section-subtitle">Social Media Audience</div>
+<div class="source-tag">Source: Sprout Social · FYTD: Jul 2025–Apr 2026</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Total Audience</div>
+<div class="kpi-value">95.3K</div>
+<div class="kpi-sub"><span class="up">+39.6% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">FYTD Impressions</div>
+<div class="kpi-value">15.2M</div>
+<div class="kpi-sub"><span class="up">+43.2% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">FYTD Engagements</div>
+<div class="kpi-value">384.8K</div>
+<div class="kpi-sub"><span class="down">-11.4% YOY</span></div>
+</div>
+</div>
+
+<div class="chart-wrap">
+<div class="chart-title">Social Media Audience by Platform</div>
+<svg viewBox="0 0 716 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:220px">
+<!-- Horizontal bar chart — scale: 46500 max = 580px width, left edge at x=100 -->
+<!-- Facebook: 46,500 -->
+<text x="94" y="32" fill="#333" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="end">Facebook</text>
+<rect x="100" y="18" width="580" height="22" rx="3" fill="#007B8A"/>
+<text x="688" y="34" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="end">46.5K</text>
+<!-- Instagram: 32,900 -->
+<text x="94" y="72" fill="#333" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="end">Instagram</text>
+<rect x="100" y="58" width="410" height="22" rx="3" fill="#F5C518"/>
+<text x="518" y="74" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="end">32.9K</text>
+<!-- TikTok: 12,300 -->
+<text x="94" y="112" fill="#333" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="end">TikTok</text>
+<rect x="100" y="98" width="153" height="22" rx="3" fill="#1A1A1A"/>
+<text x="261" y="114" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="end">12.3K</text>
+<!-- LinkedIn: 2,800 -->
+<text x="94" y="152" fill="#333" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="end">LinkedIn</text>
+<rect x="100" y="138" width="35" height="22" rx="3" fill="#1e3a5f"/>
+<text x="143" y="154" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="end">2.8K</text>
+<!-- YouTube: 681 -->
+<text x="94" y="192" fill="#333" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="end">YouTube</text>
+<rect x="100" y="178" width="9" height="22" rx="3" fill="#b85c00"/>
+<text x="117" y="194" fill="#888" font-family="Inter,sans-serif" font-size="10" text-anchor="end">681</text>
+</svg>
+</div>
+
+<table class="data-table">
+<thead><tr><th>Platform</th><th>Audience</th><th>YOY Growth</th><th>FYTD Engagements</th><th>Eng. Rate</th></tr></thead>
+<tbody>
+<tr><td>Facebook</td><td>46.5K</td><td><span class="up">+50.0%</span></td><td>104,041</td><td>1.1%</td></tr>
+<tr><td>Instagram</td><td>32.9K</td><td><span class="up">+25.3%</span></td><td>166,575</td><td>3.9%</td></tr>
+<tr><td>TikTok</td><td>12.3K</td><td><span class="up">+54.5%</span></td><td>105,935</td><td>6.3%</td></tr>
+<tr><td>LinkedIn</td><td>2.8K</td><td><span class="up">+16.5%</span></td><td>6,036</td><td>11.7%</td></tr>
+<tr><td>YouTube</td><td>681</td><td><span class="up">+25.4%</span></td><td>2,191</td><td>—</td></tr>
+</tbody>
+</table>
+
+<div class="insight-box"><strong>Viral highlight:</strong> The Salt River tubing guide reel (April 21) reached 836,778 views, 39,594 likes, and 37,324 shares on Instagram — one of the highest-performing organic posts in Visit Mesa history. The Las Sendas sunset dinner reel (21.9K views) and Hidden Slot Canyon reel (60.5K views) also performed exceptionally.</div>
+
+<div class="section-subtitle">SEO & Organic Search</div>
+<div class="source-tag">Source: Google Search Console & GA4 · April 2026</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Search Impressions</div>
+<div class="kpi-value">2.39M</div>
+<div class="kpi-sub"><span class="down">-16.0% MOM</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Search Clicks</div>
+<div class="kpi-value">23,225</div>
+<div class="kpi-sub"><span class="down">-33.0% MOM</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Avg Position</div>
+<div class="kpi-value">8.4</div>
+<div class="kpi-sub"><span class="up">+14.7% MOM improvement</span></div>
+</div>
+</div>
+<p>Organic search traffic softened seasonally in April as spring travel intent shifts from planning to action. Top performing content included the Salt River guide (clicks <span class="up">+27.9% MOM</span>), Mother's Day celebration page (<span class="up">+974% MOM</span> — seasonal), and the Coopstock 2026 event page (<span class="up">+196.8% MOM</span>).</p>
+
+<div class="section-subtitle">AI Visibility & LLM Traffic</div>
+<div class="source-tag">Source: Scrunch AI · April 2026</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">LLM Sessions</div>
+<div class="kpi-value">233</div>
+<div class="kpi-sub"><span class="down">-31.7% MOM</span> · <span class="up">+177.4% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Brand Presence</div>
+<div class="kpi-value">26.3%</div>
+<div class="kpi-sub"><span class="down">-4.0% MOM</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Top LLM Referrer</div>
+<div class="kpi-value">ChatGPT</div>
+<div class="kpi-sub">220 sessions (94% of LLM traffic)</div>
+</div>
+</div>
+<p>AI-driven traffic is still a small channel (0.3% of total sessions) but growing rapidly YOY (<span class="up">+177.4%</span>). ChatGPT dominates LLM referrals. Top pages receiving AI traffic include "Top Things to Do in Mesa," the Phoenix Reptile Expo event page, and the Autism Travel accessibility guide. Visit Mesa appeared in AI Overviews for two hotel property pages.</p>
+
+<div class="section-subtitle">Earned Media & PR</div>
+<div class="source-tag">Source: Critical Mention · FYTD</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">FYTD Total Mentions</div>
+<div class="kpi-value">247</div>
+<div class="kpi-sub">Through April 2026</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">FYTD Total Audience</div>
+<div class="kpi-value">335.2M</div>
+<div class="kpi-sub">Estimated reach</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">FYTD Est. Publicity Value</div>
+<div class="kpi-value">$5.1M</div>
+<div class="kpi-sub">Earned media equivalent</div>
+</div>
+</div>
+</div>
+
+<!-- ===== WEBSITE ATTRIBUTION & OTAs ===== -->
+<div class="section">
+<div class="section-title">Website Attribution & OTAs</div>
+
+<div class="section-subtitle">Website Performance</div>
+<div class="source-tag">Source: Google Analytics 4 · April 2026</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Users</div>
+<div class="kpi-value">57.9K</div>
+<div class="kpi-sub"><span class="down">-8.7% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Sessions</div>
+<div class="kpi-value">67.8K</div>
+<div class="kpi-sub"><span class="down">-7.5% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Engaged Sessions</div>
+<div class="kpi-value">29.2K</div>
+<div class="kpi-sub"><span class="down">-19.7% YOY</span></div>
+</div>
+</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Engagement Rate</div>
+<div class="kpi-value">43.1%</div>
+<div class="kpi-sub"><span class="down">-6.52 pts YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Page Views</div>
+<div class="kpi-value">111.7K</div>
+<div class="kpi-sub">Flat YOY</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Pages Per Session</div>
+<div class="kpi-value">1.65</div>
+<div class="kpi-sub"><span class="up">+0.12 YOY</span></div>
+</div>
+</div>
+<p>Website traffic softened in April with sessions down <span class="down">-7.5% YOY</span> and engagement rate declining to 43.1%. However, page views held flat and pages per session increased — suggesting fewer visitors but deeper engagement per visit. Organic search (44.3%) and direct traffic (25.7%) remained the primary channels, together accounting for 70% of sessions. The paid Valley Locals campaign contributed 7.9% of sessions.</p>
+
+<div class="section-subtitle">ADARA — Website-to-Booking Attribution</div>
+<div class="source-tag">Source: ADARA · April 2026 · Enriched data · Tracking 43.79% of website traffic</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Room Nights</div>
+<div class="kpi-value">718</div>
+<div class="kpi-sub">Attributed from site visitors</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Hotel Bookings</div>
+<div class="kpi-value">287</div>
+<div class="kpi-sub">507 total travelers</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Site Visits Tracked</div>
+<div class="kpi-value">27,413</div>
+<div class="kpi-sub">43.8% of total traffic</div>
+</div>
+</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Avg Advance Purchase</div>
+<div class="kpi-value">5.6 days</div>
+<div class="kpi-sub"></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Avg Length of Stay</div>
+<div class="kpi-value">2.5 nights</div>
+<div class="kpi-sub"></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Avg Travelers per Booking</div>
+<div class="kpi-value">1.8</div>
+<div class="kpi-sub"></div>
+</div>
+</div>
+<p>ADARA tracked 27,413 site visits in April, attributing 287 hotel bookings and 718 total nights from 507 travelers. The short 5.6-day advance purchase window reflects the growing trend of last-minute travel booking, particularly for the drive and short-haul fly markets that dominate Mesa's visitor mix.</p>
+</div>
+
+<!-- ===== GLOSSARY ===== -->
+<div class="section">
+<div class="section-title">Glossary</div>
+
+<div class="section-subtitle">Data Sources</div>
+<table class="data-table">
+<thead><tr><th>Source</th><th>Description</th><th>Used For</th></tr></thead>
+<tbody>
+<tr><td>STR / CoStar</td><td>Hotel industry benchmarking platform. Collects occupancy, ADR, and RevPAR data from participating hotels.</td><td>Lodging performance, market comparisons</td></tr>
+<tr><td>KeyData</td><td>STVR analytics platform tracking Airbnb, Vrbo, and other platforms. ADR includes cleaning/platform fees as of Q2 2025.</td><td>Vacation rental performance</td></tr>
+<tr><td>Placer.ai</td><td>Mobile device location data estimating visit counts from 50+ miles away.</td><td>Visitation trends, visitor profile</td></tr>
+<tr><td>ADARA</td><td>Travel intent and booking attribution matching VisitMesa.com traffic to actual bookings.</td><td>Website-to-booking attribution</td></tr>
+<tr><td>Azira / Symphony</td><td>Connects website exposure to real-world visitation using mobile device location data.</td><td>Website-to-destination attribution</td></tr>
+<tr><td>GA4</td><td>Website analytics for VisitMesa.com.</td><td>Website performance</td></tr>
+<tr><td>DV360</td><td>Google's programmatic ad platform for display and pre-roll video.</td><td>Paid digital impressions</td></tr>
+<tr><td>Meta Ads</td><td>Facebook and Instagram paid advertising.</td><td>Paid social</td></tr>
+<tr><td>Sprout Social</td><td>Social media management aggregating FB, IG, TikTok, LinkedIn, YouTube.</td><td>Social audience & engagement</td></tr>
+<tr><td>Tempest CRM</td><td>Visit Mesa's sales CRM for group leads, bookings, and room night actualization.</td><td>Sales performance</td></tr>
+<tr><td>Critical Mention</td><td>Earned media monitoring across TV, print, online, radio.</td><td>Earned media reach</td></tr>
+<tr><td>Scrunch AI</td><td>AI search result monitoring for ChatGPT, Perplexity, Google AI Overviews.</td><td>AI brand monitoring</td></tr>
+</tbody>
+</table>
+
+<div class="section-subtitle">Key Metric Definitions</div>
+<table class="data-table">
+<thead><tr><th>Term</th><th>Definition</th></tr></thead>
+<tbody>
+<tr><td>ADR</td><td>Average revenue earned per occupied hotel room per night.</td></tr>
+<tr><td>RevPAR</td><td>Total room revenue divided by total available rooms. Combines occupancy and rate.</td></tr>
+<tr><td>Occupancy Rate</td><td>Percentage of available rooms sold in a given period.</td></tr>
+<tr><td>ROAS</td><td>Revenue generated for every $1 spent on advertising.</td></tr>
+<tr><td>Room Nights</td><td>Total rooms occupied × number of nights. One guest, 3 nights = 3 room nights.</td></tr>
+<tr><td>Overnight Trip Share</td><td>% of trips with at least one overnight stay (vs. day trips), among 50+ mile visitors.</td></tr>
+<tr><td>Overnight Leakage</td><td>Day trips to Mesa preceded or followed by an overnight stay in a different market. Represents demand Mesa attracts but doesn't capture.</td></tr>
+<tr><td>Search-to-Booking Rate</td><td>% of VisitMesa.com visitors who complete a travel booking (ADARA).</td></tr>
+<tr><td>CTR</td><td>Percentage of ad impressions that resulted in a click.</td></tr>
+<tr><td>Engagement Rate (Website)</td><td>% of sessions lasting >10 seconds, with a conversion event, or 2+ page views (GA4).</td></tr>
+<tr><td>VCR</td><td>Video Completion Rate — % of video ad starts that play to completion.</td></tr>
+<tr><td>FYTD</td><td>Fiscal Year to Date. Visit Mesa's fiscal year starts July 1.</td></tr>
+</tbody>
+</table>
+</div>
+
+</div><!-- /content -->
+
+<!-- ==================== FOOTER ==================== -->
+<div class="report-footer">
+<strong>Report prepared by Visit Mesa | Destination Sales & Marketing | Confidential</strong><br>
+Sources: STR, KeyData, CoStar, Placer.ai, GA4, Google Search Console, ADARA, DV360, Meta, Sprout Social, Tempest, Critical Mention, Scrunch AI, Tourism Economics, US Travel Association<br><br>
+<span style="font-size:11px;color:#fff;">This report was generated with the assistance of AI. All context provided by Visit Mesa, with human review.</span>
+</div>
+
+</div><!-- /page -->
+
+</body>
+</html>
