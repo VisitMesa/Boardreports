@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visit Mesa Board Reports Archive</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    :root {
+      --teal: #007B8A;
+      --teal-dark: #005f6b;
+      --navy: #1e3a5f;
+      --gold: #F5C518;
+      --ink: #1A1A1A;
+      --muted: #666;
+      --soft: #f4f7f8;
+      --line: #d9e3e5;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(145deg, #f7f7f3 0%, #eef6f7 55%, #ffffff 100%);
+      line-height: 1.6;
+    }
+
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--teal) 64%, #00b4cc 100%);
+      color: var(--white);
+      padding: 72px 24px 64px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      opacity: 0.82;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(36px, 7vw, 68px);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 22px auto 0;
+      font-size: 17px;
+      opacity: 0.88;
+    }
+
+    .divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin: 28px 0 0;
+    }
+
+    .divider span:nth-child(1),
+    .divider span:nth-child(3) {
+      width: 72px;
+      height: 2px;
+      background: rgba(255,255,255,0.38);
+    }
+
+    .divider span:nth-child(2) {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    main {
+      width: min(1040px, calc(100% - 40px));
+      margin: -34px auto 60px;
+    }
+
+    .archive-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 20px;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.10);
+      overflow: hidden;
+    }
+
+    .archive-header {
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+    }
+
+    .archive-header h2 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+      color: var(--teal-dark);
+    }
+
+    .archive-header p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #fff7d6;
+      color: #725800;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      white-space: nowrap;
+    }
+
+    .reports {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      padding: 28px 32px 34px;
+      background: var(--soft);
+    }
+
+    .report-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .report-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 34px rgba(0, 123, 138, 0.16);
+      border-color: var(--teal);
+    }
+
+    .month {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--ink);
+      margin: 0 0 4px;
+    }
+
+    .meta {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .description {
+      margin: 0;
+      color: #444;
+      font-size: 14px;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--teal);
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .note {
+      margin: 18px 32px 30px;
+      padding: 14px 18px;
+      border-left: 4px solid var(--teal);
+      background: #edf8fa;
+      border-radius: 0 10px 10px 0;
+      color: #345;
+      font-size: 13px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 0 24px 44px;
+    }
+
+    @media (max-width: 700px) {
+      .archive-header {
+        display: block;
+        padding: 24px;
+      }
+
+      .tag {
+        margin-top: 16px;
+      }
+
+      .reports {
+        padding: 22px;
+      }
+
+      .note {
+        margin: 10px 22px 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">Visit Mesa</p>
+    <h1>Board Reports</h1>
+    <div class="divider"><span></span><span></span><span></span></div>
+    <p>A monthly archive of destination marketing, lodging, sales, visitation, and digital performance reports.</p>
+  </header>
+
+  <main>
+    <section class="archive-card" aria-labelledby="archive-title">
+      <div class="archive-header">
+        <div>
+          <h2 id="archive-title">Monthly Archive</h2>
+          <p>Select a report below to open the full HTML version.</p>
+        </div>
+        <span class="tag">FY2026</span>
+      </div>
+
+      <div class="reports">
+        <a class="report-link" href="reports/Visit-Mesa-Board-Report-April-2026.html">
+          <h3 class="month">April 2026</h3>
+          <p class="meta">Monthly Board Report</p>
+          <p class="description">Destination marketing performance report covering visitation, lodging, sales, paid media, social, SEO, earned media, and website attribution.</p>
+          <span class="cta">Open report</span>
+        </a>
+
+        <a class="report-link" href="Visit-Mesa-Board-Report-February-2026.html">
+          <h3 class="month">February 2026</h3>
+          <p class="meta">Monthly Board Report</p>
+          <p class="description">Previously uploaded board report, currently stored at the root of this repository.</p>
+          <span class="cta">Open report</span>
+        </a>
+      </div>
+
+      <div class="note">
+        Future monthly reports should be added to the <strong>reports</strong> folder, then linked from this page.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Visit Mesa | Board Reports Archive
+  </footer>
+</body>
+</html>
