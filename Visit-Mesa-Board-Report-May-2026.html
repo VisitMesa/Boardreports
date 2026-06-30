@@ -391,6 +391,52 @@
   @media print {
     .page-header { position: static; }
   }
+
+  .section-jump {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 18px;
+  }
+  .section-jump label {
+    color: rgba(255,255,255,0.82);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .section-jump select {
+    appearance: none;
+    background: #ffffff;
+    color: #1e3a5f;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 999px;
+    padding: 7px 30px 7px 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    max-width: 260px;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 50%, #007B8A 50%), linear-gradient(135deg, #007B8A 50%, transparent 50%);
+    background-position: calc(100% - 16px) 50%, calc(100% - 10px) 50%;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+  }
+  .section-jump select:focus {
+    outline: 2px solid #F5C518;
+    outline-offset: 2px;
+  }
+  html { scroll-behavior: smooth; }
+  .section { scroll-margin-top: 88px; }
+  @media (max-width: 680px) {
+    .page-header { align-items: flex-start; flex-direction: column; gap: 10px; }
+    .section-jump { margin-left: 0; width: 100%; }
+    .section-jump select { max-width: none; width: 100%; }
+  }
+  @media print {
+    .section-jump { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -532,11 +578,11 @@
 </g>
 </svg>
 <div class="page-header-title">Board Report — May 2026</div>
-</div>
+<div class="section-jump"><label for="sectionJump">Jump to</label><select aria-label="Jump to report section" id="sectionJump" onchange="if (this.value) { document.querySelector(this.value).scrollIntoView({behavior: 'smooth'}); this.selectedIndex = 0; }"><option value="">Select section</option><option value="#executive-summary">Executive Summary</option><option value="#team-community-highlights">Team &amp; Community Highlights</option><option value="#sales-performance">Sales Performance</option><option value="#marketing-website-attribution-ota-room-nights-fytd">Marketing Website Attribution &amp; OTA Room Nights — FYTD</option><option value="#lodging-performance">Lodging Performance</option><option value="#visitation-travel-trends">Visitation &amp; Travel Trends</option><option value="#visitor-profile">Visitor Profile</option><option value="#market-recap">Market Recap</option><option value="#digital-marketing-paid">Digital Marketing — Paid</option><option value="#digital-marketing-social-seo-earned-media">Digital Marketing — Social, SEO &amp; Earned Media</option><option value="#glossary">Glossary</option></select></div></div>
 <!-- ============ CONTENT ============ -->
 <div class="content">
 <!-- ============ EXECUTIVE SUMMARY ============ -->
-<div class="section">
+<div class="section" id="executive-summary">
 <div class="section-title">Executive Summary</div>
 <div class="insight-box">
 <strong>May 2026 headline:</strong> Mesa closed May with record hotel demand, near-record social audience growth, and a landmark FIFA World Cup announcement — confirming the destination's rising national profile heading into summer.
@@ -642,7 +688,7 @@
       </div>
 </div>
 <!-- ============ TEAM & COMMUNITY HIGHLIGHTS ============ -->
-<div class="section">
+<div class="section" id="team-community-highlights">
 <div class="section-title">Team &amp; Community Highlights</div>
 <div class="section-subtitle">May 2026 Moments</div>
 <ul class="highlight-list">
@@ -655,7 +701,7 @@
 </ul>
 </div>
 <!-- ============ SALES PERFORMANCE ============ -->
-<div class="section">
+<div class="section" id="sales-performance">
 <div class="section-title">Sales Performance</div>
 <div class="source-tag">Source: Visit Mesa CRM System (Tempest) · As of June 18, 2026</div>
 <div class="kpi-grid">
@@ -772,7 +818,7 @@
 </table>
 </div>
 <!-- ============ MARKETING ATTRIBUTION & OTA ROOM NIGHTS ============ -->
-<div class="section">
+<div class="section" id="marketing-website-attribution-ota-room-nights-fytd">
 <div class="section-title">Marketing Website Attribution &amp; OTA Room Nights — FYTD</div>
 <div class="source-tag">Source: Tempest Pickup History Detail · July 1, 2025-May 31, 2026 · ADARA website attribution + Expedia OTA campaigns</div>
 <div class="kpi-grid">
@@ -800,7 +846,7 @@
 <div class="insight-box">
 <strong>FYTD marketing attribution adds 20,659 room nights</strong> beyond the core sales production view, with ADARA accounting for 63% of attributed campaign room nights and Expedia OTA campaigns contributing the remaining 37%. Combined economic impact actualized is <strong>$7.13M</strong>, reinforcing the need to view marketing-attributed lodging production alongside group sales activity.
       </div>
-</div><div class="section">
+</div><div class="section" id="lodging-performance">
 <div class="section-title">Lodging Performance</div>
 <div class="section-subtitle">Aggregate Lodging — City of Mesa</div>
 <div class="source-tag">Source: STR &amp; KeyData · City of Mesa, AZ submarket</div>
@@ -973,8 +1019,7 @@
 <div class="source-tag">Note: Monthly trend reflects STR values available in this report (Mar-May); FYTD average is shown as a benchmark.</div>
 </div>
 <!-- ============ VISITATION & TRAVEL TRENDS ============ -->
-
-<div class="section">
+<div class="section" id="visitation-travel-trends">
 <div class="section-title">Visitation &amp; Travel Trends</div>
 <div class="section-subtitle">Visitor Volume — Last 12 Months (Jun 2025–May 2026)</div>
 <div class="source-tag">Source: Placer.ai · 50+ mile visitor filter · Domestic Travel &amp; Tourism Report</div>
@@ -1121,7 +1166,7 @@
 </ul>
 </div>
 <!-- ============ VISITOR PROFILE ============ -->
-<div class="section">
+<div class="section" id="visitor-profile">
 <div class="section-title">Visitor Profile</div>
 <div class="section-subtitle">May 2026 Domestic Visits</div>
 <div class="source-tag">Source: Azira / Symphony · U.S. Census Bureau · Placer.ai · 50+ mile filter</div>
@@ -1193,7 +1238,7 @@
 <div class="insight-box">
         Mesa's visitor profile skews toward high-income, experienced travelers — with 22% earning $150K+ and 88% overnighting. This premium visitor profile supports the continued investment in upscale product development, including the opening of Unscripted 233 in May.
       </div>
-</div><div class="section">
+</div><div class="section" id="market-recap">
 <div class="section-title">Market Recap</div>
 <div class="section-subtitle">Leisure &amp; Hospitality Workforce</div>
 <div class="source-tag">Source: Bureau of Labor Statistics · Phoenix-Mesa-Scottsdale MSA</div>
@@ -1223,9 +1268,8 @@
 </div>
 <!-- ============ MARKET RECAP ============ -->
 <!-- ============ LODGING PERFORMANCE ============ -->
-
 <!-- ============ DIGITAL MARKETING — PAID ============ -->
-<div class="section">
+<div class="section" id="digital-marketing-paid">
 <div class="section-title">Digital Marketing — Paid</div>
 <div class="section-subtitle">DV360 Programmatic — Out-of-State Feeder Markets</div>
 <div class="source-tag">Source: Google Display &amp; Video 360 · May 1–31, 2026 · Pre-roll + Display campaign</div>
@@ -1440,7 +1484,7 @@
       </div>
 </div>
 <!-- ============ DIGITAL MARKETING — SOCIAL / SEO / EARNED ============ -->
-<div class="section">
+<div class="section" id="digital-marketing-social-seo-earned-media">
 <div class="section-title">Digital Marketing — Social, SEO &amp; Earned Media</div>
 <div class="section-subtitle">Social Media Overview — May 2026</div>
 <div class="source-tag">Source: Sprout Social · Facebook, Instagram, TikTok, LinkedIn, YouTube</div>
@@ -1672,7 +1716,7 @@
 <!-- ============ WEBSITE ATTRIBUTION & OTAs ============ -->
 <div class="section">
 <!-- ============ GLOSSARY ============ -->
-<div class="section">
+<div class="section" id="glossary">
 <div class="section-title">Glossary</div>
 <div class="section-subtitle">Data Sources</div>
 <table class="glossary-table">
