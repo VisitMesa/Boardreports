@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Visit Mesa Board Report — May 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -394,14 +395,13 @@
 </head>
 <body>
 <div class="page">
-
-  <!-- ============ COVER ============ -->
-  <div class="cover">
-    <div class="cover-logo">
-      <!-- Visit Mesa Logo - official supplied artwork -->
-      <svg class="visit-mesa-logo cover-brand-logo" width="220" aria-label="Visit Mesa City Limitless logo" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 307.4 95.6">
-        <defs>
-          <style>
+<!-- ============ COVER ============ -->
+<div class="cover">
+<div class="cover-logo">
+<!-- Visit Mesa Logo - official supplied artwork -->
+<svg aria-label="Visit Mesa City Limitless logo" class="visit-mesa-logo cover-brand-logo" role="img" viewbox="0 0 307.4 95.6" width="220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
             .cls-1 {
               fill: #f36e21;
             }
@@ -422,59 +422,58 @@
               fill: #336195;
             }
           </style>
-        </defs>
-        <g>
-          <polygon class="cls-1" points="137.4 21.9 136.8 21.9 146.3 49.8 146.8 49.9 146.6 33.5 137.4 21.9"/>
-          <polygon class="cls-5" points="148.3 36.4 156.7 24.9 157.5 24.9 149.1 52.3 148.5 52.8 148.3 36.4"/>
-          <polygon class="cls-4" points="141.5 41 129.8 50.7 128.9 50.7 135.5 24.7 136.2 24.6 141.5 41"/>
-          <polygon class="cls-2" points="155.1 38.1 170.8 52.5 171.6 52.6 160.2 23.6 159.5 23.6 155.1 38.1"/>
-        </g>
-        <g>
-          <g>
-            <path class="cls-3" d="M29.7,47.3l-9.4-18.9c-.1-.3-.2-.5-.2-.7,0-.7.4-1.2,1.3-1.2h2.2c.8,0,1.3.3,1.6.9l7.4,15.6,7.4-15.6c.3-.6.8-.9,1.6-.9h2.2c.8,0,1.3.6,1.3,1.2,0,.2,0,.5-.2.7l-9.4,18.9c-.3.6-.8.9-1.6.9h-2.6c-.8,0-1.3-.3-1.6-.9"/>
-            <path class="cls-3" d="M49.6,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"/>
-            <path class="cls-3" d="M71.3,44.2c3,0,5.8-.8,5.8-2.7,0-1.6-1.9-2-6.1-2.4-6.7-.5-10.5-2-10.5-6s4-7,10.3-7c4.7,0,8,1.6,9.2,2.6.6.4.9.9.9,1.6,0,.5-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5-.3,0-.7-.1-1-.4-2.2-1.4-4.4-2.1-6.9-2.1-2.7,0-5.5.9-5.5,2.4,0,1.4,2.5,1.8,5.7,2,6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4c-4.4,0-8.2-1.3-10.6-3.2-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7.1,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"/>
-            <path class="cls-3" d="M87.4,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"/>
-            <path class="cls-3" d="M110.9,46.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-15.9h-8.3c-.9,0-1.4-.5-1.4-1.4v-1.5c0-.8.5-1.4,1.4-1.4h21.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-8.3s0,15.9,0,15.9Z"/>
-            <path class="cls-3" d="M190.7,43.7l-6.7-8.7v11.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-18.9c0-.8.6-1.4,1.4-1.4h1.6c.9,0,1.3.3,1.9,1l8.1,10.5,8.2-10.5c.6-.7,1-1,1.9-1h1.6c.8,0,1.4.6,1.4,1.4v18.8c0,.9-.6,1.4-1.4,1.4h-2c-.9,0-1.4-.5-1.4-1.4v-11.7l-6.7,8.7c-.4.5-.8.8-1.6.8-.6.1-1-.3-1.5-.8"/>
-            <path class="cls-3" d="M212.5,46.8v-18.9c0-.8.6-1.4,1.4-1.4h18.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-15v4.2h10.7c.9,0,1.4.6,1.4,1.4v1.6c0,.9-.5,1.4-1.4,1.4h-10.7v4.4h15c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-18.4c-.8.1-1.4-.4-1.4-1.3"/>
-            <path class="cls-3" d="M248.8,44.2c3,0,5.8-.8,5.8-2.7,0-1.6-1.9-2-6.1-2.4-6.7-.5-10.5-2-10.5-6s4-7,10.3-7c4.7,0,8,1.6,9.2,2.6.6.4.9.9.9,1.6,0,.5-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5-.3,0-.7-.1-1-.4-2.2-1.4-4.4-2.1-6.9-2.1-2.7,0-5.5.9-5.5,2.4,0,1.4,2.5,1.8,5.7,2,6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4c-4.4,0-8.2-1.3-10.6-3.2-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7.1,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"/>
-            <path class="cls-3" d="M278.6,39.6l-3.7-7.9-3.8,7.9h7.5ZM277.7,27.4l9.4,18.9c.1.3.2.5.2.8,0,.7-.5,1.2-1.3,1.2h-2.2c-.8,0-1.3-.3-1.6-.9l-1.6-3.4h-11.6l-1.6,3.4c-.3.6-.8.9-1.6.9h-2.2c-.8,0-1.3-.5-1.3-1.2,0-.3.1-.5.2-.8l9.4-18.9c.3-.6.8-.9,1.6-.9h2.6c.8,0,1.3.3,1.6.9"/>
-            <path class="cls-3" d="M92.2,63.8l-.7,1.8c-.8-.4-1.6-.6-2.5-.6s-1.8.3-2.5.9-1,1.4-1,2.5c0,.7.2,1.4.5,1.9.7,1,1.8,1.4,3,1.4.9,0,1.7-.2,2.4-.6l.8,1.8c-1.1.5-2.2.8-3.3.8-3,0-5.6-1.8-5.6-5.2,0-1.6.5-2.9,1.6-3.9,1-1,2.4-1.5,3.9-1.5,1.2-.1,2.3.2,3.4.7"/>
-          </g>
-          <rect class="cls-3" x="96.2" y="63.2" width="2.1" height="10.2"/>
-          <polygon class="cls-3" points="101.4 63.2 101.4 65.2 104.7 65.2 104.7 73.4 106.9 73.4 106.9 65.2 110.2 65.2 110.2 63.2 101.4 63.2"/>
-          <polygon class="cls-3" points="120.6 63.2 117.8 67.4 115.1 63.2 112.5 63.2 116.6 69.4 116.6 73.4 119 73.4 119 69.5 123.2 63.2 120.6 63.2"/>
-          <polygon class="cls-3" points="133 63.2 133 73.4 140.2 73.4 140.2 71.5 135.2 71.5 135.2 63.2 133 63.2"/>
-          <rect class="cls-3" x="143.3" y="63.2" width="2.1" height="10.2"/>
-          <polygon class="cls-3" points="159.7 63.2 155.7 68.5 151.8 63.2 149.7 63.2 149.7 73.4 151.9 73.4 151.9 66.8 155.7 71.9 159.5 66.8 159.5 73.4 161.7 73.4 161.7 63.2 159.7 63.2"/>
-          <rect class="cls-3" x="166" y="63.2" width="2.1" height="10.2"/>
-          <polygon class="cls-3" points="171.2 63.2 171.2 65.2 174.5 65.2 174.5 73.4 176.7 73.4 176.7 65.2 180 65.2 180 63.2 171.2 63.2"/>
-          <polygon class="cls-3" points="183.1 63.2 183.1 73.4 190.3 73.4 190.3 71.5 185.3 71.5 185.3 63.2 183.1 63.2"/>
-          <polygon class="cls-3" points="193.4 63.2 193.4 73.4 201.1 73.4 201.1 71.5 195.6 71.5 195.6 69.2 199.5 69.2 199.5 67.4 195.6 67.4 195.6 65.2 200.8 65.2 200.8 63.2 193.4 63.2"/>
-          <g>
-            <path class="cls-3" d="M211.9,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7-1.1,0-1.8.4-1.8,1,0,.3.2.5.6.7.2.1.6.2.9.3.3.1.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9,0,1.1-.4,1.9-1.2,2.4-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9,1.3,0,2-.5,2.1-1.2,0-.4-.2-.6-.6-.8-.2-.1-.4-.2-.6-.2-.2-.1-.4-.1-.8-.2-.3-.1-.6-.1-.8-.2-1.9-.5-3-1.3-3-2.9,0-.7.2-1.3.6-1.8.8-1,2-1.3,3.5-1.3,1.1.1,2.1.3,3.2.8"/>
-            <path class="cls-3" d="M223.2,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7-1.1,0-1.8.4-1.8,1,0,.3.2.5.6.7.2.1.6.2.9.3.3.1.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9,0,1.1-.4,1.9-1.2,2.4-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9,1.3,0,2-.5,2.1-1.2,0-.4-.2-.6-.6-.8-.2-.1-.4-.2-.6-.2-.2-.1-.4-.1-.8-.2-.3-.1-.6-.1-.8-.2-1.9-.5-3-1.3-3-2.9,0-.7.2-1.3.6-1.8.8-1,2-1.3,3.5-1.3,1,.1,2.1.3,3.2.8"/>
-            <path class="cls-3" d="M227.2,64.4v.8h.3c.3,0,.5-.1.5-.4,0-.2-.2-.4-.5-.4h-.3M228.4,64.8c0,.3-.1.5-.3.6l.3.6h-.4l-.2-.5h-.5v.5h-.4v-1.9h.7c.4-.1.8.2.8.7M226.6,64c-.3.3-.4.6-.4,1s.1.7.4,1c.3.3.6.4,1,.4s.7-.1,1-.4.4-.6.4-1-.1-.7-.4-1c-.3-.3-.6-.4-1-.4s-.8.2-1,.4M228.8,63.8c.4.3.5.8.5,1.3s-.2.9-.5,1.3c-.4.4-.8.5-1.3.5s-.9-.2-1.3-.5c-.4-.4-.5-.8-.5-1.3s.2-.9.5-1.3c.4-.4.8-.5,1.3-.5.5-.1,1,.1,1.3.5"/>
-          </g>
-        </g>
-      </svg>
-    </div>
-    <div class="cover-subtitle">Monthly Board Report</div>
-    <h1>Destination Marketing<br>Performance Report</h1>
-    <div class="cover-divider">
-      <div class="cover-divider-line"></div>
-      <div class="cover-divider-dot"></div>
-      <div class="cover-divider-line"></div>
-    </div>
-    <div class="cover-date">May 2026</div>
-  </div>
-
-  <!-- ============ STICKY HEADER ============ -->
-  <div class="page-header">
-    <svg class="visit-mesa-logo header-brand-logo" width="150" aria-label="Visit Mesa City Limitless logo" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 307.4 95.6">
-      <defs>
-        <style>
+</defs>
+<g>
+<polygon class="cls-1" points="137.4 21.9 136.8 21.9 146.3 49.8 146.8 49.9 146.6 33.5 137.4 21.9"></polygon>
+<polygon class="cls-5" points="148.3 36.4 156.7 24.9 157.5 24.9 149.1 52.3 148.5 52.8 148.3 36.4"></polygon>
+<polygon class="cls-4" points="141.5 41 129.8 50.7 128.9 50.7 135.5 24.7 136.2 24.6 141.5 41"></polygon>
+<polygon class="cls-2" points="155.1 38.1 170.8 52.5 171.6 52.6 160.2 23.6 159.5 23.6 155.1 38.1"></polygon>
+</g>
+<g>
+<g>
+<path class="cls-3" d="M29.7,47.3l-9.4-18.9c-.1-.3-.2-.5-.2-.7,0-.7.4-1.2,1.3-1.2h2.2c.8,0,1.3.3,1.6.9l7.4,15.6,7.4-15.6c.3-.6.8-.9,1.6-.9h2.2c.8,0,1.3.6,1.3,1.2,0,.2,0,.5-.2.7l-9.4,18.9c-.3.6-.8.9-1.6.9h-2.6c-.8,0-1.3-.3-1.6-.9"></path>
+<path class="cls-3" d="M49.6,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"></path>
+<path class="cls-3" d="M71.3,44.2c3,0,5.8-.8,5.8-2.7,0-1.6-1.9-2-6.1-2.4-6.7-.5-10.5-2-10.5-6s4-7,10.3-7c4.7,0,8,1.6,9.2,2.6.6.4.9.9.9,1.6,0,.5-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5-.3,0-.7-.1-1-.4-2.2-1.4-4.4-2.1-6.9-2.1-2.7,0-5.5.9-5.5,2.4,0,1.4,2.5,1.8,5.7,2,6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4c-4.4,0-8.2-1.3-10.6-3.2-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7.1,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"></path>
+<path class="cls-3" d="M87.4,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"></path>
+<path class="cls-3" d="M110.9,46.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-15.9h-8.3c-.9,0-1.4-.5-1.4-1.4v-1.5c0-.8.5-1.4,1.4-1.4h21.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-8.3s0,15.9,0,15.9Z"></path>
+<path class="cls-3" d="M190.7,43.7l-6.7-8.7v11.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-18.9c0-.8.6-1.4,1.4-1.4h1.6c.9,0,1.3.3,1.9,1l8.1,10.5,8.2-10.5c.6-.7,1-1,1.9-1h1.6c.8,0,1.4.6,1.4,1.4v18.8c0,.9-.6,1.4-1.4,1.4h-2c-.9,0-1.4-.5-1.4-1.4v-11.7l-6.7,8.7c-.4.5-.8.8-1.6.8-.6.1-1-.3-1.5-.8"></path>
+<path class="cls-3" d="M212.5,46.8v-18.9c0-.8.6-1.4,1.4-1.4h18.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-15v4.2h10.7c.9,0,1.4.6,1.4,1.4v1.6c0,.9-.5,1.4-1.4,1.4h-10.7v4.4h15c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-18.4c-.8.1-1.4-.4-1.4-1.3"></path>
+<path class="cls-3" d="M248.8,44.2c3,0,5.8-.8,5.8-2.7,0-1.6-1.9-2-6.1-2.4-6.7-.5-10.5-2-10.5-6s4-7,10.3-7c4.7,0,8,1.6,9.2,2.6.6.4.9.9.9,1.6,0,.5-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5-.3,0-.7-.1-1-.4-2.2-1.4-4.4-2.1-6.9-2.1-2.7,0-5.5.9-5.5,2.4,0,1.4,2.5,1.8,5.7,2,6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4c-4.4,0-8.2-1.3-10.6-3.2-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7.1,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"></path>
+<path class="cls-3" d="M278.6,39.6l-3.7-7.9-3.8,7.9h7.5ZM277.7,27.4l9.4,18.9c.1.3.2.5.2.8,0,.7-.5,1.2-1.3,1.2h-2.2c-.8,0-1.3-.3-1.6-.9l-1.6-3.4h-11.6l-1.6,3.4c-.3.6-.8.9-1.6.9h-2.2c-.8,0-1.3-.5-1.3-1.2,0-.3.1-.5.2-.8l9.4-18.9c.3-.6.8-.9,1.6-.9h2.6c.8,0,1.3.3,1.6.9"></path>
+<path class="cls-3" d="M92.2,63.8l-.7,1.8c-.8-.4-1.6-.6-2.5-.6s-1.8.3-2.5.9-1,1.4-1,2.5c0,.7.2,1.4.5,1.9.7,1,1.8,1.4,3,1.4.9,0,1.7-.2,2.4-.6l.8,1.8c-1.1.5-2.2.8-3.3.8-3,0-5.6-1.8-5.6-5.2,0-1.6.5-2.9,1.6-3.9,1-1,2.4-1.5,3.9-1.5,1.2-.1,2.3.2,3.4.7"></path>
+</g>
+<rect class="cls-3" height="10.2" width="2.1" x="96.2" y="63.2"></rect>
+<polygon class="cls-3" points="101.4 63.2 101.4 65.2 104.7 65.2 104.7 73.4 106.9 73.4 106.9 65.2 110.2 65.2 110.2 63.2 101.4 63.2"></polygon>
+<polygon class="cls-3" points="120.6 63.2 117.8 67.4 115.1 63.2 112.5 63.2 116.6 69.4 116.6 73.4 119 73.4 119 69.5 123.2 63.2 120.6 63.2"></polygon>
+<polygon class="cls-3" points="133 63.2 133 73.4 140.2 73.4 140.2 71.5 135.2 71.5 135.2 63.2 133 63.2"></polygon>
+<rect class="cls-3" height="10.2" width="2.1" x="143.3" y="63.2"></rect>
+<polygon class="cls-3" points="159.7 63.2 155.7 68.5 151.8 63.2 149.7 63.2 149.7 73.4 151.9 73.4 151.9 66.8 155.7 71.9 159.5 66.8 159.5 73.4 161.7 73.4 161.7 63.2 159.7 63.2"></polygon>
+<rect class="cls-3" height="10.2" width="2.1" x="166" y="63.2"></rect>
+<polygon class="cls-3" points="171.2 63.2 171.2 65.2 174.5 65.2 174.5 73.4 176.7 73.4 176.7 65.2 180 65.2 180 63.2 171.2 63.2"></polygon>
+<polygon class="cls-3" points="183.1 63.2 183.1 73.4 190.3 73.4 190.3 71.5 185.3 71.5 185.3 63.2 183.1 63.2"></polygon>
+<polygon class="cls-3" points="193.4 63.2 193.4 73.4 201.1 73.4 201.1 71.5 195.6 71.5 195.6 69.2 199.5 69.2 199.5 67.4 195.6 67.4 195.6 65.2 200.8 65.2 200.8 63.2 193.4 63.2"></polygon>
+<g>
+<path class="cls-3" d="M211.9,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7-1.1,0-1.8.4-1.8,1,0,.3.2.5.6.7.2.1.6.2.9.3.3.1.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9,0,1.1-.4,1.9-1.2,2.4-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9,1.3,0,2-.5,2.1-1.2,0-.4-.2-.6-.6-.8-.2-.1-.4-.2-.6-.2-.2-.1-.4-.1-.8-.2-.3-.1-.6-.1-.8-.2-1.9-.5-3-1.3-3-2.9,0-.7.2-1.3.6-1.8.8-1,2-1.3,3.5-1.3,1.1.1,2.1.3,3.2.8"></path>
+<path class="cls-3" d="M223.2,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7-1.1,0-1.8.4-1.8,1,0,.3.2.5.6.7.2.1.6.2.9.3.3.1.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9,0,1.1-.4,1.9-1.2,2.4-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9,1.3,0,2-.5,2.1-1.2,0-.4-.2-.6-.6-.8-.2-.1-.4-.2-.6-.2-.2-.1-.4-.1-.8-.2-.3-.1-.6-.1-.8-.2-1.9-.5-3-1.3-3-2.9,0-.7.2-1.3.6-1.8.8-1,2-1.3,3.5-1.3,1,.1,2.1.3,3.2.8"></path>
+<path class="cls-3" d="M227.2,64.4v.8h.3c.3,0,.5-.1.5-.4,0-.2-.2-.4-.5-.4h-.3M228.4,64.8c0,.3-.1.5-.3.6l.3.6h-.4l-.2-.5h-.5v.5h-.4v-1.9h.7c.4-.1.8.2.8.7M226.6,64c-.3.3-.4.6-.4,1s.1.7.4,1c.3.3.6.4,1,.4s.7-.1,1-.4.4-.6.4-1-.1-.7-.4-1c-.3-.3-.6-.4-1-.4s-.8.2-1,.4M228.8,63.8c.4.3.5.8.5,1.3s-.2.9-.5,1.3c-.4.4-.8.5-1.3.5s-.9-.2-1.3-.5c-.4-.4-.5-.8-.5-1.3s.2-.9.5-1.3c.4-.4.8-.5,1.3-.5.5-.1,1,.1,1.3.5"></path>
+</g>
+</g>
+</svg>
+</div>
+<div class="cover-subtitle">Monthly Board Report</div>
+<h1>Destination Marketing<br/>Performance Report</h1>
+<div class="cover-divider">
+<div class="cover-divider-line"></div>
+<div class="cover-divider-dot"></div>
+<div class="cover-divider-line"></div>
+</div>
+<div class="cover-date">May 2026</div>
+</div>
+<!-- ============ STICKY HEADER ============ -->
+<div class="page-header">
+<svg aria-label="Visit Mesa City Limitless logo" class="visit-mesa-logo header-brand-logo" role="img" viewbox="0 0 307.4 95.6" width="150" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
           .cls-1 {
             fill: #f36e21;
           }
@@ -495,1307 +494,1241 @@
             fill: #336195;
           }
         </style>
-      </defs>
-      <g>
-        <polygon class="cls-1" points="137.4 21.9 136.8 21.9 146.3 49.8 146.8 49.9 146.6 33.5 137.4 21.9"/>
-        <polygon class="cls-5" points="148.3 36.4 156.7 24.9 157.5 24.9 149.1 52.3 148.5 52.8 148.3 36.4"/>
-        <polygon class="cls-4" points="141.5 41 129.8 50.7 128.9 50.7 135.5 24.7 136.2 24.6 141.5 41"/>
-        <polygon class="cls-2" points="155.1 38.1 170.8 52.5 171.6 52.6 160.2 23.6 159.5 23.6 155.1 38.1"/>
-      </g>
-      <g>
-        <g>
-          <path class="cls-3" d="M29.7,47.3l-9.4-18.9c-.1-.3-.2-.5-.2-.7,0-.7.4-1.2,1.3-1.2h2.2c.8,0,1.3.3,1.6.9l7.4,15.6,7.4-15.6c.3-.6.8-.9,1.6-.9h2.2c.8,0,1.3.6,1.3,1.2,0,.2,0,.5-.2.7l-9.4,18.9c-.3.6-.8.9-1.6.9h-2.6c-.8,0-1.3-.3-1.6-.9"/>
-          <path class="cls-3" d="M49.6,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"/>
-          <path class="cls-3" d="M71.3,44.2c3,0,5.8-.8,5.8-2.7,0-1.6-1.9-2-6.1-2.4-6.7-.5-10.5-2-10.5-6s4-7,10.3-7c4.7,0,8,1.6,9.2,2.6.6.4.9.9.9,1.6,0,.5-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5-.3,0-.7-.1-1-.4-2.2-1.4-4.4-2.1-6.9-2.1-2.7,0-5.5.9-5.5,2.4,0,1.4,2.5,1.8,5.7,2,6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4c-4.4,0-8.2-1.3-10.6-3.2-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7.1,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"/>
-          <path class="cls-3" d="M87.4,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"/>
-          <path class="cls-3" d="M110.9,46.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-15.9h-8.3c-.9,0-1.4-.5-1.4-1.4v-1.5c0-.8.5-1.4,1.4-1.4h21.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-8.3s0,15.9,0,15.9Z"/>
-          <path class="cls-3" d="M190.7,43.7l-6.7-8.7v11.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-18.9c0-.8.6-1.4,1.4-1.4h1.6c.9,0,1.3.3,1.9,1l8.1,10.5,8.2-10.5c.6-.7,1-1,1.9-1h1.6c.8,0,1.4.6,1.4,1.4v18.8c0,.9-.6,1.4-1.4,1.4h-2c-.9,0-1.4-.5-1.4-1.4v-11.7l-6.7,8.7c-.4.5-.8.8-1.6.8-.6.1-1-.3-1.5-.8"/>
-          <path class="cls-3" d="M212.5,46.8v-18.9c0-.8.6-1.4,1.4-1.4h18.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-15v4.2h10.7c.9,0,1.4.6,1.4,1.4v1.6c0,.9-.5,1.4-1.4,1.4h-10.7v4.4h15c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-18.4c-.8.1-1.4-.4-1.4-1.3"/>
-          <path class="cls-3" d="M248.8,44.2c3,0,5.8-.8,5.8-2.7,0-1.6-1.9-2-6.1-2.4-6.7-.5-10.5-2-10.5-6s4-7,10.3-7c4.7,0,8,1.6,9.2,2.6.6.4.9.9.9,1.6,0,.5-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5-.3,0-.7-.1-1-.4-2.2-1.4-4.4-2.1-6.9-2.1-2.7,0-5.5.9-5.5,2.4,0,1.4,2.5,1.8,5.7,2,6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4c-4.4,0-8.2-1.3-10.6-3.2-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7.1,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"/>
-          <path class="cls-3" d="M278.6,39.6l-3.7-7.9-3.8,7.9h7.5ZM277.7,27.4l9.4,18.9c.1.3.2.5.2.8,0,.7-.5,1.2-1.3,1.2h-2.2c-.8,0-1.3-.3-1.6-.9l-1.6-3.4h-11.6l-1.6,3.4c-.3.6-.8.9-1.6.9h-2.2c-.8,0-1.3-.5-1.3-1.2,0-.3.1-.5.2-.8l9.4-18.9c.3-.6.8-.9,1.6-.9h2.6c.8,0,1.3.3,1.6.9"/>
-          <path class="cls-3" d="M92.2,63.8l-.7,1.8c-.8-.4-1.6-.6-2.5-.6s-1.8.3-2.5.9-1,1.4-1,2.5c0,.7.2,1.4.5,1.9.7,1,1.8,1.4,3,1.4.9,0,1.7-.2,2.4-.6l.8,1.8c-1.1.5-2.2.8-3.3.8-3,0-5.6-1.8-5.6-5.2,0-1.6.5-2.9,1.6-3.9,1-1,2.4-1.5,3.9-1.5,1.2-.1,2.3.2,3.4.7"/>
-        </g>
-        <rect class="cls-3" x="96.2" y="63.2" width="2.1" height="10.2"/>
-        <polygon class="cls-3" points="101.4 63.2 101.4 65.2 104.7 65.2 104.7 73.4 106.9 73.4 106.9 65.2 110.2 65.2 110.2 63.2 101.4 63.2"/>
-        <polygon class="cls-3" points="120.6 63.2 117.8 67.4 115.1 63.2 112.5 63.2 116.6 69.4 116.6 73.4 119 73.4 119 69.5 123.2 63.2 120.6 63.2"/>
-        <polygon class="cls-3" points="133 63.2 133 73.4 140.2 73.4 140.2 71.5 135.2 71.5 135.2 63.2 133 63.2"/>
-        <rect class="cls-3" x="143.3" y="63.2" width="2.1" height="10.2"/>
-        <polygon class="cls-3" points="159.7 63.2 155.7 68.5 151.8 63.2 149.7 63.2 149.7 73.4 151.9 73.4 151.9 66.8 155.7 71.9 159.5 66.8 159.5 73.4 161.7 73.4 161.7 63.2 159.7 63.2"/>
-        <rect class="cls-3" x="166" y="63.2" width="2.1" height="10.2"/>
-        <polygon class="cls-3" points="171.2 63.2 171.2 65.2 174.5 65.2 174.5 73.4 176.7 73.4 176.7 65.2 180 65.2 180 63.2 171.2 63.2"/>
-        <polygon class="cls-3" points="183.1 63.2 183.1 73.4 190.3 73.4 190.3 71.5 185.3 71.5 185.3 63.2 183.1 63.2"/>
-        <polygon class="cls-3" points="193.4 63.2 193.4 73.4 201.1 73.4 201.1 71.5 195.6 71.5 195.6 69.2 199.5 69.2 199.5 67.4 195.6 67.4 195.6 65.2 200.8 65.2 200.8 63.2 193.4 63.2"/>
-        <g>
-          <path class="cls-3" d="M211.9,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7-1.1,0-1.8.4-1.8,1,0,.3.2.5.6.7.2.1.6.2.9.3.3.1.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9,0,1.1-.4,1.9-1.2,2.4-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9,1.3,0,2-.5,2.1-1.2,0-.4-.2-.6-.6-.8-.2-.1-.4-.2-.6-.2-.2-.1-.4-.1-.8-.2-.3-.1-.6-.1-.8-.2-1.9-.5-3-1.3-3-2.9,0-.7.2-1.3.6-1.8.8-1,2-1.3,3.5-1.3,1.1.1,2.1.3,3.2.8"/>
-          <path class="cls-3" d="M223.2,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7-1.1,0-1.8.4-1.8,1,0,.3.2.5.6.7.2.1.6.2.9.3.3.1.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9,0,1.1-.4,1.9-1.2,2.4-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9,1.3,0,2-.5,2.1-1.2,0-.4-.2-.6-.6-.8-.2-.1-.4-.2-.6-.2-.2-.1-.4-.1-.8-.2-.3-.1-.6-.1-.8-.2-1.9-.5-3-1.3-3-2.9,0-.7.2-1.3.6-1.8.8-1,2-1.3,3.5-1.3,1,.1,2.1.3,3.2.8"/>
-          <path class="cls-3" d="M227.2,64.4v.8h.3c.3,0,.5-.1.5-.4,0-.2-.2-.4-.5-.4h-.3M228.4,64.8c0,.3-.1.5-.3.6l.3.6h-.4l-.2-.5h-.5v.5h-.4v-1.9h.7c.4-.1.8.2.8.7M226.6,64c-.3.3-.4.6-.4,1s.1.7.4,1c.3.3.6.4,1,.4s.7-.1,1-.4.4-.6.4-1-.1-.7-.4-1c-.3-.3-.6-.4-1-.4s-.8.2-1,.4M228.8,63.8c.4.3.5.8.5,1.3s-.2.9-.5,1.3c-.4.4-.8.5-1.3.5s-.9-.2-1.3-.5c-.4-.4-.5-.8-.5-1.3s.2-.9.5-1.3c.4-.4.8-.5,1.3-.5.5-.1,1,.1,1.3.5"/>
-        </g>
-      </g>
-    </svg>
-    <div class="page-header-title">Board Report — May 2026</div>
-  </div>
-
-  <!-- ============ CONTENT ============ -->
-  <div class="content">
-
-    <!-- ============ EXECUTIVE SUMMARY ============ -->
-    <div class="section">
-      <div class="section-title">Executive Summary</div>
-      <div class="insight-box">
-        <strong>May 2026 headline:</strong> Mesa closed May with record hotel demand, near-record social audience growth, and a landmark FIFA World Cup announcement — confirming the destination's rising national profile heading into summer.
+</defs>
+<g>
+<polygon class="cls-1" points="137.4 21.9 136.8 21.9 146.3 49.8 146.8 49.9 146.6 33.5 137.4 21.9"></polygon>
+<polygon class="cls-5" points="148.3 36.4 156.7 24.9 157.5 24.9 149.1 52.3 148.5 52.8 148.3 36.4"></polygon>
+<polygon class="cls-4" points="141.5 41 129.8 50.7 128.9 50.7 135.5 24.7 136.2 24.6 141.5 41"></polygon>
+<polygon class="cls-2" points="155.1 38.1 170.8 52.5 171.6 52.6 160.2 23.6 159.5 23.6 155.1 38.1"></polygon>
+</g>
+<g>
+<g>
+<path class="cls-3" d="M29.7,47.3l-9.4-18.9c-.1-.3-.2-.5-.2-.7,0-.7.4-1.2,1.3-1.2h2.2c.8,0,1.3.3,1.6.9l7.4,15.6,7.4-15.6c.3-.6.8-.9,1.6-.9h2.2c.8,0,1.3.6,1.3,1.2,0,.2,0,.5-.2.7l-9.4,18.9c-.3.6-.8.9-1.6.9h-2.6c-.8,0-1.3-.3-1.6-.9"></path>
+<path class="cls-3" d="M49.6,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"></path>
+<path class="cls-3" d="M71.3,44.2c3,0,5.8-.8,5.8-2.7,0-1.6-1.9-2-6.1-2.4-6.7-.5-10.5-2-10.5-6s4-7,10.3-7c4.7,0,8,1.6,9.2,2.6.6.4.9.9.9,1.6,0,.5-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5-.3,0-.7-.1-1-.4-2.2-1.4-4.4-2.1-6.9-2.1-2.7,0-5.5.9-5.5,2.4,0,1.4,2.5,1.8,5.7,2,6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4c-4.4,0-8.2-1.3-10.6-3.2-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7.1,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"></path>
+<path class="cls-3" d="M87.4,46.8v-18.9c0-.8.6-1.4,1.4-1.4h2c.9,0,1.4.6,1.4,1.4v18.8c0,.9-.5,1.4-1.4,1.4h-2c-.8.1-1.4-.4-1.4-1.3"></path>
+<path class="cls-3" d="M110.9,46.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-15.9h-8.3c-.9,0-1.4-.5-1.4-1.4v-1.5c0-.8.5-1.4,1.4-1.4h21.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-8.3s0,15.9,0,15.9Z"></path>
+<path class="cls-3" d="M190.7,43.7l-6.7-8.7v11.8c0,.9-.5,1.4-1.4,1.4h-2c-.8,0-1.4-.5-1.4-1.4v-18.9c0-.8.6-1.4,1.4-1.4h1.6c.9,0,1.3.3,1.9,1l8.1,10.5,8.2-10.5c.6-.7,1-1,1.9-1h1.6c.8,0,1.4.6,1.4,1.4v18.8c0,.9-.6,1.4-1.4,1.4h-2c-.9,0-1.4-.5-1.4-1.4v-11.7l-6.7,8.7c-.4.5-.8.8-1.6.8-.6.1-1-.3-1.5-.8"></path>
+<path class="cls-3" d="M212.5,46.8v-18.9c0-.8.6-1.4,1.4-1.4h18.4c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-15v4.2h10.7c.9,0,1.4.6,1.4,1.4v1.6c0,.9-.5,1.4-1.4,1.4h-10.7v4.4h15c.9,0,1.4.6,1.4,1.4v1.5c0,.9-.5,1.4-1.4,1.4h-18.4c-.8.1-1.4-.4-1.4-1.3"></path>
+<path class="cls-3" d="M248.8,44.2c3,0,5.8-.8,5.8-2.7,0-1.6-1.9-2-6.1-2.4-6.7-.5-10.5-2-10.5-6s4-7,10.3-7c4.7,0,8,1.6,9.2,2.6.6.4.9.9.9,1.6,0,.5-.2.9-.5,1.3l-.7.9c-.3.3-.6.5-1,.5-.3,0-.7-.1-1-.4-2.2-1.4-4.4-2.1-6.9-2.1-2.7,0-5.5.9-5.5,2.4,0,1.4,2.5,1.8,5.7,2,6.6.5,11,1.7,11,6.4s-4.4,7.4-10.8,7.4c-4.4,0-8.2-1.3-10.6-3.2-.5-.4-.8-.8-.8-1.4s.2-1,.5-1.4l.7-.9c.3-.3.6-.5,1-.5s.7.1,1.1.4c2.5,1.7,5.1,2.5,8.2,2.5"></path>
+<path class="cls-3" d="M278.6,39.6l-3.7-7.9-3.8,7.9h7.5ZM277.7,27.4l9.4,18.9c.1.3.2.5.2.8,0,.7-.5,1.2-1.3,1.2h-2.2c-.8,0-1.3-.3-1.6-.9l-1.6-3.4h-11.6l-1.6,3.4c-.3.6-.8.9-1.6.9h-2.2c-.8,0-1.3-.5-1.3-1.2,0-.3.1-.5.2-.8l9.4-18.9c.3-.6.8-.9,1.6-.9h2.6c.8,0,1.3.3,1.6.9"></path>
+<path class="cls-3" d="M92.2,63.8l-.7,1.8c-.8-.4-1.6-.6-2.5-.6s-1.8.3-2.5.9-1,1.4-1,2.5c0,.7.2,1.4.5,1.9.7,1,1.8,1.4,3,1.4.9,0,1.7-.2,2.4-.6l.8,1.8c-1.1.5-2.2.8-3.3.8-3,0-5.6-1.8-5.6-5.2,0-1.6.5-2.9,1.6-3.9,1-1,2.4-1.5,3.9-1.5,1.2-.1,2.3.2,3.4.7"></path>
+</g>
+<rect class="cls-3" height="10.2" width="2.1" x="96.2" y="63.2"></rect>
+<polygon class="cls-3" points="101.4 63.2 101.4 65.2 104.7 65.2 104.7 73.4 106.9 73.4 106.9 65.2 110.2 65.2 110.2 63.2 101.4 63.2"></polygon>
+<polygon class="cls-3" points="120.6 63.2 117.8 67.4 115.1 63.2 112.5 63.2 116.6 69.4 116.6 73.4 119 73.4 119 69.5 123.2 63.2 120.6 63.2"></polygon>
+<polygon class="cls-3" points="133 63.2 133 73.4 140.2 73.4 140.2 71.5 135.2 71.5 135.2 63.2 133 63.2"></polygon>
+<rect class="cls-3" height="10.2" width="2.1" x="143.3" y="63.2"></rect>
+<polygon class="cls-3" points="159.7 63.2 155.7 68.5 151.8 63.2 149.7 63.2 149.7 73.4 151.9 73.4 151.9 66.8 155.7 71.9 159.5 66.8 159.5 73.4 161.7 73.4 161.7 63.2 159.7 63.2"></polygon>
+<rect class="cls-3" height="10.2" width="2.1" x="166" y="63.2"></rect>
+<polygon class="cls-3" points="171.2 63.2 171.2 65.2 174.5 65.2 174.5 73.4 176.7 73.4 176.7 65.2 180 65.2 180 63.2 171.2 63.2"></polygon>
+<polygon class="cls-3" points="183.1 63.2 183.1 73.4 190.3 73.4 190.3 71.5 185.3 71.5 185.3 63.2 183.1 63.2"></polygon>
+<polygon class="cls-3" points="193.4 63.2 193.4 73.4 201.1 73.4 201.1 71.5 195.6 71.5 195.6 69.2 199.5 69.2 199.5 67.4 195.6 67.4 195.6 65.2 200.8 65.2 200.8 63.2 193.4 63.2"></polygon>
+<g>
+<path class="cls-3" d="M211.9,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7-1.1,0-1.8.4-1.8,1,0,.3.2.5.6.7.2.1.6.2.9.3.3.1.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9,0,1.1-.4,1.9-1.2,2.4-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9,1.3,0,2-.5,2.1-1.2,0-.4-.2-.6-.6-.8-.2-.1-.4-.2-.6-.2-.2-.1-.4-.1-.8-.2-.3-.1-.6-.1-.8-.2-1.9-.5-3-1.3-3-2.9,0-.7.2-1.3.6-1.8.8-1,2-1.3,3.5-1.3,1.1.1,2.1.3,3.2.8"></path>
+<path class="cls-3" d="M223.2,63.8l-.6,1.9c-.9-.4-1.8-.7-2.6-.7-1.1,0-1.8.4-1.8,1,0,.3.2.5.6.7.2.1.6.2.9.3.3.1.8.2,1.1.3,1.1.3,1.9.6,2.4,1.1.5.4.8,1.1.8,1.9,0,1.1-.4,1.9-1.2,2.4-.8.6-1.8.8-3,.9-1.5,0-2.9-.4-4.2-1.1l.8-1.8c1.1.6,2.2.9,3.2.9,1.3,0,2-.5,2.1-1.2,0-.4-.2-.6-.6-.8-.2-.1-.4-.2-.6-.2-.2-.1-.4-.1-.8-.2-.3-.1-.6-.1-.8-.2-1.9-.5-3-1.3-3-2.9,0-.7.2-1.3.6-1.8.8-1,2-1.3,3.5-1.3,1,.1,2.1.3,3.2.8"></path>
+<path class="cls-3" d="M227.2,64.4v.8h.3c.3,0,.5-.1.5-.4,0-.2-.2-.4-.5-.4h-.3M228.4,64.8c0,.3-.1.5-.3.6l.3.6h-.4l-.2-.5h-.5v.5h-.4v-1.9h.7c.4-.1.8.2.8.7M226.6,64c-.3.3-.4.6-.4,1s.1.7.4,1c.3.3.6.4,1,.4s.7-.1,1-.4.4-.6.4-1-.1-.7-.4-1c-.3-.3-.6-.4-1-.4s-.8.2-1,.4M228.8,63.8c.4.3.5.8.5,1.3s-.2.9-.5,1.3c-.4.4-.8.5-1.3.5s-.9-.2-1.3-.5c-.4-.4-.5-.8-.5-1.3s.2-.9.5-1.3c.4-.4.8-.5,1.3-.5.5-.1,1,.1,1.3.5"></path>
+</g>
+</g>
+</svg>
+<div class="page-header-title">Board Report — May 2026</div>
+</div>
+<!-- ============ CONTENT ============ -->
+<div class="content">
+<!-- ============ EXECUTIVE SUMMARY ============ -->
+<div class="section">
+<div class="section-title">Executive Summary</div>
+<div class="insight-box">
+<strong>May 2026 headline:</strong> Mesa closed May with record hotel demand, near-record social audience growth, and a landmark FIFA World Cup announcement — confirming the destination's rising national profile heading into summer.
       </div>
-
-      <div class="section-subtitle">Key Performance Wins</div>
-      <table class="wins-table">
-        <thead>
-          <tr><th>Win</th><th>Impact</th><th>Strategic Significance</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>FIFA World Cup 2026™ — Türkiye Team Base Camp</td>
-            <td>Arizona Athletic Grounds selected; national media coverage generated millions of impressions in May</td>
-            <td>Places Mesa on the world stage ahead of the largest sporting event of 2026; major earned media catalyst with lasting brand lift</td>
-          </tr>
-          <tr>
-            <td>Hotel Demand Up 6.0% YOY</td>
-            <td>102.6K room nights sold in May — the strongest demand growth in the competitive set</td>
-            <td>Mesa leads comparable Arizona markets in demand growth; confirms Mesa is capturing share even as ADR dips seasonally</td>
-          </tr>
-          <tr>
-            <td>Social Audience Crosses 99.9K</td>
-            <td>+41.6% YOY growth; engagements up 204.1% to 126.4K in May</td>
-            <td>Visit Mesa's owned audience has nearly doubled in a year — a critical organic channel as paid budgets stay lean in shoulder season</td>
-          </tr>
-          <tr>
-            <td>AZ Travel Awards — 6 Honors</td>
-            <td>Recognition across destination marketing, arts & culture, recreation, and attractions including City Limitless Podcast</td>
-            <td>Industry validation of Visit Mesa's brand and programming strategy; adds earned credibility for future partner and media pitches</td>
-          </tr>
-          <tr>
-            <td>TELLY Award — City Limitless Podcast</td>
-            <td>National award for the Jesse Cole / Savannah Bananas episode</td>
-            <td>Elevates podcast as a premium content vehicle; supports content distribution and future sponsorship opportunities</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="section-subtitle">Monthly KPI Snapshot</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Hotel Demand</div>
-          <div class="kpi-value">102.6K</div>
-          <div class="kpi-sub"><span class="up">+6.0% YOY</span> — strongest in comp set</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Hotel ADR</div>
-          <div class="kpi-value">$102</div>
-          <div class="kpi-sub"><span class="watch">-1.6% YOY</span> — seasonal, weekday softness</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Total Rooms Booked — FYTD</div>
-          <div class="kpi-value">91,549</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Actualized (Pick-Up) Rooms — FYTD</div>
-          <div class="kpi-value">60,439</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Overnight Trip Share</div>
-          <div class="kpi-value">88%</div>
-          <div class="kpi-sub"><span class="up">Above 2025 levels</span></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Social Audience</div>
-          <div class="kpi-value">99.9K</div>
-          <div class="kpi-sub"><span class="up">+41.6% YOY</span> — approaching 100K milestone</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Website Sessions</div>
-          <div class="kpi-value">97.5K</div>
-          <div class="kpi-sub"><span class="up">+81.0% YOY</span> — driven by paid + organic</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">L&H Jobs</div>
-          <div class="kpi-value">268.8K</div>
-          <div class="kpi-sub"><span class="watch">-1.2% YOY</span> · +14.5% vs. 2019</div>
-        </div>
+<div class="section-subtitle">Key Performance Wins</div>
+<table class="wins-table">
+<thead>
+<tr><th>Win</th><th>Impact</th><th>Strategic Significance</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>FIFA World Cup 2026™ — Türkiye Team Base Camp</td>
+<td>Arizona Athletic Grounds selected; national media coverage generated millions of impressions in May</td>
+<td>Places Mesa on the world stage ahead of the largest sporting event of 2026; major earned media catalyst with lasting brand lift</td>
+</tr>
+<tr>
+<td>Hotel Demand Up 6.0% YOY</td>
+<td>102.6K room nights sold in May — the strongest demand growth in the competitive set</td>
+<td>Mesa leads comparable Arizona markets in demand growth; confirms Mesa is capturing share even as ADR dips seasonally</td>
+</tr>
+<tr>
+<td>Social Audience Crosses 99.9K</td>
+<td>+41.6% YOY growth; engagements up 204.1% to 126.4K in May</td>
+<td>Visit Mesa's owned audience has nearly doubled in a year — a critical organic channel as paid budgets stay lean in shoulder season</td>
+</tr>
+<tr>
+<td>AZ Travel Awards — 6 Honors</td>
+<td>Recognition across destination marketing, arts &amp; culture, recreation, and attractions including City Limitless Podcast</td>
+<td>Industry validation of Visit Mesa's brand and programming strategy; adds earned credibility for future partner and media pitches</td>
+</tr>
+<tr>
+<td>TELLY Award — City Limitless Podcast</td>
+<td>National award for the Jesse Cole / Savannah Bananas episode</td>
+<td>Elevates podcast as a premium content vehicle; supports content distribution and future sponsorship opportunities</td>
+</tr>
+</tbody>
+</table>
+<div class="section-subtitle">Monthly KPI Snapshot</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Hotel Demand</div>
+<div class="kpi-value">102.6K</div>
+<div class="kpi-sub"><span class="up">+6.0% YOY</span> — strongest in comp set</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Hotel ADR</div>
+<div class="kpi-value">$102</div>
+<div class="kpi-sub"><span class="watch">-1.6% YOY</span> — seasonal, weekday softness</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Total Rooms Booked — FYTD</div>
+<div class="kpi-value">91,549</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Actualized (Pick-Up) Rooms — FYTD</div>
+<div class="kpi-value">60,439</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Overnight Trip Share</div>
+<div class="kpi-value">88%</div>
+<div class="kpi-sub"><span class="up">Above 2025 levels</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Social Audience</div>
+<div class="kpi-value">99.9K</div>
+<div class="kpi-sub"><span class="up">+41.6% YOY</span> — approaching 100K milestone</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Website Sessions</div>
+<div class="kpi-value">97.5K</div>
+<div class="kpi-sub"><span class="up">+81.0% YOY</span> — driven by paid + organic</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">L&amp;H Jobs</div>
+<div class="kpi-value">268.8K</div>
+<div class="kpi-sub"><span class="watch">-1.2% YOY</span> · +14.5% vs. 2019</div>
+</div>
+</div>
+<div class="section-subtitle">FYTD Competitive Position (Jul 2025-May 2026)</div>
+<div class="source-tag">Source: STR · Fiscal Year-to-Date Performance</div>
+<div class="three-col" style="gap:10px; margin-top:10px;">
+<div>
+<div class="subsection-title" style="font-size:11px;">Occupancy Rank</div>
+<div class="rank-highlight">City of Gilbert #1 — 77.0%</div>
+<div class="rank-highlight">Phoenix Airport #2 — 74.1%</div>
+<div style="padding: 6px 10px; font-size:12px; color:#666;">City of Mesa: 65.6% (-0.8%)</div>
+</div>
+<div>
+<div class="subsection-title" style="font-size:11px;">ADR Rank</div>
+<div class="rank-highlight">Scottsdale #1 — $222</div>
+<div class="rank-highlight">Phoenix Central #2 — $208</div>
+<div style="padding: 6px 10px; font-size:12px; color:#666;">City of Mesa: $120 (-0.4%)</div>
+</div>
+<div>
+<div class="subsection-title" style="font-size:11px;">RevPAR Rank</div>
+<div class="rank-highlight">Phoenix Central #1 — $136</div>
+<div class="rank-highlight">Scottsdale #2 — $133</div>
+<div style="padding: 6px 10px; font-size:12px; color:#666;">City of Mesa: $79 (-1.2%)</div>
+</div>
+</div>
+<div class="insight-box">
+<strong>Strategic context:</strong> Mesa is not leading on rate, but the FYTD position shows strong regional demand fundamentals. City of Mesa occupancy is tracking at <strong>65.6%</strong>, while ADR and RevPAR remain below premium-rate markets such as Scottsdale and Phoenix Central. The opportunity is to convert demand momentum into stronger rate capture.
       </div>
-
-      <div class="section-subtitle">FYTD Competitive Position (Jul 2025-May 2026)</div>
-      <div class="source-tag">Source: STR · Fiscal Year-to-Date Performance</div>
-      <div class="three-col" style="gap:10px; margin-top:10px;">
-        <div>
-          <div class="subsection-title" style="font-size:11px;">Occupancy Rank</div>
-          <div class="rank-highlight">City of Gilbert #1 — 77.0%</div>
-          <div class="rank-highlight">Phoenix Airport #2 — 74.1%</div>
-          <div style="padding: 6px 10px; font-size:12px; color:#666;">City of Mesa: 65.6% (-0.8%)</div>
-        </div>
-        <div>
-          <div class="subsection-title" style="font-size:11px;">ADR Rank</div>
-          <div class="rank-highlight">Scottsdale #1 — $222</div>
-          <div class="rank-highlight">Phoenix Central #2 — $208</div>
-          <div style="padding: 6px 10px; font-size:12px; color:#666;">City of Mesa: $120 (-0.4%)</div>
-        </div>
-        <div>
-          <div class="subsection-title" style="font-size:11px;">RevPAR Rank</div>
-          <div class="rank-highlight">Phoenix Central #1 — $136</div>
-          <div class="rank-highlight">Scottsdale #2 — $133</div>
-          <div style="padding: 6px 10px; font-size:12px; color:#666;">City of Mesa: $79 (-1.2%)</div>
-        </div>
-      </div>
-      <div class="insight-box">
-        <strong>Strategic context:</strong> Mesa is not leading on rate, but the FYTD position shows strong regional demand fundamentals. City of Mesa occupancy is tracking at <strong>65.6%</strong>, while ADR and RevPAR remain below premium-rate markets such as Scottsdale and Phoenix Central. The opportunity is to convert demand momentum into stronger rate capture.
-      </div>
-    </div>
-
-    <!-- ============ TEAM & COMMUNITY HIGHLIGHTS ============ -->
-    <div class="section">
-      <div class="section-title">Team &amp; Community Highlights</div>
-      <div class="section-subtitle">May 2026 Moments</div>
-
-      <ul class="highlight-list">
-        <li><strong>FIFA World Cup 2026™ — Türkiye Men's National Team Base Camp:</strong> Arizona Athletic Grounds, in partnership with Visit Mesa and the City of Mesa, was officially selected as the training site for the Türkiye Men's National Team. Coverage expanded nationally, including Yahoo! Sports pickup, generating millions of impressions. A Community Day was planned for June 8 at Arizona Athletic Grounds, featuring live entertainment, food, cultural experiences, and public viewing of the training session.</li>
-        <li><strong>Unscripted 233 Hotel Opens in Downtown Mesa:</strong> The highly anticipated all-suite hotel with kitchen-equipped rooms opened May 27, adding new upscale lodging inventory to the downtown corridor.</li>
-        <li><strong>ABC15 Feature — Mesa Gateway Airport:</strong> Mesa Gateway Airport's expanding nonstop service (45 destinations) was featured on ABC15 during National Travel &amp; Tourism Week. Visit Mesa's Alicia and Ryan Smith participated in interviews.</li>
-        <li><strong>2026 AZ Travel Awards — 6 Honors:</strong> Visit Mesa and partners took home six recognitions across destination marketing, arts &amp; culture, recreation, and attractions, including recognition for the City Limitless Podcast and Mesa Arts &amp; Culture Week.</li>
-        <li><strong>TELLY Award — City Limitless® Podcast:</strong> The episode featuring Savannah Bananas' Jesse Cole earned a national TELLY Award. Congratulations to Ashley and the entire podcast team.</li>
-        <li><strong>New City Limitless Episodes:</strong> Episodes launched in May featuring Mesa Padel Club (downtown transformation story), Dani Bowman from Love on the Spectrum, and the i.d.e.a. Museum.</li>
-      </ul>
-    </div>
-
-    <!-- ============ SALES PERFORMANCE ============ -->
-    <div class="section">
-      <div class="section-title">Sales Performance</div>
-      <div class="source-tag">Source: Visit Mesa CRM System (Tempest) · As of June 18, 2026</div>
-
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Total Room Nights Generated — FYTD</div>
-          <div class="kpi-value">91,549</div>
-          <div class="kpi-sub">Sales production + marketing attribution</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Rooms Actualized — FYTD</div>
-          <div class="kpi-value">60,439</div>
-          <div class="kpi-sub">Sales actualized + marketing attribution</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Leads Created — FYTD</div>
-          <div class="kpi-value">284</div>
-          <div class="kpi-sub"><span class="up">+9.2% YOY</span> · May: 20 leads</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Attendance Actualized — FYTD</div>
-          <div class="kpi-value">103,408</div>
-          <div class="kpi-sub">Sales attendance + marketing attribution</div>
-        </div>
-      </div>
-
-      <div class="section-subtitle">Rooms Booked by Month — FY2026 FYTD</div>
-      <div class="chart-wrap">
-        <div class="chart-canvas-wrap">
-          <canvas id="roomsBookedChart"></canvas>
-        </div>
-      </div>
-
-      <div class="section-subtitle">Rooms Booked Detail</div>
-      <table class="data-table">
-        <thead>
-          <tr><th>Segment</th><th>May 2026</th><th>FYTD Total</th><th>FYTD YOY</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Group Meetings &amp; Conferences</td>
-            <td>882</td>
-            <td>12,650</td>
-            <td class="up">+7.9%</td>
-          </tr>
-          <tr>
-            <td>Sports Sales</td>
-            <td>—</td>
-            <td>58,240</td>
-            <td class="up">+6.1%</td>
-          </tr>
-          <tr class="highlight">
-            <td class="bold">Total</td>
-            <td class="bold">882</td>
-            <td class="bold">70,890</td>
-            <td class="up bold">+6.4%</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="section-subtitle">Rooms Actualized Detail</div>
-      <table class="data-table">
-        <thead>
-          <tr><th>Segment</th><th>May 2026</th><th>FYTD Total</th><th>FYTD YOY</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Group Meetings &amp; Conferences</td>
-            <td>274</td>
-            <td>12,608</td>
-            <td class="up">+18.1%</td>
-          </tr>
-          <tr>
-            <td>Sports Sales</td>
-            <td>1,994</td>
-            <td>26,799</td>
-            <td class="up">+5.5%</td>
-          </tr>
-          <tr class="highlight">
-            <td class="bold">Total</td>
-            <td class="bold">2,268</td>
-            <td class="bold">39,407</td>
-            <td class="up bold">+9.2%</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="insight-box">
+</div>
+<!-- ============ TEAM & COMMUNITY HIGHLIGHTS ============ -->
+<div class="section">
+<div class="section-title">Team &amp; Community Highlights</div>
+<div class="section-subtitle">May 2026 Moments</div>
+<ul class="highlight-list">
+<li><strong>FIFA World Cup 2026™ — Türkiye Men's National Team Base Camp:</strong> Arizona Athletic Grounds, in partnership with Visit Mesa and the City of Mesa, was officially selected as the training site for the Türkiye Men's National Team. Coverage expanded nationally, including Yahoo! Sports pickup, generating millions of impressions. A Community Day was planned for June 8 at Arizona Athletic Grounds, featuring live entertainment, food, cultural experiences, and public viewing of the training session.</li>
+<li><strong>Unscripted 233 Hotel Opens in Downtown Mesa:</strong> The highly anticipated all-suite hotel with kitchen-equipped rooms opened May 27, adding new upscale lodging inventory to the downtown corridor.</li>
+<li><strong>ABC15 Feature — Mesa Gateway Airport:</strong> Mesa Gateway Airport's expanding nonstop service (45 destinations) was featured on ABC15 during National Travel &amp; Tourism Week. Visit Mesa's Alicia and Ryan Smith participated in interviews.</li>
+<li><strong>2026 AZ Travel Awards — 6 Honors:</strong> Visit Mesa and partners took home six recognitions across destination marketing, arts &amp; culture, recreation, and attractions, including recognition for the City Limitless Podcast and Mesa Arts &amp; Culture Week.</li>
+<li><strong>TELLY Award — City Limitless® Podcast:</strong> The episode featuring Savannah Bananas' Jesse Cole earned a national TELLY Award. Congratulations to Ashley and the entire podcast team.</li>
+<li><strong>New City Limitless Episodes:</strong> Episodes launched in May featuring Mesa Padel Club (downtown transformation story), Dani Bowman from Love on the Spectrum, and the i.d.e.a. Museum.</li>
+</ul>
+</div>
+<!-- ============ SALES PERFORMANCE ============ -->
+<div class="section">
+<div class="section-title">Sales Performance</div>
+<div class="source-tag">Source: Visit Mesa CRM System (Tempest) · As of June 18, 2026</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Total Room Nights Generated — FYTD</div>
+<div class="kpi-value">91,549</div>
+<div class="kpi-sub">Sales production + marketing attribution</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Rooms Actualized — FYTD</div>
+<div class="kpi-value">60,439</div>
+<div class="kpi-sub">Sales actualized + marketing attribution</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Leads Created — FYTD</div>
+<div class="kpi-value">284</div>
+<div class="kpi-sub"><span class="up">+9.2% YOY</span> · May: 20 leads</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Attendance Actualized — FYTD</div>
+<div class="kpi-value">103,408</div>
+<div class="kpi-sub">Sales attendance + marketing attribution</div>
+</div>
+</div>
+<div class="section-subtitle">Rooms Booked by Month — FY2026 FYTD</div>
+<div class="chart-wrap">
+<div class="chart-canvas-wrap">
+<canvas id="roomsBookedChart"></canvas>
+</div>
+</div>
+<div class="section-subtitle">Rooms Booked Detail</div>
+<table class="data-table">
+<thead>
+<tr><th>Segment</th><th>May 2026</th><th>FYTD Total</th><th>FYTD YOY</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Group Meetings &amp; Conferences</td>
+<td>882</td>
+<td>12,650</td>
+<td class="up">+7.9%</td>
+</tr>
+<tr>
+<td>Sports Sales</td>
+<td>—</td>
+<td>58,240</td>
+<td class="up">+6.1%</td>
+</tr>
+<tr class="highlight">
+<td class="bold">Total</td>
+<td class="bold">882</td>
+<td class="bold">70,890</td>
+<td class="up bold">+6.4%</td>
+</tr>
+</tbody>
+</table>
+<div class="section-subtitle">Rooms Actualized Detail</div>
+<table class="data-table">
+<thead>
+<tr><th>Segment</th><th>May 2026</th><th>FYTD Total</th><th>FYTD YOY</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Group Meetings &amp; Conferences</td>
+<td>274</td>
+<td>12,608</td>
+<td class="up">+18.1%</td>
+</tr>
+<tr>
+<td>Sports Sales</td>
+<td>1,994</td>
+<td>26,799</td>
+<td class="up">+5.5%</td>
+</tr>
+<tr class="highlight">
+<td class="bold">Total</td>
+<td class="bold">2,268</td>
+<td class="bold">39,407</td>
+<td class="up bold">+9.2%</td>
+</tr>
+</tbody>
+</table>
+<div class="insight-box">
         Sales performance is tracking strongly across core sales and marketing-attributed lodging production. <strong>Total room nights generated FYTD</strong> now reflects group meetings, sports, ADARA website attribution, and Expedia OTA campaigns, giving a fuller view of Visit Mesa-influenced demand. Group Meetings &amp; Conferences actualization remains particularly strong at <strong>+18.1% YOY</strong>.
       </div>
-
-      <div class="section-subtitle">Total Estimated Attendance — FYTD</div>
-      <table class="data-table">
-        <thead>
-          <tr><th>Segment</th><th>Booked FYTD</th><th>Booked YOY</th><th>Actualized FYTD</th><th>Actualized YOY</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Group Meetings &amp; Conferences</td>
-            <td>15,246</td>
-            <td class="up">+64.3%</td>
-            <td>15,911</td>
-            <td class="up">+14.0%</td>
-          </tr>
-          <tr>
-            <td>Sports Sales</td>
-            <td>92,715</td>
-            <td class="up">+24.0%</td>
-            <td>76,720</td>
-            <td class="watch">-2.5%</td>
-          </tr>
-          <tr class="highlight">
-            <td class="bold">Total</td>
-            <td class="bold">107,961</td>
-            <td class="up bold">+28.4%</td>
-            <td class="bold">92,631</td>
-            <td class="watch bold">-0.1%</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- ============ MARKETING ATTRIBUTION & OTA ROOM NIGHTS ============ -->
-    <div class="section">
-      <div class="section-title">Marketing Website Attribution &amp; OTA Room Nights — FYTD</div>
-      <div class="source-tag">Source: Tempest Pickup History Detail · July 1, 2025-May 31, 2026 · ADARA website attribution + Expedia OTA campaigns</div>
-
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Total Campaign Room Nights</div>
-          <div class="kpi-value">20,659</div>
-          <div class="kpi-sub">ADARA + Expedia FYTD pickup</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">ADARA Attributed Room Nights</div>
-          <div class="kpi-value">13,031</div>
-          <div class="kpi-sub">Website attribution campaigns</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Expedia OTA Room Nights</div>
-          <div class="kpi-value">7,628</div>
-          <div class="kpi-sub">Expedia lodging partner campaigns</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Economic Impact Actualized</div>
-          <div class="kpi-value">$7.13M</div>
-          <div class="kpi-sub">Combined FYTD campaign impact</div>
-        </div>
+<div class="section-subtitle">Total Estimated Attendance — FYTD</div>
+<table class="data-table">
+<thead>
+<tr><th>Segment</th><th>Booked FYTD</th><th>Booked YOY</th><th>Actualized FYTD</th><th>Actualized YOY</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Group Meetings &amp; Conferences</td>
+<td>15,246</td>
+<td class="up">+64.3%</td>
+<td>15,911</td>
+<td class="up">+14.0%</td>
+</tr>
+<tr>
+<td>Sports Sales</td>
+<td>92,715</td>
+<td class="up">+24.0%</td>
+<td>76,720</td>
+<td class="watch">-2.5%</td>
+</tr>
+<tr class="highlight">
+<td class="bold">Total</td>
+<td class="bold">107,961</td>
+<td class="up bold">+28.4%</td>
+<td class="bold">92,631</td>
+<td class="watch bold">-0.1%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- ============ MARKETING ATTRIBUTION & OTA ROOM NIGHTS ============ -->
+<div class="section">
+<div class="section-title">Marketing Website Attribution &amp; OTA Room Nights — FYTD</div>
+<div class="source-tag">Source: Tempest Pickup History Detail · July 1, 2025-May 31, 2026 · ADARA website attribution + Expedia OTA campaigns</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Total Campaign Room Nights</div>
+<div class="kpi-value">20,659</div>
+<div class="kpi-sub">ADARA + Expedia FYTD pickup</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">ADARA Attributed Room Nights</div>
+<div class="kpi-value">13,031</div>
+<div class="kpi-sub">Website attribution campaigns</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Expedia OTA Room Nights</div>
+<div class="kpi-value">7,628</div>
+<div class="kpi-sub">Expedia lodging partner campaigns</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Economic Impact Actualized</div>
+<div class="kpi-value">$7.13M</div>
+<div class="kpi-sub">Combined FYTD campaign impact</div>
+</div>
+</div>
+<div class="insight-box">
+<strong>FYTD marketing attribution adds 20,659 room nights</strong> beyond the core sales production view, with ADARA accounting for 63% of attributed campaign room nights and Expedia OTA campaigns contributing the remaining 37%. Combined economic impact actualized is <strong>$7.13M</strong>, reinforcing the need to view marketing-attributed lodging production alongside group sales activity.
       </div>
-
-      <div class="insight-box">
-        <strong>FYTD marketing attribution adds 20,659 room nights</strong> beyond the core sales production view, with ADARA accounting for 63% of attributed campaign room nights and Expedia OTA campaigns contributing the remaining 37%. Combined economic impact actualized is <strong>$7.13M</strong>, reinforcing the need to view marketing-attributed lodging production alongside group sales activity.
-      </div>
-    </div>
-
-    <!-- ============ VISITATION & TRAVEL TRENDS ============ -->
-    <div class="section">
-      <div class="section-title">Visitation &amp; Travel Trends</div>
-
-      <div class="section-subtitle">Visitor Volume — Last 12 Months (Jun 2025–May 2026)</div>
-      <div class="source-tag">Source: Placer.ai · 50+ mile visitor filter · Domestic Travel &amp; Tourism Report</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Total Trips</div>
-          <div class="kpi-value">3.7M</div>
-          <div class="kpi-sub"><span class="up">+3.9% YOY</span> vs. 3.5M prior year</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Avg. Monthly Visitors</div>
-          <div class="kpi-value">244.0K</div>
-          <div class="kpi-sub"><span class="up">+6.2% YOY</span> vs. 229.8K prior year</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Visit Nights</div>
-          <div class="kpi-value">6.1M</div>
-          <div class="kpi-sub"><span class="up">+0.1% YOY</span> — stable overnight demand</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Overnight Trips</div>
-          <div class="kpi-value">2.4M</div>
-          <div class="kpi-sub"><span class="bold">65%</span> of all trips — avg 2.6 nights/trip</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Day Trips</div>
-          <div class="kpi-value">1.3M</div>
-          <div class="kpi-sub"><span class="bold">35%</span> of all trips — same-day returns</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Arizona City Rank</div>
-          <div class="kpi-value">#5</div>
-          <div class="kpi-sub">Behind Phoenix, Tucson, Scottsdale, Flagstaff</div>
-        </div>
-      </div>
-
-      <div class="insight-box">
-        Mesa attracted <strong>3.7M trips over the last 12 months</strong>, up +3.9% YOY — the strongest volume growth among comparable AZ cities. Avg monthly visitors grew to <strong>244K (+6.2%)</strong>, the highest in the FYTD period. Mesa ranks <strong>#5 among all Arizona cities</strong>, ahead of Tempe, Glendale, Chandler, and Sedona. Visitor distribution: 69% overnight guests, 17% leaked day visitors (who slept in competing markets), and 14% true day visitors.
-      </div>
-
-      <div class="section-subtitle">Overnight Visitor Distribution — May 2026</div>
-      <div class="source-tag">Source: Placer.ai · 50+ mile visitor filter</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Overnight Visitors Captured</div>
-          <div class="kpi-value">168.5K</div>
-          <div class="kpi-sub"><span class="up">69.0%</span> of avg monthly visitors — slept in Mesa</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Leaked Day Visitors</div>
-          <div class="kpi-value">41.5K</div>
-          <div class="kpi-sub"><span class="watch">17.0%</span> visited Mesa but slept elsewhere</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Pure Day Visitors</div>
-          <div class="kpi-value">34.0K</div>
-          <div class="kpi-sub">13.9% — no overnight stay anywhere</div>
-        </div>
-      </div>
-
-      <div class="section-subtitle">Overnight Leakage — Last 12 Months</div>
-      <div class="source-tag">Source: Placer.ai · Overnight Leakage Report · 50+ miles · Max Distance 200 miles</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Nights Lost</div>
-          <div class="kpi-value">1.2M</div>
-          <div class="kpi-sub"><span class="watch">+11.9% YOY</span> — growing conversion opportunity</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Leakage Rate</div>
-          <div class="kpi-value">16.2%</div>
-          <div class="kpi-sub"><span class="up">-6.3% YOY</span> — improving capture rate</div>
-        </div>
-      </div>
-      <div class="warning-box">
-        <strong>1.2M nights are being lost</strong> to competing markets annually — visitors who came to Mesa but slept in neighboring cities. The top leakage destinations are all East Valley AZ: Gilbert (188.6K nights, 20.6%), Phoenix (183.9K, 20.1%), Tempe (118.2K, 12.9%), and Chandler (113.7K, 12.4%). <strong>The leakage rate is improving (-6.3% YOY)</strong>, indicating that Mesa's lodging supply and marketing are increasing overnight capture — but the absolute nights lost are still growing, representing a significant revenue recovery opportunity.
-      </div>
-
-      <div class="section-subtitle">Top Visitor Origin Markets — May 2026</div>
-      <div class="source-tag">Source: Placer.ai · DMA Rankings · 50+ miles · All Trips</div>
-      <table class="data-table">
-        <thead><tr><th>Rank</th><th>Origin Market</th><th>Trips (Annual)</th><th>Avg Monthly Visitors</th><th>Visit Nights</th><th>Avg Duration</th></tr></thead>
-        <tbody>
-          <tr><td class="bold">#1</td><td>Phoenix, AZ</td><td>692,577</td><td>40,534</td><td>807,954</td><td>2.0 nights</td></tr>
-          <tr><td class="bold">#2</td><td>Tucson (Sierra Vista), AZ</td><td>388,669</td><td>23,638</td><td>394,867</td><td>1.8 nights</td></tr>
-          <tr><td class="bold">#3</td><td>Los Angeles, CA</td><td>311,545</td><td>22,203</td><td>477,087</td><td>2.3 nights</td></tr>
-          <tr><td class="bold">#4</td><td>Albuquerque–Santa Fe, NM</td><td>139,266</td><td>9,650</td><td>231,619</td><td>2.3 nights</td></tr>
-          <tr><td class="bold">#5</td><td>Salt Lake City, UT</td><td>134,649</td><td>10,338</td><td>286,165</td><td>2.9 nights</td></tr>
-          <tr><td>#6</td><td>Seattle–Tacoma, WA</td><td>105,831</td><td>7,832</td><td>240,983</td><td>3.2 nights</td></tr>
-          <tr><td>#7</td><td>Denver, CO</td><td>104,961</td><td>8,143</td><td>205,047</td><td>2.8 nights</td></tr>
-          <tr><td>#8</td><td>San Diego, CA</td><td>87,835</td><td>6,365</td><td>146,297</td><td>2.4 nights</td></tr>
-          <tr><td>#9</td><td>Minneapolis–St. Paul, MN</td><td>87,462</td><td>8,644</td><td>259,810</td><td>3.7 nights</td></tr>
-        </tbody>
-      </table>
-
-      <div class="section-subtitle">Visitor Category Activity — Last 12 Months</div>
-      <div class="source-tag">Source: Placer.ai · Category Analysis · 50+ miles · All Trip Types</div>
-      <table class="data-table" style="max-width:520px;">
-        <thead><tr><th>Category</th><th>Trips</th><th>% of Total</th><th>YOY Change</th></tr></thead>
-        <tbody>
-          <tr><td>Retail</td><td>1,118,062</td><td>25.8%</td><td class="up">+0.7%</td></tr>
-          <tr><td>Restaurants</td><td>1,026,222</td><td>23.6%</td><td class="up">+0.5%</td></tr>
-          <tr><td>Hotels</td><td>616,454</td><td>14.2%</td><td class="up">+3.3%</td></tr>
-          <tr><td>Recreation &amp; Entertainment</td><td>324,737</td><td>7.5%</td><td class="up">+3.5%</td></tr>
-          <tr><td>Health, Beauty &amp; Wellness</td><td>315,454</td><td>7.3%</td><td class="up">+6.5%</td></tr>
-          <tr><td>Groceries &amp; Food Stores</td><td>573,530</td><td>13.2%</td><td class="down">-3.0%</td></tr>
-        </tbody>
-      </table>
-
-      <div class="section-subtitle">Airport Access — PHX Checkpoint Volume</div>
-      <div class="source-tag">Source: Transportation Security Administration (TSA)</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">May 2026 Volume</div>
-          <div class="kpi-value">1.9M</div>
-          <div class="kpi-sub"><span class="watch">-1.2% YOY</span> — slight softness in air travel</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">FYTD Volume (Jul–May)</div>
-          <div class="kpi-value">19.5M</div>
-          <div class="kpi-sub"><span class="watch">-0.8% YOY</span> — marginal year-to-date decline</div>
-        </div>
-      </div>
-      <div class="insight-box">
-        PHX checkpoint volume is down slightly YOY (-1.2%), consistent with broader national softness in air travel. However, Mesa Gateway Airport continues to expand, now offering nonstop service to 45 destinations — providing an important access alternative that supplements PHX demand.
-      </div>
-
-      <div class="section-subtitle">Top Air Origin Markets (FYTD — Jul 2025–Apr 2026)</div>
-      <div class="source-tag">Source: OAG Visitor Arrival Data</div>
-      <table class="data-table" style="max-width:420px;">
-        <thead><tr><th>Origin Market</th><th>Share of Air Arrivals</th></tr></thead>
-        <tbody>
-          <tr><td>Chicago, IL</td><td class="bold">4.8%</td></tr>
-          <tr><td>Denver, CO</td><td>4.5%</td></tr>
-          <tr><td>Seattle, WA</td><td>4.2%</td></tr>
-          <tr><td>Minneapolis, MN</td><td>3.2%</td></tr>
-          <tr><td>Portland, OR</td><td>2.5%</td></tr>
-          <tr><td>Los Angeles, CA</td><td>2.4%</td></tr>
-          <tr><td>Dallas–Fort Worth, TX</td><td>2.4%</td></tr>
-          <tr><td>Salt Lake City, UT</td><td>2.4%</td></tr>
-        </tbody>
-      </table>
-
-      <div class="section-subtitle">National Travel Context</div>
-      <div class="source-tag">Source: Tourism Economics · U.S. Travel Association · MMGY Global Portrait of American Travelers</div>
-      <ul class="highlight-list">
-        <li><strong>Airline fares up 37.9% vs. prior year</strong> as of May — the sharpest input cost increase across all travel categories. F&amp;B up 31.9%, transportation up 24.0%. These macro headwinds have not dampened Mesa demand, which outperformed the comp set.</li>
-        <li><strong>Travel spending is +8.3% vs. 2019</strong> nationally (Tourism Economics), continuing a multiyear recovery trajectory.</li>
-        <li><strong>Oxford Economics upgraded its 2026 GDP forecast</strong> to +2.2% (from +1.9%) and consumer spending to +1.9%. Tourism Economics raised its U.S. RevPAR forecast to +2.8% YOY. Positive tailwinds for the summer and fall booking window.</li>
-        <li><strong>High-income travelers remain most committed:</strong> 91–93% of households earning $150K+ plan leisure travel in the next 12 months (2026 Q1 MMGY data), reinforcing Mesa's opportunity with its premium visitor segment.</li>
-        <li><strong>Summer booking pace is strong:</strong> As of June 10, June hotel reservations are up 4.4% YOY, July up 5.0%, and September up 9.2% — all ahead of last year at the same point in the booking window.</li>
-      </ul>
-    </div>
-
-    <!-- ============ VISITOR PROFILE ============ -->
-    <div class="section">
-      <div class="section-title">Visitor Profile</div>
-      <div class="section-subtitle">May 2026 Domestic Visits</div>
-      <div class="source-tag">Source: Azira / Symphony · U.S. Census Bureau · Placer.ai · 50+ mile filter</div>
-
-      <div class="two-col">
-        <div>
-          <div class="subsection-title">Top Origin States</div>
-          <table class="data-table">
-            <thead><tr><th>State</th><th>Share</th></tr></thead>
-            <tbody>
-              <tr><td>Arizona (in-state)</td><td>36.9%</td></tr>
-              <tr><td>California</td><td class="bold">12.7%</td></tr>
-              <tr><td>Texas</td><td>5.1%</td></tr>
-              <tr><td>Utah</td><td>4.2%</td></tr>
-              <tr><td>New Mexico</td><td>4.2%</td></tr>
-              <tr><td>Colorado</td><td>3.7%</td></tr>
-              <tr><td>Nevada</td><td>3.2%</td></tr>
-              <tr><td>Washington</td><td>2.8%</td></tr>
-              <tr><td>Illinois</td><td>2.1%</td></tr>
-              <tr><td>Virginia</td><td>2.0%</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div>
-          <div class="subsection-title">Top Origin MSAs</div>
-          <table class="data-table">
-            <thead><tr><th>Metro Area</th><th>Share</th></tr></thead>
-            <tbody>
-              <tr><td>Tucson, AZ</td><td class="bold">8.9%</td></tr>
-              <tr><td>Phoenix-Mesa-Chandler, AZ</td><td>5.9%</td></tr>
-              <tr><td>Prescott Valley-Prescott, AZ</td><td>5.6%</td></tr>
-              <tr><td>Los Angeles-Long Beach-Anaheim, CA</td><td>5.0%</td></tr>
-              <tr><td>Riverside-San Bernardino, CA</td><td>3.0%</td></tr>
-              <tr><td>Flagstaff, AZ</td><td>3.0%</td></tr>
-              <tr><td>Payson, AZ</td><td>2.8%</td></tr>
-              <tr><td>Las Vegas-Henderson, NV</td><td>2.8%</td></tr>
-              <tr><td>Show Low, AZ</td><td>2.8%</td></tr>
-              <tr><td>Yuma, AZ</td><td>2.4%</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="subsection-title">Visitor Demographics — May 2026</div>
-      <div class="three-col">
-        <div>
-          <div class="chart-title">Household Income</div>
-          <div class="insight-box" style="margin-top:0;">
-            Median: <strong>$88,680</strong><br>
-            Largest segment: $150K+ at <strong>22%</strong><br>
-            $100K–$149K at <strong>15%</strong>
-          </div>
-        </div>
-        <div>
-          <div class="chart-title">Age Distribution</div>
-          <div class="insight-box" style="margin-top:0;">
-            Largest group: <strong>65+</strong> at 17%<br>
-            35–44 at <strong>14%</strong><br>
-            25–34 &amp; 45–54 at <strong>13%</strong> each
-          </div>
-        </div>
-        <div>
-          <div class="chart-title">Race/Ethnicity</div>
-          <div class="insight-box" style="margin-top:0;">
-            White: <strong>60%</strong><br>
-            2+ Races: <strong>11%</strong><br>
-            Other: <strong>11%</strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="insight-box">
-        Mesa's visitor profile skews toward high-income, experienced travelers — with 22% earning $150K+ and 88% overnighting. This premium visitor profile supports the continued investment in upscale product development, including the opening of Unscripted 233 in May.
-      </div>
-    </div>
-
-    <!-- ============ MARKET RECAP ============ -->
-    <div class="section">
-      <div class="section-title">Market Recap</div>
-
-      <div class="section-subtitle">Leisure &amp; Hospitality Workforce</div>
-      <div class="source-tag">Source: Bureau of Labor Statistics · Phoenix-Mesa-Scottsdale MSA</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">L&H Jobs — May 2026</div>
-          <div class="kpi-value">268.8K</div>
-          <div class="kpi-sub"><span class="watch">-1.2% YOY</span> · <span class="up">+14.5% vs. 2019</span> · 10.8% of all jobs</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">L&H Job Openings</div>
-          <div class="kpi-value">12.1K</div>
-          <div class="kpi-sub">4.6% opening rate · +0.0% YOY · -7.2% vs. 2019</div>
-        </div>
-      </div>
-      <div class="insight-box">
-        L&H jobs are down slightly YOY (-1.2%) but remain <strong>14.5% above pre-pandemic 2019 levels</strong> — a sign of a fundamentally stronger tourism economy. Job openings are flat YOY, suggesting the sector has reached a more normalized labor market after the post-pandemic surge.
-      </div>
-
-      <div class="section-subtitle">Economic Outlook — May 2026 Revisions</div>
-      <div class="source-tag">Source: Tourism Economics · Oxford Economics · USTA Travel Recovery Tracker</div>
-      <ul class="highlight-list">
-        <li>Oxford Economics raised 2026 GDP forecast to <strong>+2.2%</strong> (from +1.9%) and consumer spending to <strong>+1.9%</strong> (from +1.7%)</li>
-        <li>Tourism Economics upgraded U.S. RevPAR forecast to <strong>+2.8% YOY</strong> and shifted occupancy from a projected decline to <strong>+0.5 ppt growth</strong></li>
-        <li>Travel spending is <strong>+8.3% vs. 2019</strong> nationally, with leisure travel volume at 115% of 2019 levels (forecast)</li>
-        <li>Domestic leisure travel spending forecast: <strong>$909B in 2026</strong>, growing to $1.0T by 2030</li>
-      </ul>
-    </div>
-
-    <!-- ============ LODGING PERFORMANCE ============ -->
-    <div class="section">
-      <div class="section-title">Lodging Performance</div>
-
-      <div class="section-subtitle">Aggregate Lodging — City of Mesa</div>
-      <div class="source-tag">Source: STR &amp; KeyData · City of Mesa, AZ submarket</div>
-      <table class="data-table">
-        <thead>
-          <tr><th>Period</th><th>Occupancy</th><th>ADR</th><th>RevPAR</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="bold">May 2026</td>
-            <td>54.0% <span class="up" style="font-size:11px;">+1.8% YOY</span></td>
-            <td>$139.61 <span class="watch" style="font-size:11px;">-2.0% YOY</span></td>
-            <td>$75.40 <span class="watch" style="font-size:11px;">-0.2% YOY</span></td>
-          </tr>
-          <tr>
-            <td>FYTD (Jul–May)</td>
-            <td>57.7% <span class="up" style="font-size:11px;">+4.5% YOY</span></td>
-            <td>$159.81 <span class="watch" style="font-size:11px;">-1.2% YOY</span></td>
-            <td>$92.15 <span class="up" style="font-size:11px;">+3.2% YOY</span></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="section-subtitle">Hotel Performance — City of Mesa</div>
-      <div class="source-tag">Source: STR · City of Mesa, AZ</div>
-      <table class="data-table">
-        <thead>
-          <tr><th>Period</th><th>Occupancy</th><th>ADR</th><th>RevPAR</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="bold">May 2026</td>
-            <td>62.8% <span class="watch" style="font-size:11px;">-0.6% YOY</span></td>
-            <td>$104.68 <span class="watch" style="font-size:11px;">-2.7% YOY</span></td>
-            <td>$65.79 <span class="watch" style="font-size:11px;">-3.3% YOY</span></td>
-          </tr>
-          <tr>
-            <td>FYTD (Jul–May)</td>
-            <td>66.3% <span class="watch" style="font-size:11px;">-0.6% YOY</span></td>
-            <td>$123.88 <span class="watch" style="font-size:11px;">-0.5% YOY</span></td>
-            <td>$82.07 <span class="watch" style="font-size:11px;">-1.2% YOY</span></td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="insight-box">
+</div><div class="section">
+<div class="section-title">Lodging Performance</div>
+<div class="section-subtitle">Aggregate Lodging — City of Mesa</div>
+<div class="source-tag">Source: STR &amp; KeyData · City of Mesa, AZ submarket</div>
+<table class="data-table">
+<thead>
+<tr><th>Period</th><th>Occupancy</th><th>ADR</th><th>RevPAR</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="bold">May 2026</td>
+<td>54.0% <span class="up" style="font-size:11px;">+1.8% YOY</span></td>
+<td>$139.61 <span class="watch" style="font-size:11px;">-2.0% YOY</span></td>
+<td>$75.40 <span class="watch" style="font-size:11px;">-0.2% YOY</span></td>
+</tr>
+<tr>
+<td>FYTD (Jul–May)</td>
+<td>57.7% <span class="up" style="font-size:11px;">+4.5% YOY</span></td>
+<td>$159.81 <span class="watch" style="font-size:11px;">-1.2% YOY</span></td>
+<td>$92.15 <span class="up" style="font-size:11px;">+3.2% YOY</span></td>
+</tr>
+</tbody>
+</table>
+<div class="section-subtitle">Hotel Performance — City of Mesa</div>
+<div class="source-tag">Source: STR · City of Mesa, AZ</div>
+<table class="data-table">
+<thead>
+<tr><th>Period</th><th>Occupancy</th><th>ADR</th><th>RevPAR</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="bold">May 2026</td>
+<td>62.8% <span class="watch" style="font-size:11px;">-0.6% YOY</span></td>
+<td>$104.68 <span class="watch" style="font-size:11px;">-2.7% YOY</span></td>
+<td>$65.79 <span class="watch" style="font-size:11px;">-3.3% YOY</span></td>
+</tr>
+<tr>
+<td>FYTD (Jul–May)</td>
+<td>66.3% <span class="watch" style="font-size:11px;">-0.6% YOY</span></td>
+<td>$123.88 <span class="watch" style="font-size:11px;">-0.5% YOY</span></td>
+<td>$82.07 <span class="watch" style="font-size:11px;">-1.2% YOY</span></td>
+</tr>
+</tbody>
+</table>
+<div class="insight-box">
         Hotel ADR softness (-2.7% in May) is primarily driven by <strong>weekday rate declines (-2.7% ADR)</strong>, consistent with the shoulder-season pattern. Demand growth of <strong>+6.0% YOY</strong> is the standout — Mesa grew demand faster than every comparable Arizona market in May. Revenue grew +4.4% YOY despite the rate softness.
       </div>
-
-      <div class="section-subtitle">Short-Term Vacation Rental Performance</div>
-      <div class="source-tag">Source: KeyData · Vacation Area — Mesa · Note: ADR includes cleaning &amp; platform fees as of Q2 2025</div>
-      <table class="data-table">
-        <thead>
-          <tr><th>Period</th><th>Occupancy</th><th>ADR</th><th>RevPAR</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="bold">May 2026</td>
-            <td>36.4% <span class="up" style="font-size:11px;">+5.3% YOY</span></td>
-            <td>$259.65 <span class="up" style="font-size:11px;">+0.6% YOY</span></td>
-            <td>$94.53 <span class="up" style="font-size:11px;">+6.0% YOY</span></td>
-          </tr>
-          <tr>
-            <td>FYTD (Jul–May)</td>
-            <td>39.6% <span class="up" style="font-size:11px;">+8.7% YOY</span></td>
-            <td>$286.34 <span class="up" style="font-size:11px;">+4.9% YOY</span></td>
-            <td>$113.35 <span class="up" style="font-size:11px;">+14.0% YOY</span></td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="insight-box">
+<div class="section-subtitle">Short-Term Vacation Rental Performance</div>
+<div class="source-tag">Source: KeyData · Vacation Area — Mesa · Note: ADR includes cleaning &amp; platform fees as of Q2 2025</div>
+<table class="data-table">
+<thead>
+<tr><th>Period</th><th>Occupancy</th><th>ADR</th><th>RevPAR</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="bold">May 2026</td>
+<td>36.4% <span class="up" style="font-size:11px;">+5.3% YOY</span></td>
+<td>$259.65 <span class="up" style="font-size:11px;">+0.6% YOY</span></td>
+<td>$94.53 <span class="up" style="font-size:11px;">+6.0% YOY</span></td>
+</tr>
+<tr>
+<td>FYTD (Jul–May)</td>
+<td>39.6% <span class="up" style="font-size:11px;">+8.7% YOY</span></td>
+<td>$286.34 <span class="up" style="font-size:11px;">+4.9% YOY</span></td>
+<td>$113.35 <span class="up" style="font-size:11px;">+14.0% YOY</span></td>
+</tr>
+</tbody>
+</table>
+<div class="insight-box">
         STVRs are outperforming hotels on RevPAR growth — FYTD STVR RevPAR is up <strong>+14.0% YOY</strong> vs. hotels at -1.2%. Demand grew +1.9% despite supply declining -10.9%, driving occupancy to 40.1% FYTD. This supply contraction is pushing available inventory revenue higher.
       </div>
-
-      <div class="section-subtitle">Competitive Set Performance — May 2026</div>
-      <div class="source-tag">Source: STR · Monthly Performance by Market</div>
-      <table class="data-table">
-        <thead>
-          <tr><th>Market</th><th>Occupancy</th><th>OCC Chg</th><th>ADR</th><th>ADR Chg</th><th>RevPAR</th><th>RevPAR Chg</th></tr>
-        </thead>
-        <tbody>
-          <tr class="highlight">
-            <td class="bold">City of Mesa, AZ</td>
-            <td>62.1%</td>
-            <td class="watch">-1.0%</td>
-            <td>$102</td>
-            <td class="watch">-1.6%</td>
-            <td>$64</td>
-            <td class="watch">-2.6%</td>
-          </tr>
-          <tr>
-            <td>Mesa Top Tier</td>
-            <td>60.7%</td>
-            <td class="down">-4.6%</td>
-            <td>$140</td>
-            <td class="up">+1.4%</td>
-            <td>$85</td>
-            <td class="down">-3.3%</td>
-          </tr>
-          <tr>
-            <td>Phoenix Airport, AZ</td>
-            <td>69.7%</td>
-            <td class="up">+5.8%</td>
-            <td>$115</td>
-            <td class="up">+2.4%</td>
-            <td>$80</td>
-            <td class="up">+8.3%</td>
-          </tr>
-          <tr>
-            <td>Phoenix, AZ</td>
-            <td>65.2%</td>
-            <td class="up">+0.2%</td>
-            <td>$158</td>
-            <td class="up">+1.1%</td>
-            <td>$103</td>
-            <td class="up">+1.3%</td>
-          </tr>
-          <tr>
-            <td>Tempe, AZ</td>
-            <td>65.9%</td>
-            <td class="up">+0.6%</td>
-            <td>$142</td>
-            <td class="up">+2.2%</td>
-            <td>$94</td>
-            <td class="up">+2.8%</td>
-          </tr>
-          <tr>
-            <td>City of Gilbert, AZ</td>
-            <td>76.3%</td>
-            <td class="up">+3.1%</td>
-            <td>$128</td>
-            <td class="down">-1.5%</td>
-            <td>$98</td>
-            <td class="up">+1.6%</td>
-          </tr>
-          <tr>
-            <td>Phoenix West, AZ</td>
-            <td>67.1%</td>
-            <td class="watch">-0.2%</td>
-            <td>$123</td>
-            <td class="down">-1.8%</td>
-            <td>$83</td>
-            <td class="down">-2.0%</td>
-          </tr>
-          <tr>
-            <td>Phoenix Central, AZ</td>
-            <td>64.0%</td>
-            <td class="up">+0.6%</td>
-            <td>$185</td>
-            <td class="up">+0.5%</td>
-            <td>$119</td>
-            <td class="up">+1.1%</td>
-          </tr>
-          <tr>
-            <td>Scottsdale, AZ</td>
-            <td>65.9%</td>
-            <td class="down">-9.8%</td>
-            <td>[TBD]</td>
-            <td>—</td>
-            <td>[TBD]</td>
-            <td>—</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="insight-box">
+<div class="section-subtitle">Competitive Set Performance — May 2026</div>
+<div class="source-tag">Source: STR · Monthly Performance by Market</div>
+<table class="data-table">
+<thead>
+<tr><th>Market</th><th>Occupancy</th><th>OCC Chg</th><th>ADR</th><th>ADR Chg</th><th>RevPAR</th><th>RevPAR Chg</th></tr>
+</thead>
+<tbody>
+<tr class="highlight">
+<td class="bold">City of Mesa, AZ</td>
+<td>62.1%</td>
+<td class="watch">-1.0%</td>
+<td>$102</td>
+<td class="watch">-1.6%</td>
+<td>$64</td>
+<td class="watch">-2.6%</td>
+</tr>
+<tr>
+<td>Mesa Top Tier</td>
+<td>60.7%</td>
+<td class="down">-4.6%</td>
+<td>$140</td>
+<td class="up">+1.4%</td>
+<td>$85</td>
+<td class="down">-3.3%</td>
+</tr>
+<tr>
+<td>Phoenix Airport, AZ</td>
+<td>69.7%</td>
+<td class="up">+5.8%</td>
+<td>$115</td>
+<td class="up">+2.4%</td>
+<td>$80</td>
+<td class="up">+8.3%</td>
+</tr>
+<tr>
+<td>Phoenix, AZ</td>
+<td>65.2%</td>
+<td class="up">+0.2%</td>
+<td>$158</td>
+<td class="up">+1.1%</td>
+<td>$103</td>
+<td class="up">+1.3%</td>
+</tr>
+<tr>
+<td>Tempe, AZ</td>
+<td>65.9%</td>
+<td class="up">+0.6%</td>
+<td>$142</td>
+<td class="up">+2.2%</td>
+<td>$94</td>
+<td class="up">+2.8%</td>
+</tr>
+<tr>
+<td>City of Gilbert, AZ</td>
+<td>76.3%</td>
+<td class="up">+3.1%</td>
+<td>$128</td>
+<td class="down">-1.5%</td>
+<td>$98</td>
+<td class="up">+1.6%</td>
+</tr>
+<tr>
+<td>Phoenix West, AZ</td>
+<td>67.1%</td>
+<td class="watch">-0.2%</td>
+<td>$123</td>
+<td class="down">-1.8%</td>
+<td>$83</td>
+<td class="down">-2.0%</td>
+</tr>
+<tr>
+<td>Phoenix Central, AZ</td>
+<td>64.0%</td>
+<td class="up">+0.6%</td>
+<td>$185</td>
+<td class="up">+0.5%</td>
+<td>$119</td>
+<td class="up">+1.1%</td>
+</tr>
+<tr>
+<td>Scottsdale, AZ</td>
+<td>65.9%</td>
+<td class="down">-9.8%</td>
+<td>[TBD]</td>
+<td>—</td>
+<td>[TBD]</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<div class="insight-box">
         Mesa's <strong>+6.0% hotel demand growth</strong> led all comparable Arizona markets in May. While RevPAR was down -2.6% — consistent with ADR softness — the demand story is strong. Scottsdale experienced a -9.8% occupancy decline, underscoring Mesa's relative strength as we move into summer.
       </div>
+<div class="section-subtitle">Hotel Occupancy Trend — City of Mesa (Last 3 Months)</div>
+<div class="chart-wrap">
+<div class="chart-canvas-wrap">
+<canvas id="hotelOccChart"></canvas>
+</div>
+</div>
+<div class="source-tag">Note: Monthly trend reflects STR values available in this report (Mar-May); FYTD average is shown as a benchmark.</div>
+</div>
+<!-- ============ VISITATION & TRAVEL TRENDS ============ -->
 
-      <div class="section-subtitle">Hotel Occupancy Trend — City of Mesa (Last 3 Months)</div>
-      <div class="chart-wrap">
-        <div class="chart-canvas-wrap">
-          <canvas id="hotelOccChart"></canvas>
-        </div>
+<div class="section">
+<div class="section-title">Visitation &amp; Travel Trends</div>
+<div class="section-subtitle">Visitor Volume — Last 12 Months (Jun 2025–May 2026)</div>
+<div class="source-tag">Source: Placer.ai · 50+ mile visitor filter · Domestic Travel &amp; Tourism Report</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Total Trips</div>
+<div class="kpi-value">3.7M</div>
+<div class="kpi-sub"><span class="up">+3.9% YOY</span> vs. 3.5M prior year</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Avg. Monthly Visitors</div>
+<div class="kpi-value">244.0K</div>
+<div class="kpi-sub"><span class="up">+6.2% YOY</span> vs. 229.8K prior year</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Visit Nights</div>
+<div class="kpi-value">6.1M</div>
+<div class="kpi-sub"><span class="up">+0.1% YOY</span> — stable overnight demand</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Overnight Trips</div>
+<div class="kpi-value">2.4M</div>
+<div class="kpi-sub"><span class="bold">65%</span> of all trips — avg 2.6 nights/trip</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Day Trips</div>
+<div class="kpi-value">1.3M</div>
+<div class="kpi-sub"><span class="bold">35%</span> of all trips — same-day returns</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Arizona City Rank</div>
+<div class="kpi-value">#5</div>
+<div class="kpi-sub">Behind Phoenix, Tucson, Scottsdale, Flagstaff</div>
+</div>
+</div>
+<div class="insight-box">
+        Mesa attracted <strong>3.7M trips over the last 12 months</strong>, up +3.9% YOY — the strongest volume growth among comparable AZ cities. Avg monthly visitors grew to <strong>244K (+6.2%)</strong>, the highest in the FYTD period. Mesa ranks <strong>#5 among all Arizona cities</strong>, ahead of Tempe, Glendale, Chandler, and Sedona. Visitor distribution: 69% overnight guests, 17% leaked day visitors (who slept in competing markets), and 14% true day visitors.
       </div>
-      <div class="source-tag">Note: Monthly trend reflects STR values available in this report (Mar-May); FYTD average is shown as a benchmark.</div>
-    </div>
-
-    <!-- ============ DIGITAL MARKETING — PAID ============ -->
-    <div class="section">
-      <div class="section-title">Digital Marketing — Paid</div>
-
-      <div class="section-subtitle">DV360 Programmatic — Out-of-State Feeder Markets</div>
-      <div class="source-tag">Source: Google Display &amp; Video 360 · May 1–31, 2026 · Pre-roll + Display campaign</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Impressions</div>
-          <div class="kpi-value">1.6M</div>
-          <div class="kpi-sub"><span class="up">+179.2% vs. April</span> — campaign scaling</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Clicks</div>
-          <div class="kpi-value">25,831</div>
-          <div class="kpi-sub"><span class="up">+384.4% vs. April</span></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">CTR</div>
-          <div class="kpi-value">1.60%</div>
-          <div class="kpi-sub"><span class="up">+46.3% vs. April</span></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Spend</div>
-          <div class="kpi-value">$7,499</div>
-          <div class="kpi-sub">CPM: $4.64</div>
-        </div>
+<div class="section-subtitle">Overnight Visitor Distribution — May 2026</div>
+<div class="source-tag">Source: Placer.ai · 50+ mile visitor filter</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Overnight Visitors Captured</div>
+<div class="kpi-value">168.5K</div>
+<div class="kpi-sub"><span class="up">69.0%</span> of avg monthly visitors — slept in Mesa</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Leaked Day Visitors</div>
+<div class="kpi-value">41.5K</div>
+<div class="kpi-sub"><span class="watch">17.0%</span> visited Mesa but slept elsewhere</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Pure Day Visitors</div>
+<div class="kpi-value">34.0K</div>
+<div class="kpi-sub">13.9% — no overnight stay anywhere</div>
+</div>
+</div>
+<div class="section-subtitle">Overnight Leakage — Last 12 Months</div>
+<div class="source-tag">Source: Placer.ai · Overnight Leakage Report · 50+ miles · Max Distance 200 miles</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Nights Lost</div>
+<div class="kpi-value">1.2M</div>
+<div class="kpi-sub"><span class="watch">+11.9% YOY</span> — growing conversion opportunity</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Leakage Rate</div>
+<div class="kpi-value">16.2%</div>
+<div class="kpi-sub"><span class="up">-6.3% YOY</span> — improving capture rate</div>
+</div>
+</div>
+<div class="warning-box">
+<strong>1.2M nights are being lost</strong> to competing markets annually — visitors who came to Mesa but slept in neighboring cities. The top leakage destinations are all East Valley AZ: Gilbert (188.6K nights, 20.6%), Phoenix (183.9K, 20.1%), Tempe (118.2K, 12.9%), and Chandler (113.7K, 12.4%). <strong>The leakage rate is improving (-6.3% YOY)</strong>, indicating that Mesa's lodging supply and marketing are increasing overnight capture — but the absolute nights lost are still growing, representing a significant revenue recovery opportunity.
       </div>
+<div class="section-subtitle">Top Visitor Origin Markets — May 2026</div>
+<div class="source-tag">Source: Placer.ai · DMA Rankings · 50+ miles · All Trips</div>
+<table class="data-table">
+<thead><tr><th>Rank</th><th>Origin Market</th><th>Trips (Annual)</th><th>Avg Monthly Visitors</th><th>Visit Nights</th><th>Avg Duration</th></tr></thead>
+<tbody>
+<tr><td class="bold">#1</td><td>Phoenix, AZ</td><td>692,577</td><td>40,534</td><td>807,954</td><td>2.0 nights</td></tr>
+<tr><td class="bold">#2</td><td>Tucson (Sierra Vista), AZ</td><td>388,669</td><td>23,638</td><td>394,867</td><td>1.8 nights</td></tr>
+<tr><td class="bold">#3</td><td>Los Angeles, CA</td><td>311,545</td><td>22,203</td><td>477,087</td><td>2.3 nights</td></tr>
+<tr><td class="bold">#4</td><td>Albuquerque–Santa Fe, NM</td><td>139,266</td><td>9,650</td><td>231,619</td><td>2.3 nights</td></tr>
+<tr><td class="bold">#5</td><td>Salt Lake City, UT</td><td>134,649</td><td>10,338</td><td>286,165</td><td>2.9 nights</td></tr>
+<tr><td>#6</td><td>Seattle–Tacoma, WA</td><td>105,831</td><td>7,832</td><td>240,983</td><td>3.2 nights</td></tr>
+<tr><td>#7</td><td>Denver, CO</td><td>104,961</td><td>8,143</td><td>205,047</td><td>2.8 nights</td></tr>
+<tr><td>#8</td><td>San Diego, CA</td><td>87,835</td><td>6,365</td><td>146,297</td><td>2.4 nights</td></tr>
+<tr><td>#9</td><td>Minneapolis–St. Paul, MN</td><td>87,462</td><td>8,644</td><td>259,810</td><td>3.7 nights</td></tr>
+</tbody>
+</table>
+<div class="section-subtitle">Visitor Category Activity — Last 12 Months</div>
+<div class="source-tag">Source: Placer.ai · Category Analysis · 50+ miles · All Trip Types</div>
+<table class="data-table" style="max-width:520px;">
+<thead><tr><th>Category</th><th>Trips</th><th>% of Total</th><th>YOY Change</th></tr></thead>
+<tbody>
+<tr><td>Retail</td><td>1,118,062</td><td>25.8%</td><td class="up">+0.7%</td></tr>
+<tr><td>Restaurants</td><td>1,026,222</td><td>23.6%</td><td class="up">+0.5%</td></tr>
+<tr><td>Hotels</td><td>616,454</td><td>14.2%</td><td class="up">+3.3%</td></tr>
+<tr><td>Recreation &amp; Entertainment</td><td>324,737</td><td>7.5%</td><td class="up">+3.5%</td></tr>
+<tr><td>Health, Beauty &amp; Wellness</td><td>315,454</td><td>7.3%</td><td class="up">+6.5%</td></tr>
+<tr><td>Groceries &amp; Food Stores</td><td>573,530</td><td>13.2%</td><td class="down">-3.0%</td></tr>
+</tbody>
+</table>
+<div class="section-subtitle">Airport Access — PHX Checkpoint Volume</div>
+<div class="source-tag">Source: Transportation Security Administration (TSA)</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">May 2026 Volume</div>
+<div class="kpi-value">1.9M</div>
+<div class="kpi-sub"><span class="watch">-1.2% YOY</span> — slight softness in air travel</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">FYTD Volume (Jul–May)</div>
+<div class="kpi-value">19.5M</div>
+<div class="kpi-sub"><span class="watch">-0.8% YOY</span> — marginal year-to-date decline</div>
+</div>
+</div>
+<div class="insight-box">
+        PHX checkpoint volume is down slightly YOY (-1.2%), consistent with broader national softness in air travel. However, Mesa Gateway Airport continues to expand, now offering nonstop service to 45 destinations — providing an important access alternative that supplements PHX demand.
+      </div>
+<div class="section-subtitle">Top Air Origin Markets (FYTD — Jul 2025–Apr 2026)</div>
+<div class="source-tag">Source: OAG Visitor Arrival Data</div>
+<table class="data-table" style="max-width:420px;">
+<thead><tr><th>Origin Market</th><th>Share of Air Arrivals</th></tr></thead>
+<tbody>
+<tr><td>Chicago, IL</td><td class="bold">4.8%</td></tr>
+<tr><td>Denver, CO</td><td>4.5%</td></tr>
+<tr><td>Seattle, WA</td><td>4.2%</td></tr>
+<tr><td>Minneapolis, MN</td><td>3.2%</td></tr>
+<tr><td>Portland, OR</td><td>2.5%</td></tr>
+<tr><td>Los Angeles, CA</td><td>2.4%</td></tr>
+<tr><td>Dallas–Fort Worth, TX</td><td>2.4%</td></tr>
+<tr><td>Salt Lake City, UT</td><td>2.4%</td></tr>
+</tbody>
+</table>
+<div class="section-subtitle">National Travel Context</div>
+<div class="source-tag">Source: Tourism Economics · U.S. Travel Association · MMGY Global Portrait of American Travelers</div>
+<ul class="highlight-list">
+<li><strong>Airline fares up 37.9% vs. prior year</strong> as of May — the sharpest input cost increase across all travel categories. F&amp;B up 31.9%, transportation up 24.0%. These macro headwinds have not dampened Mesa demand, which outperformed the comp set.</li>
+<li><strong>Travel spending is +8.3% vs. 2019</strong> nationally (Tourism Economics), continuing a multiyear recovery trajectory.</li>
+<li><strong>Oxford Economics upgraded its 2026 GDP forecast</strong> to +2.2% (from +1.9%) and consumer spending to +1.9%. Tourism Economics raised its U.S. RevPAR forecast to +2.8% YOY. Positive tailwinds for the summer and fall booking window.</li>
+<li><strong>High-income travelers remain most committed:</strong> 91–93% of households earning $150K+ plan leisure travel in the next 12 months (2026 Q1 MMGY data), reinforcing Mesa's opportunity with its premium visitor segment.</li>
+<li><strong>Summer booking pace is strong:</strong> As of June 10, June hotel reservations are up 4.4% YOY, July up 5.0%, and September up 9.2% — all ahead of last year at the same point in the booking window.</li>
+</ul>
+</div>
+<!-- ============ VISITOR PROFILE ============ -->
+<div class="section">
+<div class="section-title">Visitor Profile</div>
+<div class="section-subtitle">May 2026 Domestic Visits</div>
+<div class="source-tag">Source: Azira / Symphony · U.S. Census Bureau · Placer.ai · 50+ mile filter</div>
+<div class="two-col">
+<div>
+<div class="subsection-title">Top Origin States</div>
+<table class="data-table">
+<thead><tr><th>State</th><th>Share</th></tr></thead>
+<tbody>
+<tr><td>Arizona (in-state)</td><td>36.9%</td></tr>
+<tr><td>California</td><td class="bold">12.7%</td></tr>
+<tr><td>Texas</td><td>5.1%</td></tr>
+<tr><td>Utah</td><td>4.2%</td></tr>
+<tr><td>New Mexico</td><td>4.2%</td></tr>
+<tr><td>Colorado</td><td>3.7%</td></tr>
+<tr><td>Nevada</td><td>3.2%</td></tr>
+<tr><td>Washington</td><td>2.8%</td></tr>
+<tr><td>Illinois</td><td>2.1%</td></tr>
+<tr><td>Virginia</td><td>2.0%</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<div class="subsection-title">Top Origin MSAs</div>
+<table class="data-table">
+<thead><tr><th>Metro Area</th><th>Share</th></tr></thead>
+<tbody>
+<tr><td>Tucson, AZ</td><td class="bold">8.9%</td></tr>
+<tr><td>Phoenix-Mesa-Chandler, AZ</td><td>5.9%</td></tr>
+<tr><td>Prescott Valley-Prescott, AZ</td><td>5.6%</td></tr>
+<tr><td>Los Angeles-Long Beach-Anaheim, CA</td><td>5.0%</td></tr>
+<tr><td>Riverside-San Bernardino, CA</td><td>3.0%</td></tr>
+<tr><td>Flagstaff, AZ</td><td>3.0%</td></tr>
+<tr><td>Payson, AZ</td><td>2.8%</td></tr>
+<tr><td>Las Vegas-Henderson, NV</td><td>2.8%</td></tr>
+<tr><td>Show Low, AZ</td><td>2.8%</td></tr>
+<tr><td>Yuma, AZ</td><td>2.4%</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="subsection-title">Visitor Demographics — May 2026</div>
+<div class="three-col">
+<div>
+<div class="chart-title">Household Income</div>
+<div class="insight-box" style="margin-top:0;">
+            Median: <strong>$88,680</strong><br/>
+            Largest segment: $150K+ at <strong>22%</strong><br/>
+            $100K–$149K at <strong>15%</strong>
+</div>
+</div>
+<div>
+<div class="chart-title">Age Distribution</div>
+<div class="insight-box" style="margin-top:0;">
+            Largest group: <strong>65+</strong> at 17%<br/>
+            35–44 at <strong>14%</strong><br/>
+            25–34 &amp; 45–54 at <strong>13%</strong> each
+          </div>
+</div>
+<div>
+<div class="chart-title">Race/Ethnicity</div>
+<div class="insight-box" style="margin-top:0;">
+            White: <strong>60%</strong><br/>
+            2+ Races: <strong>11%</strong><br/>
+            Other: <strong>11%</strong>
+</div>
+</div>
+</div>
+<div class="insight-box">
+        Mesa's visitor profile skews toward high-income, experienced travelers — with 22% earning $150K+ and 88% overnighting. This premium visitor profile supports the continued investment in upscale product development, including the opening of Unscripted 233 in May.
+      </div>
+</div><div class="section">
+<div class="section-title">Market Recap</div>
+<div class="section-subtitle">Leisure &amp; Hospitality Workforce</div>
+<div class="source-tag">Source: Bureau of Labor Statistics · Phoenix-Mesa-Scottsdale MSA</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">L&amp;H Jobs — May 2026</div>
+<div class="kpi-value">268.8K</div>
+<div class="kpi-sub"><span class="watch">-1.2% YOY</span> · <span class="up">+14.5% vs. 2019</span> · 10.8% of all jobs</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">L&amp;H Job Openings</div>
+<div class="kpi-value">12.1K</div>
+<div class="kpi-sub">4.6% opening rate · +0.0% YOY · -7.2% vs. 2019</div>
+</div>
+</div>
+<div class="insight-box">
+        L&amp;H jobs are down slightly YOY (-1.2%) but remain <strong>14.5% above pre-pandemic 2019 levels</strong> — a sign of a fundamentally stronger tourism economy. Job openings are flat YOY, suggesting the sector has reached a more normalized labor market after the post-pandemic surge.
+      </div>
+<div class="section-subtitle">Economic Outlook — May 2026 Revisions</div>
+<div class="source-tag">Source: Tourism Economics · Oxford Economics · USTA Travel Recovery Tracker</div>
+<ul class="highlight-list">
+<li>Oxford Economics raised 2026 GDP forecast to <strong>+2.2%</strong> (from +1.9%) and consumer spending to <strong>+1.9%</strong> (from +1.7%)</li>
+<li>Tourism Economics upgraded U.S. RevPAR forecast to <strong>+2.8% YOY</strong> and shifted occupancy from a projected decline to <strong>+0.5 ppt growth</strong></li>
+<li>Travel spending is <strong>+8.3% vs. 2019</strong> nationally, with leisure travel volume at 115% of 2019 levels (forecast)</li>
+<li>Domestic leisure travel spending forecast: <strong>$909B in 2026</strong>, growing to $1.0T by 2030</li>
+</ul>
+</div>
+<!-- ============ MARKET RECAP ============ -->
+<!-- ============ LODGING PERFORMANCE ============ -->
 
-      <div class="insight-box">
+<!-- ============ DIGITAL MARKETING — PAID ============ -->
+<div class="section">
+<div class="section-title">Digital Marketing — Paid</div>
+<div class="section-subtitle">DV360 Programmatic — Out-of-State Feeder Markets</div>
+<div class="source-tag">Source: Google Display &amp; Video 360 · May 1–31, 2026 · Pre-roll + Display campaign</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Impressions</div>
+<div class="kpi-value">1.6M</div>
+<div class="kpi-sub"><span class="up">+179.2% vs. April</span> — campaign scaling</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Clicks</div>
+<div class="kpi-value">25,831</div>
+<div class="kpi-sub"><span class="up">+384.4% vs. April</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">CTR</div>
+<div class="kpi-value">1.60%</div>
+<div class="kpi-sub"><span class="up">+46.3% vs. April</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Spend</div>
+<div class="kpi-value">$7,499</div>
+<div class="kpi-sub">CPM: $4.64</div>
+</div>
+</div>
+<div class="insight-box">
         DV360 pre-roll video drove all activity — <strong>1,603,683 pre-roll impressions</strong> at a 44.37% Video Completion Rate (VCR). The campaign ran on premium placements including dailymotion.com, theshot.com, mjpost.com, historynob.com, and eathai.com. The pre-roll format continues to be the primary driver of awareness and brand engagement for Visit Mesa's out-of-state campaigns.
       </div>
-
-      <div class="section-subtitle">All Campaign Performance Summary — May 2026</div>
-      <div class="source-tag">Source: Monthly Insights Dashboard · All Campaigns (Sept–May)</div>
-      <table class="data-table">
-        <thead>
-          <tr><th>Media</th><th>Impressions</th><th>Clicks</th><th>CTR</th><th>Spend</th><th>CPM</th><th>CPC</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>YouTube</td>
-            <td>1,018,795</td>
-            <td>1,364</td>
-            <td>0.13%</td>
-            <td>$3,096.38</td>
-            <td>$3.04</td>
-            <td>$2.27</td>
-          </tr>
-          <tr>
-            <td>Display Banners</td>
-            <td>467,801</td>
-            <td>338</td>
-            <td>0.07%</td>
-            <td>$1,561.71</td>
-            <td>$3.34</td>
-            <td>$4.62</td>
-          </tr>
-          <tr>
-            <td>DV360 Pre-roll</td>
-            <td>2,683,579</td>
-            <td>18,879</td>
-            <td>0.70%</td>
-            <td>$21,529.66</td>
-            <td>$8.02</td>
-            <td>$1.14</td>
-          </tr>
-          <tr>
-            <td>Facebook</td>
-            <td>354,956</td>
-            <td>2,012</td>
-            <td>0.57%</td>
-            <td>$11,435.84</td>
-            <td>$32.21</td>
-            <td>$5.68</td>
-          </tr>
-          <tr>
-            <td>Google Search</td>
-            <td>2,453,578</td>
-            <td>13,752</td>
-            <td>—</td>
-            <td>$11,447.84</td>
-            <td>$4.67</td>
-            <td>$0.83</td>
-          </tr>
-          <tr>
-            <td>Instagram</td>
-            <td>5,907,320</td>
-            <td>—</td>
-            <td>—</td>
-            <td>$37,693.80</td>
-            <td>$6.38</td>
-            <td>—</td>
-          </tr>
-          <tr>
-            <td>Spotify Audio</td>
-            <td>489,735</td>
-            <td>452</td>
-            <td>0.09%</td>
-            <td>$9,391.38</td>
-            <td>$19.18</td>
-            <td>$20.78</td>
-          </tr>
-          <tr>
-            <td>Hotels.com</td>
-            <td>540,527</td>
-            <td>—</td>
-            <td>0.08%</td>
-            <td>$12,647.98</td>
-            <td>$23.40</td>
-            <td>$0.00</td>
-          </tr>
-          <tr>
-            <td>Expedia</td>
-            <td>625,198</td>
-            <td>—</td>
-            <td>0.17%</td>
-            <td>$111,568.50</td>
-            <td>$178.47</td>
-            <td>$0.00</td>
-          </tr>
-          <tr>
-            <td>VRBO</td>
-            <td>229,421</td>
-            <td>162</td>
-            <td>0.07%</td>
-            <td>$4,097.39</td>
-            <td>$17.87</td>
-            <td>$0.00</td>
-          </tr>
-          <tr class="highlight">
-            <td class="bold">Campaign Total</td>
-            <td class="bold">22,110,369</td>
-            <td class="bold">346,366</td>
-            <td class="bold">1.57%</td>
-            <td class="bold">$134,007.28</td>
-            <td class="bold">$6.06</td>
-            <td class="bold">$0.39</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="section-subtitle">Valley Locals Campaign — May 2026</div>
-      <div class="source-tag">Source: Google Search Marketing · Valley Locals Campaign · May 1–31, 2026</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Impressions</div>
-          <div class="kpi-value">110,206</div>
-          <div class="kpi-sub">Local search targeting in market</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Clicks</div>
-          <div class="kpi-value">6,433</div>
-          <div class="kpi-sub">CTR: <strong>5.84%</strong> — strong local intent</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Spend</div>
-          <div class="kpi-value">$783.58</div>
-          <div class="kpi-sub">CPC: $0.12 — highly efficient</div>
-        </div>
-      </div>
-      <div class="insight-box">
+<div class="section-subtitle">All Campaign Performance Summary — May 2026</div>
+<div class="source-tag">Source: Monthly Insights Dashboard · All Campaigns (Sept–May)</div>
+<table class="data-table">
+<thead>
+<tr><th>Media</th><th>Impressions</th><th>Clicks</th><th>CTR</th><th>Spend</th><th>CPM</th><th>CPC</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube</td>
+<td>1,018,795</td>
+<td>1,364</td>
+<td>0.13%</td>
+<td>$3,096.38</td>
+<td>$3.04</td>
+<td>$2.27</td>
+</tr>
+<tr>
+<td>Display Banners</td>
+<td>467,801</td>
+<td>338</td>
+<td>0.07%</td>
+<td>$1,561.71</td>
+<td>$3.34</td>
+<td>$4.62</td>
+</tr>
+<tr>
+<td>DV360 Pre-roll</td>
+<td>2,683,579</td>
+<td>18,879</td>
+<td>0.70%</td>
+<td>$21,529.66</td>
+<td>$8.02</td>
+<td>$1.14</td>
+</tr>
+<tr>
+<td>Facebook</td>
+<td>354,956</td>
+<td>2,012</td>
+<td>0.57%</td>
+<td>$11,435.84</td>
+<td>$32.21</td>
+<td>$5.68</td>
+</tr>
+<tr>
+<td>Google Search</td>
+<td>2,453,578</td>
+<td>13,752</td>
+<td>—</td>
+<td>$11,447.84</td>
+<td>$4.67</td>
+<td>$0.83</td>
+</tr>
+<tr>
+<td>Instagram</td>
+<td>5,907,320</td>
+<td>—</td>
+<td>—</td>
+<td>$37,693.80</td>
+<td>$6.38</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Spotify Audio</td>
+<td>489,735</td>
+<td>452</td>
+<td>0.09%</td>
+<td>$9,391.38</td>
+<td>$19.18</td>
+<td>$20.78</td>
+</tr>
+<tr>
+<td>Hotels.com</td>
+<td>540,527</td>
+<td>—</td>
+<td>0.08%</td>
+<td>$12,647.98</td>
+<td>$23.40</td>
+<td>$0.00</td>
+</tr>
+<tr>
+<td>Expedia</td>
+<td>625,198</td>
+<td>—</td>
+<td>0.17%</td>
+<td>$111,568.50</td>
+<td>$178.47</td>
+<td>$0.00</td>
+</tr>
+<tr>
+<td>VRBO</td>
+<td>229,421</td>
+<td>162</td>
+<td>0.07%</td>
+<td>$4,097.39</td>
+<td>$17.87</td>
+<td>$0.00</td>
+</tr>
+<tr class="highlight">
+<td class="bold">Campaign Total</td>
+<td class="bold">22,110,369</td>
+<td class="bold">346,366</td>
+<td class="bold">1.57%</td>
+<td class="bold">$134,007.28</td>
+<td class="bold">$6.06</td>
+<td class="bold">$0.39</td>
+</tr>
+</tbody>
+</table>
+<div class="section-subtitle">Valley Locals Campaign — May 2026</div>
+<div class="source-tag">Source: Google Search Marketing · Valley Locals Campaign · May 1–31, 2026</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Impressions</div>
+<div class="kpi-value">110,206</div>
+<div class="kpi-sub">Local search targeting in market</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Clicks</div>
+<div class="kpi-value">6,433</div>
+<div class="kpi-sub">CTR: <strong>5.84%</strong> — strong local intent</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Spend</div>
+<div class="kpi-value">$783.58</div>
+<div class="kpi-sub">CPC: $0.12 — highly efficient</div>
+</div>
+</div>
+<div class="insight-box">
         The Valley Locals campaign messaging shifted in May to highlight summer staycation values — Mesa summer deals, indoor family activities, and evening outdoor adventures. While CTR of 0.11% is lower than winter months (expected in shoulder season), the <strong>ROAS on Hotels.com (2x) remains efficient</strong>. Continued refinement of local inventory and messaging is planned ahead of peak summer.
       </div>
-
-      <!-- TEGNA / CTV Streaming -->
-      <div class="section-subtitle">Streaming TV (CTV) — May 2026</div>
-      <div class="source-tag">Source: TEGNA Attribution · TVSquared · Premion · Presented by Erika O'Callaghan, 12News NBC</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Delivered Impressions</div>
-          <div class="kpi-value">180,958</div>
-          <div class="kpi-sub">100% Connected TV delivery</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Video Completion Rate</div>
-          <div class="kpi-value">97.66%</div>
-          <div class="kpi-sub">Near-complete viewership — premium format</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Unique Households</div>
-          <div class="kpi-value">66,959</div>
-          <div class="kpi-sub">Frequency: 2.70 views per household</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Attributed Impressions</div>
-          <div class="kpi-value">3,748</div>
-          <div class="kpi-sub">2.07% attributed rate</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Attributed Unique Visitors</div>
-          <div class="kpi-value">826</div>
-          <div class="kpi-sub">0.46% attributed visitor rate to visitmesa.com</div>
-        </div>
-      </div>
-
-      <div class="subsection-title">Attribution by Market</div>
-      <table class="data-table" style="max-width:560px;">
-        <thead><tr><th>Market</th><th>Delivered Impressions</th><th>Attributed Impressions</th><th>Attributed Rate</th></tr></thead>
-        <tbody>
-          <tr><td class="bold">Phoenix (Prescott)</td><td>126,556</td><td>3,506</td><td class="up">2.77%</td></tr>
-          <tr><td>Tucson (Sierra Vista)</td><td>7,668</td><td>103</td><td>1.34%</td></tr>
-          <tr><td>Las Vegas</td><td>7,283</td><td>76</td><td>1.04%</td></tr>
-          <tr><td>Albuquerque–Santa Fe</td><td>17,688</td><td>42</td><td>0.24%</td></tr>
-          <tr><td>Los Angeles</td><td>6,728</td><td>17</td><td>0.25%</td></tr>
-          <tr><td>Salt Lake City</td><td>7,790</td><td>2</td><td>0.03%</td></tr>
-        </tbody>
-      </table>
-
-      <div class="subsection-title">Top Performing Creatives</div>
-      <table class="data-table" style="max-width:560px;">
-        <thead><tr><th>Creative</th><th>Delivered Impressions</th><th>Attributed Rate</th></tr></thead>
-        <tbody>
-          <tr><td>Visit Mesa — Events (VAST TAG)</td><td>45,122</td><td class="up">3.72%</td></tr>
-          <tr><td>Visit Mesa — Deals Rev V2 (VAST TAG)</td><td>45,591</td><td class="up">3.13%</td></tr>
-          <tr><td>Adventure Guide — Water (OTT)</td><td>45,122</td><td>1.12%</td></tr>
-        </tbody>
-      </table>
-
-      <div class="insight-box">
+<!-- TEGNA / CTV Streaming -->
+<div class="section-subtitle">Streaming TV (CTV) — May 2026</div>
+<div class="source-tag">Source: TEGNA Attribution · TVSquared · Premion · Presented by Erika O'Callaghan, 12News NBC</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Delivered Impressions</div>
+<div class="kpi-value">180,958</div>
+<div class="kpi-sub">100% Connected TV delivery</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Video Completion Rate</div>
+<div class="kpi-value">97.66%</div>
+<div class="kpi-sub">Near-complete viewership — premium format</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Unique Households</div>
+<div class="kpi-value">66,959</div>
+<div class="kpi-sub">Frequency: 2.70 views per household</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Attributed Impressions</div>
+<div class="kpi-value">3,748</div>
+<div class="kpi-sub">2.07% attributed rate</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Attributed Unique Visitors</div>
+<div class="kpi-value">826</div>
+<div class="kpi-sub">0.46% attributed visitor rate to visitmesa.com</div>
+</div>
+</div>
+<div class="subsection-title">Attribution by Market</div>
+<table class="data-table" style="max-width:560px;">
+<thead><tr><th>Market</th><th>Delivered Impressions</th><th>Attributed Impressions</th><th>Attributed Rate</th></tr></thead>
+<tbody>
+<tr><td class="bold">Phoenix (Prescott)</td><td>126,556</td><td>3,506</td><td class="up">2.77%</td></tr>
+<tr><td>Tucson (Sierra Vista)</td><td>7,668</td><td>103</td><td>1.34%</td></tr>
+<tr><td>Las Vegas</td><td>7,283</td><td>76</td><td>1.04%</td></tr>
+<tr><td>Albuquerque–Santa Fe</td><td>17,688</td><td>42</td><td>0.24%</td></tr>
+<tr><td>Los Angeles</td><td>6,728</td><td>17</td><td>0.25%</td></tr>
+<tr><td>Salt Lake City</td><td>7,790</td><td>2</td><td>0.03%</td></tr>
+</tbody>
+</table>
+<div class="subsection-title">Top Performing Creatives</div>
+<table class="data-table" style="max-width:560px;">
+<thead><tr><th>Creative</th><th>Delivered Impressions</th><th>Attributed Rate</th></tr></thead>
+<tbody>
+<tr><td>Visit Mesa — Events (VAST TAG)</td><td>45,122</td><td class="up">3.72%</td></tr>
+<tr><td>Visit Mesa — Deals Rev V2 (VAST TAG)</td><td>45,591</td><td class="up">3.13%</td></tr>
+<tr><td>Adventure Guide — Water (OTT)</td><td>45,122</td><td>1.12%</td></tr>
+</tbody>
+</table>
+<div class="insight-box">
         The TEGNA Streaming TV campaign reached <strong>66,959 unique households</strong> across premium connected TV platforms including A&amp;E, Fox News, Disney+, AMC, Hulu, CNN, MLB Network, HBO Max, History, and MSNBC. With a <strong>97.66% video completion rate</strong>, Visit Mesa's 30-second spots are being watched nearly in full — exceptional engagement for video advertising. Phoenix/Prescott drove the strongest attribution (2.77%), aligning with Placer.ai data showing Phoenix as Mesa's #1 visitor origin market. Retargeting delivered an additional 220,207 impressions with 166 website clicks. Top attributed pages: /events/ (184 visitors), /things-to-do/outdoor-activities/ (86), and homepage (85).
       </div>
-    </div>
-
-    <!-- ============ DIGITAL MARKETING — SOCIAL / SEO / EARNED ============ -->
-    <div class="section">
-      <div class="section-title">Digital Marketing — Social, SEO &amp; Earned Media</div>
-
-      <div class="section-subtitle">Social Media Overview — May 2026</div>
-      <div class="source-tag">Source: Sprout Social · Facebook, Instagram, TikTok, LinkedIn, YouTube</div>
-
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Total Audience</div>
-          <div class="kpi-value">99.9K</div>
-          <div class="kpi-sub"><span class="up">+41.6% YOY</span> — approaching 100K milestone</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Impressions</div>
-          <div class="kpi-value">2.2M</div>
-          <div class="kpi-sub"><span class="up">+107.2% YOY</span> — doubled year-over-year</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Engagements</div>
-          <div class="kpi-value">126.4K</div>
-          <div class="kpi-sub"><span class="up">+204.1% YOY</span> — tripled year-over-year</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Engagement Rate</div>
-          <div class="kpi-value">5.9%</div>
-          <div class="kpi-sub"><span class="up">+1.9 pts YOY</span> — quality audience signal</div>
-        </div>
-      </div>
-
-      <div class="section-subtitle">Audience by Platform — May 2026</div>
-      <div class="platform-row">
-        <div class="platform-name">Facebook</div>
-        <div class="platform-bar-wrap"><div class="platform-bar" style="width:100%"><span class="platform-bar-label">48.1K</span></div></div>
-        <div class="platform-yoy up">+49.2%</div>
-      </div>
-      <div class="platform-row">
-        <div class="platform-name">Instagram</div>
-        <div class="platform-bar-wrap"><div class="platform-bar" style="width:72%; background:#007B8A;"><span class="platform-bar-label">34.8K</span></div></div>
-        <div class="platform-yoy up">+30.4%</div>
-      </div>
-      <div class="platform-row">
-        <div class="platform-name">TikTok</div>
-        <div class="platform-bar-wrap"><div class="platform-bar" style="width:28%; background:#F5C518;"><span class="platform-bar-label" style="color:#333;">13.5K</span></div></div>
-        <div class="platform-yoy up">+55.6%</div>
-      </div>
-      <div class="platform-row">
-        <div class="platform-name">LinkedIn</div>
-        <div class="platform-bar-wrap"><div class="platform-bar" style="width:6%; background:#1e3a5f;"><span class="platform-bar-label">2.9K</span></div></div>
-        <div class="platform-yoy up">+17.9%</div>
-      </div>
-      <div class="platform-row">
-        <div class="platform-name">YouTube</div>
-        <div class="platform-bar-wrap"><div class="platform-bar" style="width:1.5%; background:#b85c00;"><span class="platform-bar-label">707</span></div></div>
-        <div class="platform-yoy up">+29.7%</div>
-      </div>
-
-      <div class="subsection-title">Platform Performance Detail</div>
-      <table class="data-table">
-        <thead>
-          <tr><th>Platform</th><th>Audience</th><th>YOY</th><th>Impressions</th><th>Engagements</th><th>Eng. Rate</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="bold">Facebook</td>
-            <td>48.1K</td>
-            <td class="up">+49.2%</td>
-            <td>803,633</td>
-            <td>16,563</td>
-            <td>2.1%</td>
-          </tr>
-          <tr>
-            <td class="bold">Instagram</td>
-            <td>34.8K</td>
-            <td class="up">+30.4%</td>
-            <td>928,840</td>
-            <td>71,570</td>
-            <td>7.7%</td>
-          </tr>
-          <tr>
-            <td class="bold">TikTok</td>
-            <td>13.5K</td>
-            <td class="up">+55.6%</td>
-            <td>—</td>
-            <td>36,391</td>
-            <td>9.0%</td>
-          </tr>
-          <tr>
-            <td class="bold">LinkedIn</td>
-            <td>2.9K</td>
-            <td class="up">+17.9%</td>
-            <td>14,251</td>
-            <td>1,549</td>
-            <td>10.9%</td>
-          </tr>
-          <tr>
-            <td class="bold">YouTube</td>
-            <td>707</td>
-            <td class="up">+29.7%</td>
-            <td>—</td>
-            <td>339</td>
-            <td>—</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="insight-box">
+</div>
+<!-- ============ DIGITAL MARKETING — SOCIAL / SEO / EARNED ============ -->
+<div class="section">
+<div class="section-title">Digital Marketing — Social, SEO &amp; Earned Media</div>
+<div class="section-subtitle">Social Media Overview — May 2026</div>
+<div class="source-tag">Source: Sprout Social · Facebook, Instagram, TikTok, LinkedIn, YouTube</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Total Audience</div>
+<div class="kpi-value">99.9K</div>
+<div class="kpi-sub"><span class="up">+41.6% YOY</span> — approaching 100K milestone</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Impressions</div>
+<div class="kpi-value">2.2M</div>
+<div class="kpi-sub"><span class="up">+107.2% YOY</span> — doubled year-over-year</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Engagements</div>
+<div class="kpi-value">126.4K</div>
+<div class="kpi-sub"><span class="up">+204.1% YOY</span> — tripled year-over-year</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Engagement Rate</div>
+<div class="kpi-value">5.9%</div>
+<div class="kpi-sub"><span class="up">+1.9 pts YOY</span> — quality audience signal</div>
+</div>
+</div>
+<div class="section-subtitle">Audience by Platform — May 2026</div>
+<div class="platform-row">
+<div class="platform-name">Facebook</div>
+<div class="platform-bar-wrap"><div class="platform-bar" style="width:100%"><span class="platform-bar-label">48.1K</span></div></div>
+<div class="platform-yoy up">+49.2%</div>
+</div>
+<div class="platform-row">
+<div class="platform-name">Instagram</div>
+<div class="platform-bar-wrap"><div class="platform-bar" style="width:72%; background:#007B8A;"><span class="platform-bar-label">34.8K</span></div></div>
+<div class="platform-yoy up">+30.4%</div>
+</div>
+<div class="platform-row">
+<div class="platform-name">TikTok</div>
+<div class="platform-bar-wrap"><div class="platform-bar" style="width:28%; background:#F5C518;"><span class="platform-bar-label" style="color:#333;">13.5K</span></div></div>
+<div class="platform-yoy up">+55.6%</div>
+</div>
+<div class="platform-row">
+<div class="platform-name">LinkedIn</div>
+<div class="platform-bar-wrap"><div class="platform-bar" style="width:6%; background:#1e3a5f;"><span class="platform-bar-label">2.9K</span></div></div>
+<div class="platform-yoy up">+17.9%</div>
+</div>
+<div class="platform-row">
+<div class="platform-name">YouTube</div>
+<div class="platform-bar-wrap"><div class="platform-bar" style="width:1.5%; background:#b85c00;"><span class="platform-bar-label">707</span></div></div>
+<div class="platform-yoy up">+29.7%</div>
+</div>
+<div class="subsection-title">Platform Performance Detail</div>
+<table class="data-table">
+<thead>
+<tr><th>Platform</th><th>Audience</th><th>YOY</th><th>Impressions</th><th>Engagements</th><th>Eng. Rate</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class="bold">Facebook</td>
+<td>48.1K</td>
+<td class="up">+49.2%</td>
+<td>803,633</td>
+<td>16,563</td>
+<td>2.1%</td>
+</tr>
+<tr>
+<td class="bold">Instagram</td>
+<td>34.8K</td>
+<td class="up">+30.4%</td>
+<td>928,840</td>
+<td>71,570</td>
+<td>7.7%</td>
+</tr>
+<tr>
+<td class="bold">TikTok</td>
+<td>13.5K</td>
+<td class="up">+55.6%</td>
+<td>—</td>
+<td>36,391</td>
+<td>9.0%</td>
+</tr>
+<tr>
+<td class="bold">LinkedIn</td>
+<td>2.9K</td>
+<td class="up">+17.9%</td>
+<td>14,251</td>
+<td>1,549</td>
+<td>10.9%</td>
+</tr>
+<tr>
+<td class="bold">YouTube</td>
+<td>707</td>
+<td class="up">+29.7%</td>
+<td>—</td>
+<td>339</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<div class="insight-box">
         May's social performance was driven by the <strong>FIFA World Cup Türkiye Team Base Camp announcement</strong> and related City Limitless content, which generated significant organic reach and engagement. TikTok (+55.6% audience growth) and LinkedIn (+10.9% engagement rate) were standout performers. Engagements are up 204% YOY — a signal that content quality and reach are both improving significantly.
       </div>
-
-      <div class="section-subtitle">Website Performance — May 2026</div>
-      <div class="source-tag">Source: Google Analytics 4 (GA4) · VisitMesa.com</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">Sessions</div>
-          <div class="kpi-value">97.5K</div>
-          <div class="kpi-sub"><span class="up">+81.0% YOY</span></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Users</div>
-          <div class="kpi-value">84.9K</div>
-          <div class="kpi-sub"><span class="up">+88.5% YOY</span></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Engaged Sessions</div>
-          <div class="kpi-value">31.6K</div>
-          <div class="kpi-sub"><span class="up">+2.3% YOY</span></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Engagement Rate</div>
-          <div class="kpi-value">32.5%</div>
-          <div class="kpi-sub"><span class="watch">-24.95 pts YOY</span> — paid traffic effect</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Page Views</div>
-          <div class="kpi-value">137.2K</div>
-          <div class="kpi-sub"><span class="up">+47.0% YOY</span></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Avg Session Duration</div>
-          <div class="kpi-value">1:11</div>
-          <div class="kpi-sub"><span class="watch">-63 sec YOY</span> — tied to paid mix shift</div>
-        </div>
-      </div>
-      <div class="insight-box">
+<div class="section-subtitle">Website Performance — May 2026</div>
+<div class="source-tag">Source: Google Analytics 4 (GA4) · VisitMesa.com</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">Sessions</div>
+<div class="kpi-value">97.5K</div>
+<div class="kpi-sub"><span class="up">+81.0% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Users</div>
+<div class="kpi-value">84.9K</div>
+<div class="kpi-sub"><span class="up">+88.5% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Engaged Sessions</div>
+<div class="kpi-value">31.6K</div>
+<div class="kpi-sub"><span class="up">+2.3% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Engagement Rate</div>
+<div class="kpi-value">32.5%</div>
+<div class="kpi-sub"><span class="watch">-24.95 pts YOY</span> — paid traffic effect</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Page Views</div>
+<div class="kpi-value">137.2K</div>
+<div class="kpi-sub"><span class="up">+47.0% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Avg Session Duration</div>
+<div class="kpi-value">1:11</div>
+<div class="kpi-sub"><span class="watch">-63 sec YOY</span> — tied to paid mix shift</div>
+</div>
+</div>
+<div class="insight-box">
         Sessions and users are up dramatically (+81–89% YOY) driven by paid and organic campaigns. The <strong>engagement rate decline (-24.95 pts) reflects the larger share of paid traffic</strong> in the mix — paid campaigns drive volume but typically have lower dwell time than organic visitors. Engaged sessions (+2.3%) are still growing in absolute terms. Top traffic sources: Google (34.0%), GCOTSponsorPackage (21.4%), and Out-of-State Campaign (19.1%).
       </div>
-
-      <div class="subsection-title">Top Traffic Sources — May 2026</div>
-      <table class="data-table" style="max-width:480px;">
-        <thead><tr><th>Source / Campaign</th><th>Share of Sessions</th></tr></thead>
-        <tbody>
-          <tr><td>(organic / Google)</td><td class="bold">30.7%</td></tr>
-          <tr><td>GCOTSponsorPackage</td><td>21.4%</td></tr>
-          <tr><td>Visit Mesa FY26 Out-of-State Feeder</td><td>19.1%</td></tr>
-          <tr><td>(direct)</td><td>17.5%</td></tr>
-          <tr><td>Valley Locals Fiscal Year Campaign</td><td>4.9%</td></tr>
-          <tr><td>(referral)</td><td>1.9%</td></tr>
-          <tr><td>Out of State Feeder Markets</td><td>1.5%</td></tr>
-          <tr><td>HospitalityJobsTraffic</td><td>1.1%</td></tr>
-        </tbody>
-      </table>
-
-      <!-- SEO / GEO Section -->
-      <div class="section-subtitle">SEO &amp; Organic Search — May 2026</div>
-      <div class="source-tag">Source: Google Search Console · Scrunch AI · SEO Dashboard · May 1–31, 2026</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">URL Clicks</div>
-          <div class="kpi-value">21,999</div>
-          <div class="kpi-sub"><span class="watch">-5.3% MOM</span> · <span class="down">-26.3% YOY</span></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Impressions</div>
-          <div class="kpi-value">2.56M</div>
-          <div class="kpi-sub"><span class="up">+6.9% MOM</span> · <span class="down">-28.3% YOY</span></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Avg. Position</div>
-          <div class="kpi-value">8.62</div>
-          <div class="kpi-sub"><span class="up">+2.6% MOM</span> improvement in rankings</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Total Users (Organic)</div>
-          <div class="kpi-value">23,483</div>
-          <div class="kpi-sub"><span class="watch">-2.3% MOM</span> · <span class="down">-17.2% YOY</span></div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Engagement Rate</div>
-          <div class="kpi-value">58.73%</div>
-          <div class="kpi-sub"><span class="watch">-1.1% MOM</span> — strong organic quality</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Sessions (Organic)</div>
-          <div class="kpi-value">29,563</div>
-          <div class="kpi-sub"><span class="watch">-4.2% MOM</span> · <span class="down">-18.6% YOY</span></div>
-        </div>
+<div class="subsection-title">Top Traffic Sources — May 2026</div>
+<table class="data-table" style="max-width:480px;">
+<thead><tr><th>Source / Campaign</th><th>Share of Sessions</th></tr></thead>
+<tbody>
+<tr><td>(organic / Google)</td><td class="bold">30.7%</td></tr>
+<tr><td>GCOTSponsorPackage</td><td>21.4%</td></tr>
+<tr><td>Visit Mesa FY26 Out-of-State Feeder</td><td>19.1%</td></tr>
+<tr><td>(direct)</td><td>17.5%</td></tr>
+<tr><td>Valley Locals Fiscal Year Campaign</td><td>4.9%</td></tr>
+<tr><td>(referral)</td><td>1.9%</td></tr>
+<tr><td>Out of State Feeder Markets</td><td>1.5%</td></tr>
+<tr><td>HospitalityJobsTraffic</td><td>1.1%</td></tr>
+</tbody>
+</table>
+<!-- SEO / GEO Section -->
+<div class="section-subtitle">SEO &amp; Organic Search — May 2026</div>
+<div class="source-tag">Source: Google Search Console · Scrunch AI · SEO Dashboard · May 1–31, 2026</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">URL Clicks</div>
+<div class="kpi-value">21,999</div>
+<div class="kpi-sub"><span class="watch">-5.3% MOM</span> · <span class="down">-26.3% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Impressions</div>
+<div class="kpi-value">2.56M</div>
+<div class="kpi-sub"><span class="up">+6.9% MOM</span> · <span class="down">-28.3% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Avg. Position</div>
+<div class="kpi-value">8.62</div>
+<div class="kpi-sub"><span class="up">+2.6% MOM</span> improvement in rankings</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Total Users (Organic)</div>
+<div class="kpi-value">23,483</div>
+<div class="kpi-sub"><span class="watch">-2.3% MOM</span> · <span class="down">-17.2% YOY</span></div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Engagement Rate</div>
+<div class="kpi-value">58.73%</div>
+<div class="kpi-sub"><span class="watch">-1.1% MOM</span> — strong organic quality</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Sessions (Organic)</div>
+<div class="kpi-value">29,563</div>
+<div class="kpi-sub"><span class="watch">-4.2% MOM</span> · <span class="down">-18.6% YOY</span></div>
+</div>
+</div>
+<div class="subsection-title">Keyword Rankings by Type</div>
+<table class="data-table" style="max-width:480px;">
+<thead><tr><th>Keyword Category</th><th>Keyword Count</th><th>YOY Change</th></tr></thead>
+<tbody>
+<tr><td>Non-Branded</td><td class="bold">5,477</td><td class="watch">-1.1%</td></tr>
+<tr><td>Destination (Broad)</td><td>3,483</td><td class="watch">-7.3%</td></tr>
+<tr><td>Destination (With Intent)</td><td>1,415</td><td class="down">-28.8%</td></tr>
+<tr><td>Planning</td><td>71</td><td class="up">+9.2%</td></tr>
+</tbody>
+</table>
+<div class="section-subtitle">AI &amp; GEO Visibility (Generative Engine Optimization) — May 2026</div>
+<div class="source-tag">Source: Scrunch AI · Google LLM Overview · GA4 AI Referral Tracking · May 1–31, 2026</div>
+<div class="kpi-grid">
+<div class="kpi-card">
+<div class="kpi-label">AI-Referred Sessions</div>
+<div class="kpi-value">334</div>
+<div class="kpi-sub"><span class="up">+43.3% MOM</span> — LLMs driving growing traffic</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">ChatGPT Sessions</div>
+<div class="kpi-value">311</div>
+<div class="kpi-sub"><span class="up">+41.4% MOM</span> — dominant AI referrer</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Pages in AI Overviews</div>
+<div class="kpi-value">84,858</div>
+<div class="kpi-sub"><span class="up">+46.4% YOY</span> — Google AI Overview presence</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Impressions MOM</div>
+<div class="kpi-value">+6.9%</div>
+<div class="kpi-sub">Driven by increased AI overview appearances</div>
+</div>
+</div>
+<div class="insight-box">
+<strong>GEO/AI Visibility is growing rapidly:</strong> VisitMesa.com received 334 AI-referred sessions in May (+43.3% MOM), with ChatGPT alone driving 311 sessions. Gemini, Claude, and Perplexity account for the remaining sessions. <strong>84,858 pages now appear in Google AI Overviews (+46.4% YOY)</strong> — meaning Visit Mesa content is increasingly surfaced when travelers use AI tools to research Mesa. Top AI-referred pages include /events/ (35 sessions), homepage (15), /blog/top-things-to-do-in-mesa (15), and /events/fifa-2026 (14).
+        <br/><br/>
+<strong>The decline in traditional organic metrics is a sector-wide shift, not a Visit Mesa-specific issue.</strong> As AI tools like ChatGPT, Google AI Overviews, and Perplexity answer travel questions directly — "what are the best things to do in Mesa?" — users increasingly get their answers without clicking through to websites at all. This "zero-click" behavior is compressing organic click volume across destination marketing organizations nationally. The fact that URL clicks are down (-26.3% YOY) while impressions are only down (-28.3%) and average position is improving (+2.6% MOM) indicates the site is still ranking well — travelers are simply engaging differently. Visit Mesa is ahead of many peers in adapting: <strong>84,858 pages now surface in AI Overviews (+46.4% YOY)</strong>, meaning the brand is present in the new search experience even when users don't click. May deliverables — metadata and content updates to landing pages and blog pages — directly target AI-overview eligibility and GEO performance. This investment positions Visit Mesa to capture intent in both traditional and AI-driven search environments as the landscape continues to evolve.
       </div>
-
-      <div class="subsection-title">Keyword Rankings by Type</div>
-      <table class="data-table" style="max-width:480px;">
-        <thead><tr><th>Keyword Category</th><th>Keyword Count</th><th>YOY Change</th></tr></thead>
-        <tbody>
-          <tr><td>Non-Branded</td><td class="bold">5,477</td><td class="watch">-1.1%</td></tr>
-          <tr><td>Destination (Broad)</td><td>3,483</td><td class="watch">-7.3%</td></tr>
-          <tr><td>Destination (With Intent)</td><td>1,415</td><td class="down">-28.8%</td></tr>
-          <tr><td>Planning</td><td>71</td><td class="up">+9.2%</td></tr>
-        </tbody>
-      </table>
-
-      <div class="section-subtitle">AI &amp; GEO Visibility (Generative Engine Optimization) — May 2026</div>
-      <div class="source-tag">Source: Scrunch AI · Google LLM Overview · GA4 AI Referral Tracking · May 1–31, 2026</div>
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-label">AI-Referred Sessions</div>
-          <div class="kpi-value">334</div>
-          <div class="kpi-sub"><span class="up">+43.3% MOM</span> — LLMs driving growing traffic</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">ChatGPT Sessions</div>
-          <div class="kpi-value">311</div>
-          <div class="kpi-sub"><span class="up">+41.4% MOM</span> — dominant AI referrer</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Pages in AI Overviews</div>
-          <div class="kpi-value">84,858</div>
-          <div class="kpi-sub"><span class="up">+46.4% YOY</span> — Google AI Overview presence</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Impressions MOM</div>
-          <div class="kpi-value">+6.9%</div>
-          <div class="kpi-sub">Driven by increased AI overview appearances</div>
-        </div>
-      </div>
-
-      <div class="insight-box">
-        <strong>GEO/AI Visibility is growing rapidly:</strong> VisitMesa.com received 334 AI-referred sessions in May (+43.3% MOM), with ChatGPT alone driving 311 sessions. Gemini, Claude, and Perplexity account for the remaining sessions. <strong>84,858 pages now appear in Google AI Overviews (+46.4% YOY)</strong> — meaning Visit Mesa content is increasingly surfaced when travelers use AI tools to research Mesa. Top AI-referred pages include /events/ (35 sessions), homepage (15), /blog/top-things-to-do-in-mesa (15), and /events/fifa-2026 (14).
-        <br><br>
-        <strong>The decline in traditional organic metrics is a sector-wide shift, not a Visit Mesa-specific issue.</strong> As AI tools like ChatGPT, Google AI Overviews, and Perplexity answer travel questions directly — "what are the best things to do in Mesa?" — users increasingly get their answers without clicking through to websites at all. This "zero-click" behavior is compressing organic click volume across destination marketing organizations nationally. The fact that URL clicks are down (-26.3% YOY) while impressions are only down (-28.3%) and average position is improving (+2.6% MOM) indicates the site is still ranking well — travelers are simply engaging differently. Visit Mesa is ahead of many peers in adapting: <strong>84,858 pages now surface in AI Overviews (+46.4% YOY)</strong>, meaning the brand is present in the new search experience even when users don't click. May deliverables — metadata and content updates to landing pages and blog pages — directly target AI-overview eligibility and GEO performance. This investment positions Visit Mesa to capture intent in both traditional and AI-driven search environments as the landscape continues to evolve.
-      </div>
-    </div>
-
-    <!-- ============ WEBSITE ATTRIBUTION & OTAs ============ -->
-    <div class="section">
-    <!-- ============ GLOSSARY ============ -->
-    <div class="section">
-      <div class="section-title">Glossary</div>
-      <div class="section-subtitle">Data Sources</div>
-      <table class="glossary-table">
-        <thead>
-          <tr><th>Source</th><th>Description</th><th>Used For</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>STR / CoStar</strong></td><td>Hotel industry benchmarking platform. Collects occupancy, ADR, and RevPAR data from participating hotels and aggregates by market/submarket.</td><td>Lodging performance, market comparisons</td></tr>
-          <tr><td><strong>KeyData</strong></td><td>Short-term vacation rental (STVR) analytics platform. Tracks Airbnb, Vrbo, and other rental platforms. Note: As of Q2 2025, ADR includes cleaning fees and platform fees.</td><td>STVR/vacation rental performance</td></tr>
-          <tr><td><strong>Placer.ai</strong></td><td>Mobile device location data platform. Anonymized GPS signals from opted-in smartphone users used to estimate visit counts, trip types, and visitor origins. Filters: 50+ miles from Mesa.</td><td>Visitation trends, visitor profile, origin markets</td></tr>
-          <tr><td><strong>ADARA</strong></td><td>Travel intent and booking data network. Aggregates data from airline, hotel, and OTA booking platforms to measure how VisitMesa.com traffic converts to actual travel bookings.</td><td>Website-to-booking attribution</td></tr>
-          <tr><td><strong>Azira / Symphony</strong></td><td>Connects VisitMesa.com website exposure to real-world visitation using mobile device location data. Matches site visitors' anonymized device IDs to GPS signals to confirm Mesa arrival.</td><td>Website-to-destination attribution</td></tr>
-          <tr><td><strong>Expedia CPR</strong></td><td>Co-op Performance Report from Expedia Group Advertising. Measures ROAS from Visit Mesa's paid display campaign across Expedia, Hotels.com, and Vrbo.</td><td>OTA campaign performance, ROAS</td></tr>
-          <tr><td><strong>Google Analytics 4</strong></td><td>Visit Mesa's website analytics platform. Tracks sessions, users, engagement, and traffic sources for VisitMesa.com.</td><td>Website performance</td></tr>
-          <tr><td><strong>DV360</strong></td><td>Google's Display &amp; Video 360 programmatic ad platform. Used to run display advertising campaigns across the web.</td><td>Paid digital impressions and spend</td></tr>
-          <tr><td><strong>Meta Ads</strong></td><td>Facebook and Instagram paid advertising platform.</td><td>Paid social impressions and spend</td></tr>
-          <tr><td><strong>Sprout Social</strong></td><td>Social media management and analytics platform. Aggregates data from Facebook, Instagram, TikTok, LinkedIn, and YouTube.</td><td>Social media audience and engagement metrics</td></tr>
-          <tr><td><strong>CoStar</strong></td><td>Commercial real estate and hospitality market data platform. Used for hotel pipeline, supply forecasts, and competitive market analysis.</td><td>Hotel supply, pipeline, market context</td></tr>
-          <tr><td><strong>Tempest CRM</strong></td><td>Visit Mesa's sales CRM platform. Tracks group sales leads, bookings, and room night actualization for group meetings/conferences and sports.</td><td>Sales performance, group room nights</td></tr>
-          <tr><td><strong>Critical Mention</strong></td><td>Media monitoring platform. Tracks earned media mentions of Visit Mesa across TV, print, online, and radio.</td><td>Earned media reach and value</td></tr>
-          <tr><td><strong>TEGNA / TVSquared / Premion</strong></td><td>Streaming TV (Connected TV / CTV) campaign attribution platform. Measures delivered impressions, video completion rates, unique households, and website attribution from CTV placements across premium streaming publishers including Hulu, Disney+, CNN, Fox News, HBO Max, and more.</td><td>Streaming TV campaign performance &amp; attribution</td></tr>
-          <tr><td><strong>Scrunch AI</strong></td><td>AI-generated search result monitoring. Tracks how Visit Mesa is represented in AI platforms including ChatGPT, Perplexity, and Google AI Overviews. Used for GEO (Generative Engine Optimization) tracking.</td><td>AI brand visibility &amp; GEO monitoring</td></tr>
-          <tr><td><strong>Tourism Economics / USTA</strong></td><td>Economic forecasting and travel industry research organizations providing national travel trend data and the U.S. Travel Recovery Tracker.</td><td>Market context, economic forecasts</td></tr>
-        </tbody>
-      </table>
-
-      <div class="section-subtitle">Key Metric Definitions</div>
-      <table class="glossary-table">
-        <thead>
-          <tr><th>Term</th><th>Definition</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>ADR (Average Daily Rate)</strong></td><td>Average revenue earned per occupied hotel room per night.</td></tr>
-          <tr><td><strong>RevPAR (Revenue Per Available Room)</strong></td><td>Total room revenue divided by total available rooms. Combines both occupancy and rate into one efficiency metric.</td></tr>
-          <tr><td><strong>Occupancy Rate</strong></td><td>Percentage of available hotel rooms that were sold on a given night or period.</td></tr>
-          <tr><td><strong>ROAS (Return on Ad Spend)</strong></td><td>Revenue generated for every $1 spent on advertising. A ROAS of 40x means $40 in bookings for every $1 in ad spend.</td></tr>
-          <tr><td><strong>Room Nights</strong></td><td>The total number of hotel rooms occupied multiplied by the number of nights. One guest staying 3 nights = 3 room nights.</td></tr>
-          <tr><td><strong>Overnight Trip Share</strong></td><td>The percentage of total visitor trips that included at least one overnight stay. Measured among visitors from 50+ miles.</td></tr>
-          <tr><td><strong>Day Trip</strong></td><td>A visit where the traveler spends at least 5 hours in the market but returns home the same day. Measured among visitors from 50+ miles away.</td></tr>
-          <tr><td><strong>Overnight Leakage</strong></td><td>Identified when a day trip to Mesa is preceded or followed by an overnight stay in a different market. Those overnight stays = Nights Lost: visitors Mesa attracts but does not capture in lodging.</td></tr>
-          <tr><td><strong>Search-to-Booking Rate</strong></td><td>The percentage of VisitMesa.com visitors who go on to complete a travel booking. Measured via ADARA. Indicates how effectively the website converts research intent into confirmed trips.</td></tr>
-          <tr><td><strong>CTR (Click-Through Rate)</strong></td><td>Percentage of ad impressions that resulted in a click.</td></tr>
-          <tr><td><strong>Engagement Rate (Social)</strong></td><td>Interactions (likes, comments, shares, saves) as a percentage of total audience or impressions, depending on platform.</td></tr>
-          <tr><td><strong>Engagement Rate (Website)</strong></td><td>In GA4, the percentage of sessions that lasted longer than 10 seconds, had a conversion event, or had 2+ page views. The inverse of bounce rate.</td></tr>
-          <tr><td><strong>FYTD</strong></td><td>Fiscal Year-to-Date. Visit Mesa's fiscal year runs July 1 – June 30. FYTD May 2026 = July 1, 2025 through May 31, 2026.</td></tr>
-          <tr><td><strong>VCR (Video Completion Rate)</strong></td><td>Percentage of video ad impressions where the viewer watched the video to completion.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-  </div><!-- /content -->
-
-  <!-- ============ FOOTER ============ -->
-  <div class="report-footer">
-    <strong>Report prepared by Visit Mesa | Destination Sales &amp; Marketing | Confidential</strong><br>
-    Sources: STR / CoStar Symphony, KeyData, Placer.ai, ADARA / Azira, Google Analytics 4, Google Search Console, DV360, Meta Ads, Sprout Social, Tempest CRM, TEGNA / TVSquared / Premion, Scrunch AI, Tourism Economics, U.S. Travel Association, TSA, OAG, Oxford Economics, MMGY Global<br><br>
-    <span style="font-size:11px; color:rgba(255,255,255,0.5);">This report was generated with the assistance of AI. All context provided by Visit Mesa, with human review.</span>
-  </div>
-
+</div>
+<!-- ============ WEBSITE ATTRIBUTION & OTAs ============ -->
+<div class="section">
+<!-- ============ GLOSSARY ============ -->
+<div class="section">
+<div class="section-title">Glossary</div>
+<div class="section-subtitle">Data Sources</div>
+<table class="glossary-table">
+<thead>
+<tr><th>Source</th><th>Description</th><th>Used For</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>STR / CoStar</strong></td><td>Hotel industry benchmarking platform. Collects occupancy, ADR, and RevPAR data from participating hotels and aggregates by market/submarket.</td><td>Lodging performance, market comparisons</td></tr>
+<tr><td><strong>KeyData</strong></td><td>Short-term vacation rental (STVR) analytics platform. Tracks Airbnb, Vrbo, and other rental platforms. Note: As of Q2 2025, ADR includes cleaning fees and platform fees.</td><td>STVR/vacation rental performance</td></tr>
+<tr><td><strong>Placer.ai</strong></td><td>Mobile device location data platform. Anonymized GPS signals from opted-in smartphone users used to estimate visit counts, trip types, and visitor origins. Filters: 50+ miles from Mesa.</td><td>Visitation trends, visitor profile, origin markets</td></tr>
+<tr><td><strong>ADARA</strong></td><td>Travel intent and booking data network. Aggregates data from airline, hotel, and OTA booking platforms to measure how VisitMesa.com traffic converts to actual travel bookings.</td><td>Website-to-booking attribution</td></tr>
+<tr><td><strong>Azira / Symphony</strong></td><td>Connects VisitMesa.com website exposure to real-world visitation using mobile device location data. Matches site visitors' anonymized device IDs to GPS signals to confirm Mesa arrival.</td><td>Website-to-destination attribution</td></tr>
+<tr><td><strong>Expedia CPR</strong></td><td>Co-op Performance Report from Expedia Group Advertising. Measures ROAS from Visit Mesa's paid display campaign across Expedia, Hotels.com, and Vrbo.</td><td>OTA campaign performance, ROAS</td></tr>
+<tr><td><strong>Google Analytics 4</strong></td><td>Visit Mesa's website analytics platform. Tracks sessions, users, engagement, and traffic sources for VisitMesa.com.</td><td>Website performance</td></tr>
+<tr><td><strong>DV360</strong></td><td>Google's Display &amp; Video 360 programmatic ad platform. Used to run display advertising campaigns across the web.</td><td>Paid digital impressions and spend</td></tr>
+<tr><td><strong>Meta Ads</strong></td><td>Facebook and Instagram paid advertising platform.</td><td>Paid social impressions and spend</td></tr>
+<tr><td><strong>Sprout Social</strong></td><td>Social media management and analytics platform. Aggregates data from Facebook, Instagram, TikTok, LinkedIn, and YouTube.</td><td>Social media audience and engagement metrics</td></tr>
+<tr><td><strong>CoStar</strong></td><td>Commercial real estate and hospitality market data platform. Used for hotel pipeline, supply forecasts, and competitive market analysis.</td><td>Hotel supply, pipeline, market context</td></tr>
+<tr><td><strong>Tempest CRM</strong></td><td>Visit Mesa's sales CRM platform. Tracks group sales leads, bookings, and room night actualization for group meetings/conferences and sports.</td><td>Sales performance, group room nights</td></tr>
+<tr><td><strong>Critical Mention</strong></td><td>Media monitoring platform. Tracks earned media mentions of Visit Mesa across TV, print, online, and radio.</td><td>Earned media reach and value</td></tr>
+<tr><td><strong>TEGNA / TVSquared / Premion</strong></td><td>Streaming TV (Connected TV / CTV) campaign attribution platform. Measures delivered impressions, video completion rates, unique households, and website attribution from CTV placements across premium streaming publishers including Hulu, Disney+, CNN, Fox News, HBO Max, and more.</td><td>Streaming TV campaign performance &amp; attribution</td></tr>
+<tr><td><strong>Scrunch AI</strong></td><td>AI-generated search result monitoring. Tracks how Visit Mesa is represented in AI platforms including ChatGPT, Perplexity, and Google AI Overviews. Used for GEO (Generative Engine Optimization) tracking.</td><td>AI brand visibility &amp; GEO monitoring</td></tr>
+<tr><td><strong>Tourism Economics / USTA</strong></td><td>Economic forecasting and travel industry research organizations providing national travel trend data and the U.S. Travel Recovery Tracker.</td><td>Market context, economic forecasts</td></tr>
+</tbody>
+</table>
+<div class="section-subtitle">Key Metric Definitions</div>
+<table class="glossary-table">
+<thead>
+<tr><th>Term</th><th>Definition</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>ADR (Average Daily Rate)</strong></td><td>Average revenue earned per occupied hotel room per night.</td></tr>
+<tr><td><strong>RevPAR (Revenue Per Available Room)</strong></td><td>Total room revenue divided by total available rooms. Combines both occupancy and rate into one efficiency metric.</td></tr>
+<tr><td><strong>Occupancy Rate</strong></td><td>Percentage of available hotel rooms that were sold on a given night or period.</td></tr>
+<tr><td><strong>ROAS (Return on Ad Spend)</strong></td><td>Revenue generated for every $1 spent on advertising. A ROAS of 40x means $40 in bookings for every $1 in ad spend.</td></tr>
+<tr><td><strong>Room Nights</strong></td><td>The total number of hotel rooms occupied multiplied by the number of nights. One guest staying 3 nights = 3 room nights.</td></tr>
+<tr><td><strong>Overnight Trip Share</strong></td><td>The percentage of total visitor trips that included at least one overnight stay. Measured among visitors from 50+ miles.</td></tr>
+<tr><td><strong>Day Trip</strong></td><td>A visit where the traveler spends at least 5 hours in the market but returns home the same day. Measured among visitors from 50+ miles away.</td></tr>
+<tr><td><strong>Overnight Leakage</strong></td><td>Identified when a day trip to Mesa is preceded or followed by an overnight stay in a different market. Those overnight stays = Nights Lost: visitors Mesa attracts but does not capture in lodging.</td></tr>
+<tr><td><strong>Search-to-Booking Rate</strong></td><td>The percentage of VisitMesa.com visitors who go on to complete a travel booking. Measured via ADARA. Indicates how effectively the website converts research intent into confirmed trips.</td></tr>
+<tr><td><strong>CTR (Click-Through Rate)</strong></td><td>Percentage of ad impressions that resulted in a click.</td></tr>
+<tr><td><strong>Engagement Rate (Social)</strong></td><td>Interactions (likes, comments, shares, saves) as a percentage of total audience or impressions, depending on platform.</td></tr>
+<tr><td><strong>Engagement Rate (Website)</strong></td><td>In GA4, the percentage of sessions that lasted longer than 10 seconds, had a conversion event, or had 2+ page views. The inverse of bounce rate.</td></tr>
+<tr><td><strong>FYTD</strong></td><td>Fiscal Year-to-Date. Visit Mesa's fiscal year runs July 1 – June 30. FYTD May 2026 = July 1, 2025 through May 31, 2026.</td></tr>
+<tr><td><strong>VCR (Video Completion Rate)</strong></td><td>Percentage of video ad impressions where the viewer watched the video to completion.</td></tr>
+</tbody>
+</table>
+</div>
+</div><!-- /content -->
+<!-- ============ FOOTER ============ -->
+<div class="report-footer">
+<strong>Report prepared by Visit Mesa | Destination Sales &amp; Marketing | Confidential</strong><br/>
+    Sources: STR / CoStar Symphony, KeyData, Placer.ai, ADARA / Azira, Google Analytics 4, Google Search Console, DV360, Meta Ads, Sprout Social, Tempest CRM, TEGNA / TVSquared / Premion, Scrunch AI, Tourism Economics, U.S. Travel Association, TSA, OAG, Oxford Economics, MMGY Global<br/><br/>
+<span style="font-size:11px; color:rgba(255,255,255,0.5);">This report was generated with the assistance of AI. All context provided by Visit Mesa, with human review.</span>
+</div>
 </div><!-- /page -->
-
 <script>
 // ===== HOTEL OCCUPANCY TREND CHART =====
 new Chart(document.getElementById('hotelOccChart'), {
@@ -1887,5 +1820,5 @@ new Chart(document.getElementById('roomsBookedChart'), {
   }
 });
 </script>
-</body>
+</div></body>
 </html>
