@@ -29,7 +29,15 @@ html,body{margin:0;min-height:100%;background:#1B3D6B;color:#fff;font-family:Ari
     const b64=parts.join("").replace(/\s+/g,"");
     const bin=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
     const stream=new Blob([bin]).stream().pipeThrough(new DecompressionStream("gzip"));
-    const html=await new Response(stream).text();
+    let html=await new Response(stream).text();
+
+    // The exported report accidentally defines both display:none and display:flex
+    // on the Sections dropdown. Remove the later display:flex so it starts closed.
+    html=html.replace(
+      /(<div id="section-menu"[^>]*style=")([^"]*)(")/,
+      (match,start,styles,end)=>start+styles.replace(/display:flex;/g,"")+end
+    );
+
     document.open();
     document.write(html);
     document.close();
