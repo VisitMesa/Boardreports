@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Visit Mesa Board Report - July 2026</title>
+<style>
+html,body{margin:0;min-height:100%;background:#1B3D6B;color:#fff;font-family:Arial,sans-serif}body{display:grid;place-items:center}.loading{text-align:center;padding:32px}.loading strong{display:block;font-size:18px;margin-bottom:8px}.loading span{opacity:.78;font-size:14px}
+</style>
+</head>
+<body>
+<div class="loading" id="loading"><strong>Loading July 2026 report...</strong><span>Please hold for a moment.</span></div>
+<script>
+(async function(){
+  try{
+    const files=[
+      "Visit-Mesa-Board-Report-July-2026.gzpart-1.txt",
+      "Visit-Mesa-Board-Report-July-2026.gzpart-2.txt",
+      "Visit-Mesa-Board-Report-July-2026.gzpart-3.txt",
+      "Visit-Mesa-Board-Report-July-2026.gzpart-4.txt",
+      "Visit-Mesa-Board-Report-July-2026.gzpart-5.txt",
+      "Visit-Mesa-Board-Report-July-2026.gzpart-6.txt",
+      "Visit-Mesa-Board-Report-July-2026.gzpart-7.txt"
+    ];
+    const responses=await Promise.all(files.map(f=>fetch(f,{cache:"no-store"})));
+    const failed=responses.find(r=>!r.ok);
+    if(failed) throw new Error("A report segment could not be loaded ("+failed.status+").");
+    const parts=await Promise.all(responses.map(r=>r.text()));
+    const b64=parts.join("").replace(/\s+/g,"");
+    const bin=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
+    const stream=new Blob([bin]).stream().pipeThrough(new DecompressionStream("gzip"));
+    const html=await new Response(stream).text();
+    document.open();
+    document.write(html);
+    document.close();
+  }catch(error){
+    document.getElementById("loading").innerHTML="<strong>We could not load the report.</strong><span>"+error.message+" Please refresh the page.</span>";
+  }
+})();
+</script>
+</body>
+</html>
